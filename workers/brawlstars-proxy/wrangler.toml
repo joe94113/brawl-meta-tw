@@ -1,0 +1,6 @@
+name = "brawlstars-proxy"
+main = "worker.js"
+compatibility_date = "2026-05-20"
+
+[vars]
+ALLOWED_ORIGINS = "https://joe94113.github.io,http://localhost:5173"

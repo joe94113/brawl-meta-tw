@@ -3,7 +3,7 @@ import { computed, onMounted, ref, watch } from 'vue'
 import { RouterLink, useRoute, useRouter } from 'vue-router'
 import PageHeader from '../components/PageHeader.vue'
 import { useBrawlData } from '../composables/useBrawlData'
-import { fetchJson } from '../services/brawlify'
+import { fetchOfficialJson } from '../services/brawlStars'
 import type { BattleLogResponse, OfficialBattle, OfficialBattlePlayer, OfficialPlayer, OfficialPlayerBrawler } from '../types'
 
 const route = useRoute()
@@ -87,8 +87,8 @@ async function fetchPlayerData() {
 
   try {
     const [profile, battles] = await Promise.all([
-      fetchJson<OfficialPlayer>(`/api/brawlstars/players/${encodedTag}`),
-      fetchJson<BattleLogResponse>(`/api/brawlstars/players/${encodedTag}/battlelog`).catch(() => ({ items: [] })),
+      fetchOfficialJson<OfficialPlayer>(`/players/${encodedTag}`),
+      fetchOfficialJson<BattleLogResponse>(`/players/${encodedTag}/battlelog`).catch(() => ({ items: [] })),
     ])
 
     playerProfile.value = profile

@@ -47,6 +47,7 @@ jobs:
         run: npm run build
         env:
           GITHUB_PAGES: true
+          VITE_BRAWL_STARS_PROXY_BASE: ${{ vars.VITE_BRAWL_STARS_PROXY_BASE }}
 
       - name: SPA fallback
         run: cp dist/index.html dist/404.html
