@@ -97,7 +97,7 @@ async function fetchPlayerData() {
     playerError.value =
       error instanceof Error
         ? `${error.message}。請確認玩家 tag 是否正確，或稍後再試。`
-        : '官方 API 暫時無法讀取。'
+        : '玩家資料暫時無法讀取。'
   } finally {
     playerLoading.value = false
   }
@@ -122,13 +122,25 @@ function useRecentTag(tag: string) {
 }
 
 function displayBrawlerName(playerBrawler: OfficialPlayerBrawler) {
-  const found = brawlers.value.find((brawler) => brawler.id === playerBrawler.id)
+  const found = findLocalBrawler(playerBrawler)
   return found ? found.localizedName : playerBrawler.name
 }
 
 function brawlerImageUrl(playerBrawler?: OfficialPlayerBrawler) {
   if (!playerBrawler) return ''
-  return brawlers.value.find((brawler) => brawler.id === playerBrawler.id)?.imageUrl || ''
+  return findLocalBrawler(playerBrawler)?.imageUrl || ''
+}
+
+function findLocalBrawler(playerBrawler: OfficialPlayerBrawler) {
+  const normalizedName = normalizeBrawlerName(playerBrawler.name)
+  return (
+    brawlers.value.find((brawler) => brawler.id === playerBrawler.id) ||
+    brawlers.value.find((brawler) => normalizeBrawlerName(brawler.name) === normalizedName)
+  )
+}
+
+function normalizeBrawlerName(value: string) {
+  return value.toUpperCase().replace(/[^A-Z0-9]+/g, '')
 }
 
 function profileIconUrl(iconId?: number) {
@@ -169,7 +181,7 @@ function battleResultClass(result?: string) {
 
 <template>
   <section class="bg-[#121824] py-[72px]">
-    <PageHeader eyebrow="Profile scout" title="個人戰績查詢" note="輸入玩家 Tag 後，可查看官方玩家資料、代表角色與近期對戰摘要。" />
+    <PageHeader eyebrow="Profile scout" title="個人戰績查詢" note="輸入玩家 Tag 後，可查看玩家資料、代表角色與近期對戰摘要。" />
 
     <div class="mx-auto grid w-[min(1180px,calc(100%_-_48px))] grid-cols-[360px_1fr] gap-5 max-lg:grid-cols-1 max-sm:w-[calc(100%_-_28px)]">
       <form class="dark-panel grid content-start gap-3 rounded-lg p-4" @submit.prevent="submitPlayerSearch">
@@ -204,9 +216,9 @@ function battleResultClass(result?: string) {
         </div>
         <h2 v-else class="m-0 text-2xl font-black text-white">{{ normalizedPlayerTag ? `#${normalizedPlayerTag}` : '輸入玩家 Tag 開始查詢' }}</h2>
         <p v-if="!playerProfile && !playerLoading && !playerError" class="mt-3 leading-7 text-slate-300">
-          查詢後會讀取官方玩家資料與最近 25 場 battle log，並保留外部深連結方便交叉查看。
+          查詢後會讀取玩家資料與近期對戰紀錄，並保留外部深連結方便交叉查看。
         </p>
-        <p v-if="playerLoading" class="mt-3 leading-7 text-slate-300">正在讀取官方 API...</p>
+        <p v-if="playerLoading" class="mt-3 leading-7 text-slate-300">正在讀取玩家資料...</p>
         <p v-if="playerError" class="mt-3 rounded-lg border border-red-200 bg-red-50 p-3 leading-7 text-red-700">{{ playerError }}</p>
 
         <div v-if="playerProfile" class="mt-5 grid grid-cols-4 gap-3 max-sm:grid-cols-2">
@@ -287,7 +299,7 @@ function battleResultClass(result?: string) {
                   </strong>
                   <small class="block truncate text-slate-400">
                     {{ player.brawler ? displayBrawlerName(player.brawler) : '未知角色' }}
-                    <span v-if="player.brawler"> · 等級 {{ player.brawler.power }}</span>
+                    <span v-if="player.brawler && player.brawler.power > 0"> · 等級 {{ player.brawler.power }}</span>
                   </small>
                 </span>
               </RouterLink>

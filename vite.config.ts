@@ -1,14 +1,14 @@
 import { fileURLToPath, URL } from 'node:url'
 
-import { defineConfig, loadEnv } from 'vite'
+import { defineConfig, loadEnv, type Plugin } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import tailwindcss from '@tailwindcss/vite'
+import brawlStarsWorker from './workers/brawlstars-proxy/worker.js'
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  const brawlStarsToken = env.BRAWL_STARS_TOKEN || env.VITE_BRAWL_STARS_TOKEN
   const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1]
   const githubPagesBase = process.env.GITHUB_PAGES === 'true' && repoName ? `/${repoName}/` : '/'
 
@@ -18,23 +18,10 @@ export default defineConfig(({ mode }) => {
       vue(),
       tailwindcss(),
       vueDevTools(),
+      brawlStarsDevProxy(),
     ],
     server: {
       proxy: {
-        '/api/brawlstars': {
-          target: 'https://api.brawlstars.com/v1',
-          changeOrigin: true,
-          secure: true,
-          rewrite: (path) => path.replace(/^\/api\/brawlstars/, ''),
-          configure: (proxy) => {
-            proxy.on('proxyReq', (proxyReq) => {
-              if (brawlStarsToken) {
-                proxyReq.setHeader('Authorization', `Bearer ${brawlStarsToken}`)
-              }
-              proxyReq.setHeader('Accept', 'application/json')
-            })
-          },
-        },
         '/api/brawltime': {
           target: 'https://brawltime.ninja',
           changeOrigin: true,
@@ -56,3 +43,40 @@ export default defineConfig(({ mode }) => {
     },
   }
 })
+
+function brawlStarsDevProxy(): Plugin {
+  return {
+    name: 'brawl-stars-dev-proxy',
+    configureServer(server) {
+      server.middlewares.use(async (req, res, next) => {
+        if (!req.url?.startsWith('/api/brawlstars')) {
+          next()
+          return
+        }
+
+        const headers = new Headers()
+        for (const [key, value] of Object.entries(req.headers)) {
+          if (Array.isArray(value)) {
+            value.forEach((item) => headers.append(key, item))
+          } else if (value) {
+            headers.set(key, value)
+          }
+        }
+
+        try {
+          const response = await brawlStarsWorker.fetch(new Request(`http://localhost${req.url}`, { method: req.method, headers }), {
+            ALLOWED_ORIGINS: '',
+          })
+
+          res.statusCode = response.status
+          response.headers.forEach((value, key) => res.setHeader(key, value))
+          res.end(Buffer.from(await response.arrayBuffer()))
+        } catch (error) {
+          res.statusCode = 502
+          res.setHeader('Content-Type', 'application/json')
+          res.end(JSON.stringify({ message: error instanceof Error ? error.message : String(error) }))
+        }
+      })
+    },
+  }
+}
