@@ -1,42 +1,34 @@
-# brawl-meta-tw
+# 荒野報馬仔
 
-This template should help get you started developing with Vue 3 in Vite.
+台灣玩家取向的 Brawl Stars meta、選角與 Counter 工具。前端使用 Vue 3、Vue Router、Tailwind CSS，資料來源整合 Brawlify game data、Brawl Time Ninja 公開天梯統計與繁體中文在地化詞彙。
 
-## Recommended IDE Setup
-
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Recommended Browser Setup
-
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+## 開發
 
 ```sh
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
+npm run assets:icons
+npm run data:meta
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+本機玩家戰績查詢會透過 Vite dev server 代理官方 Brawl Stars API。請在 `.env.local` 放入：
+
+```sh
+BRAWL_STARS_TOKEN=你的官方 API token
+```
+
+## 建置
 
 ```sh
 npm run build
+npm run preview
 ```
+
+GitHub Pages 會由 `.github/workflows/deploy-pages.yml` 自動建置與部署，並在部署前更新公開 meta 快照與 SEO icon。
+
+## 資料說明
+
+- Meta 榜以 Brawl Time Ninja 近 30 天窗口的 adjusted win rate / use rate 為主要排序依據。
+- 角色、模式、配件與星徽資料來自 Brawlify game data。
+- 角色與技能繁中名稱使用 Brawl Stars assets localization 對照。
+- GitHub Pages 是純靜態部署，動態玩家戰績查詢仍需要本機 dev proxy 或額外後端代理。

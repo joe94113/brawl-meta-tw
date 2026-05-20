@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="荒野報馬仔">
+  <defs>
+    <linearGradient id="bg" x1="78" y1="48" x2="430" y2="464" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1D2330"/>
+      <stop offset="1" stop-color="#121824"/>
+    </linearGradient>
+    <linearGradient id="bolt" x1="148" y1="96" x2="358" y2="410" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFCC00"/>
+      <stop offset="1" stop-color="#FF8A00"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feColorMatrix in="blur" values="1 0 0 0 1 0 1 0 0 0.8 0 0 1 0 0 0 0 0 0.65 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <path d="M90 316c31 67 93 108 166 108 84 0 151-53 173-129" fill="none" stroke="#8A2BE2" stroke-width="34" stroke-linecap="round" opacity=".82"/>
+  <path d="M114 178c36-57 86-86 151-86 67 0 123 34 151 88" fill="none" stroke="#00E676" stroke-width="22" stroke-linecap="round" opacity=".78"/>
+  <path filter="url(#glow)" d="M280 70 132 286h96l-24 156 176-236h-98l-2-136Z" fill="url(#bolt)" stroke="#0A0F18" stroke-width="18" stroke-linejoin="round"/>
+  <path d="M336 142h57l-37 37 13 53-45-28-48 29 14-54-39-37h59l21-53 16 53Z" fill="#FFFFFF" opacity=".92"/>
+  <circle cx="166" cy="158" r="24" fill="#FF1744" stroke="#0A0F18" stroke-width="10"/>
+  <path d="M132 358h118" stroke="#fff" stroke-width="24" stroke-linecap="round" opacity=".86"/>
+</svg>

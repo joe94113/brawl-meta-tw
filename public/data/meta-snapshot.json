@@ -1,0 +1,767 @@
+{
+  "stats": [
+    {
+      "brawlerKey": "DAMIAN",
+      "winRateAdj": 74.4719056938493,
+      "useRate": 3.6453948140819947,
+      "picksEstimate": 16179181
+    },
+    {
+      "brawlerKey": "TRUNK",
+      "winRateAdj": 72.18645113649323,
+      "useRate": 0.48704013147792885,
+      "picksEstimate": 2161607
+    },
+    {
+      "brawlerKey": "GIGI",
+      "winRateAdj": 71.84117940928448,
+      "useRate": 0.44515708133751564,
+      "picksEstimate": 1975719
+    },
+    {
+      "brawlerKey": "OLLIE",
+      "winRateAdj": 71.30298327988318,
+      "useRate": 0.22539453191726075,
+      "picksEstimate": 1000358
+    },
+    {
+      "brawlerKey": "GLOWY",
+      "winRateAdj": 70.65217049956577,
+      "useRate": 0.3692322400113538,
+      "picksEstimate": 1638746
+    },
+    {
+      "brawlerKey": "JAEYONG",
+      "winRateAdj": 70.08308083048969,
+      "useRate": 0.2710039605004507,
+      "picksEstimate": 1202784
+    },
+    {
+      "brawlerKey": "NAJIA",
+      "winRateAdj": 69.94689850299804,
+      "useRate": 2.026992790438852,
+      "picksEstimate": 8996305
+    },
+    {
+      "brawlerKey": "GLOWBERT",
+      "winRateAdj": 69.7302771936529,
+      "useRate": 0.11231363187571825,
+      "picksEstimate": 498476
+    },
+    {
+      "brawlerKey": "ZIGGY",
+      "winRateAdj": 68.84193799219148,
+      "useRate": 0.6134826172703772,
+      "picksEstimate": 2722791
+    },
+    {
+      "brawlerKey": "FINX",
+      "winRateAdj": 68.29514333247417,
+      "useRate": 0.45060683462972695,
+      "picksEstimate": 1999907
+    },
+    {
+      "brawlerKey": "ASH",
+      "winRateAdj": 68.20649457711302,
+      "useRate": 0.21383559529861584,
+      "picksEstimate": 949056
+    },
+    {
+      "brawlerKey": "MEG",
+      "winRateAdj": 68.20445741044902,
+      "useRate": 0.35641183801745,
+      "picksEstimate": 1581846
+    },
+    {
+      "brawlerKey": "ROSA",
+      "winRateAdj": 68.13934312293242,
+      "useRate": 0.25061243355629076,
+      "picksEstimate": 1112281
+    },
+    {
+      "brawlerKey": "SAM",
+      "winRateAdj": 68.11998521927119,
+      "useRate": 0.218921386699436,
+      "picksEstimate": 971628
+    },
+    {
+      "brawlerKey": "BUSTER",
+      "winRateAdj": 68.01488739396152,
+      "useRate": 0.2727079289829655,
+      "picksEstimate": 1210347
+    },
+    {
+      "brawlerKey": "EVE",
+      "winRateAdj": 67.86547400517708,
+      "useRate": 0.2495852638766535,
+      "picksEstimate": 1107722
+    },
+    {
+      "brawlerKey": "DRACO",
+      "winRateAdj": 67.8412618214123,
+      "useRate": 0.3302765534301044,
+      "picksEstimate": 1465851
+    },
+    {
+      "brawlerKey": "PEARL",
+      "winRateAdj": 67.68058618387582,
+      "useRate": 0.3320179926420844,
+      "picksEstimate": 1473580
+    },
+    {
+      "brawlerKey": "LUMI",
+      "winRateAdj": 67.66520882264983,
+      "useRate": 0.4828440327676289,
+      "picksEstimate": 2142984
+    },
+    {
+      "brawlerKey": "CLANCY",
+      "winRateAdj": 67.58001993715618,
+      "useRate": 1.3487199632140647,
+      "picksEstimate": 5985959
+    },
+    {
+      "brawlerKey": "SIRIUS",
+      "winRateAdj": 67.41394572208297,
+      "useRate": 1.6455701574225299,
+      "picksEstimate": 7303455
+    },
+    {
+      "brawlerKey": "BONNIE",
+      "winRateAdj": 67.36899751903843,
+      "useRate": 0.23181929471560334,
+      "picksEstimate": 1028872
+    },
+    {
+      "brawlerKey": "DOUG",
+      "winRateAdj": 67.23633485526564,
+      "useRate": 0.5737989225919347,
+      "picksEstimate": 2546664
+    },
+    {
+      "brawlerKey": "MRP",
+      "winRateAdj": 67.14593886159298,
+      "useRate": 0.28892911526937,
+      "picksEstimate": 1282340
+    },
+    {
+      "brawlerKey": "RT",
+      "winRateAdj": 67.11254412926577,
+      "useRate": 0.32884122939740457,
+      "picksEstimate": 1459480
+    },
+    {
+      "brawlerKey": "JACKY",
+      "winRateAdj": 67.07916115482236,
+      "useRate": 0.3432047795032084,
+      "picksEstimate": 1523229
+    },
+    {
+      "brawlerKey": "JUJU",
+      "winRateAdj": 67.03602729892505,
+      "useRate": 0.2899552684919419,
+      "picksEstimate": 1286895
+    },
+    {
+      "brawlerKey": "LOLA",
+      "winRateAdj": 66.94087708600044,
+      "useRate": 0.2589674811106003,
+      "picksEstimate": 1149363
+    },
+    {
+      "brawlerKey": "NITA",
+      "winRateAdj": 66.89697263797729,
+      "useRate": 0.8756290374058734,
+      "picksEstimate": 3886262
+    },
+    {
+      "brawlerKey": "SANDY",
+      "winRateAdj": 66.75858422244261,
+      "useRate": 0.4765013430221429,
+      "picksEstimate": 2114833
+    },
+    {
+      "brawlerKey": "MOE",
+      "winRateAdj": 66.66128157967198,
+      "useRate": 0.31952189666162284,
+      "picksEstimate": 1418119
+    },
+    {
+      "brawlerKey": "PAM",
+      "winRateAdj": 66.56684909531873,
+      "useRate": 0.25096855654953076,
+      "picksEstimate": 1113862
+    },
+    {
+      "brawlerKey": "CHARLIE",
+      "winRateAdj": 66.54915782689683,
+      "useRate": 0.3483782532072801,
+      "picksEstimate": 1546191
+    },
+    {
+      "brawlerKey": "WILLOW",
+      "winRateAdj": 66.47499775070423,
+      "useRate": 0.3862966195906409,
+      "picksEstimate": 1714482
+    },
+    {
+      "brawlerKey": "CHUCK",
+      "winRateAdj": 66.40384007512472,
+      "useRate": 0.36263497929648025,
+      "picksEstimate": 1609465
+    },
+    {
+      "brawlerKey": "MAISIE",
+      "winRateAdj": 66.0767191327598,
+      "useRate": 0.540832631979832,
+      "picksEstimate": 2400352
+    },
+    {
+      "brawlerKey": "LOU",
+      "winRateAdj": 65.96236668146685,
+      "useRate": 0.42923866107462316,
+      "picksEstimate": 1905069
+    },
+    {
+      "brawlerKey": "JANET",
+      "winRateAdj": 65.8379858719503,
+      "useRate": 0.5140685773569784,
+      "picksEstimate": 2281566
+    },
+    {
+      "brawlerKey": "KAZE",
+      "winRateAdj": 65.60431836901363,
+      "useRate": 0.6983149435396454,
+      "picksEstimate": 3099298
+    },
+    {
+      "brawlerKey": "ALLI",
+      "winRateAdj": 65.55055583460503,
+      "useRate": 0.5250899112390194,
+      "picksEstimate": 2330481
+    },
+    {
+      "brawlerKey": "HANK",
+      "winRateAdj": 65.32330745062097,
+      "useRate": 0.2808166894587631,
+      "picksEstimate": 1246335
+    },
+    {
+      "brawlerKey": "SHADE",
+      "winRateAdj": 65.0662425818432,
+      "useRate": 0.7607259624197344,
+      "picksEstimate": 3376294
+    },
+    {
+      "brawlerKey": "LARRYANDLAWRIE",
+      "winRateAdj": 64.99080773335832,
+      "useRate": 0.3197833486237705,
+      "picksEstimate": 1419279
+    },
+    {
+      "brawlerKey": "FRANK",
+      "winRateAdj": 64.8783747337798,
+      "useRate": 1.1508934589590476,
+      "picksEstimate": 5107955
+    },
+    {
+      "brawlerKey": "GALE",
+      "winRateAdj": 64.82232956401684,
+      "useRate": 0.5385850416485984,
+      "picksEstimate": 2390376
+    },
+    {
+      "brawlerKey": "JESSIE",
+      "winRateAdj": 64.81130969389933,
+      "useRate": 0.7293353254670191,
+      "picksEstimate": 3236974
+    },
+    {
+      "brawlerKey": "PIERCE",
+      "winRateAdj": 64.78889041665589,
+      "useRate": 1.7153066722951817,
+      "picksEstimate": 7612963
+    },
+    {
+      "brawlerKey": "MINA",
+      "winRateAdj": 64.77092028542395,
+      "useRate": 1.0682315191253886,
+      "picksEstimate": 4741081
+    },
+    {
+      "brawlerKey": "OTIS",
+      "winRateAdj": 64.64287011885197,
+      "useRate": 0.8530320234684134,
+      "picksEstimate": 3785971
+    },
+    {
+      "brawlerKey": "8BIT",
+      "winRateAdj": 64.5911926440225,
+      "useRate": 0.5332094475649496,
+      "picksEstimate": 2366518
+    },
+    {
+      "brawlerKey": "GRIFF",
+      "winRateAdj": 64.50724000582204,
+      "useRate": 1.8569298061761286,
+      "picksEstimate": 8241523
+    },
+    {
+      "brawlerKey": "DARRYL",
+      "winRateAdj": 64.41714141431294,
+      "useRate": 0.543053087123142,
+      "picksEstimate": 2410206
+    },
+    {
+      "brawlerKey": "KENJI",
+      "winRateAdj": 64.34535447291879,
+      "useRate": 0.8692023096133422,
+      "picksEstimate": 3857739
+    },
+    {
+      "brawlerKey": "BERRY",
+      "winRateAdj": 64.31908045561372,
+      "useRate": 0.36197754704538404,
+      "picksEstimate": 1606548
+    },
+    {
+      "brawlerKey": "AMBER",
+      "winRateAdj": 64.26703617095264,
+      "useRate": 0.5306576133659455,
+      "picksEstimate": 2355192
+    },
+    {
+      "brawlerKey": "TARA",
+      "winRateAdj": 64.05803822909861,
+      "useRate": 0.6363845214860916,
+      "picksEstimate": 2824435
+    },
+    {
+      "brawlerKey": "MICO",
+      "winRateAdj": 64.04587101976024,
+      "useRate": 0.6652972820306059,
+      "picksEstimate": 2952757
+    },
+    {
+      "brawlerKey": "SPROUT",
+      "winRateAdj": 64.0390000383198,
+      "useRate": 0.29981277074453444,
+      "picksEstimate": 1330645
+    },
+    {
+      "brawlerKey": "MELODIE",
+      "winRateAdj": 63.97329137526781,
+      "useRate": 0.5373416195572823,
+      "picksEstimate": 2384858
+    },
+    {
+      "brawlerKey": "COLETTE",
+      "winRateAdj": 63.93456910091272,
+      "useRate": 2.030507003376814,
+      "picksEstimate": 9011902
+    },
+    {
+      "brawlerKey": "POCO",
+      "winRateAdj": 63.829263223943954,
+      "useRate": 0.9584621589144258,
+      "picksEstimate": 4253897
+    },
+    {
+      "brawlerKey": "BARLEY",
+      "winRateAdj": 63.638828008820504,
+      "useRate": 0.4158072653335195,
+      "picksEstimate": 1845457
+    },
+    {
+      "brawlerKey": "BO",
+      "winRateAdj": 63.6096858167327,
+      "useRate": 1.4586952285848296,
+      "picksEstimate": 6474057
+    },
+    {
+      "brawlerKey": "MEEPLE",
+      "winRateAdj": 63.549045633111525,
+      "useRate": 0.698209220294518,
+      "picksEstimate": 3098829
+    },
+    {
+      "brawlerKey": "ELPRIMO",
+      "winRateAdj": 63.43972865758102,
+      "useRate": 0.9782997589151956,
+      "picksEstimate": 4341941
+    },
+    {
+      "brawlerKey": "RUFFS",
+      "winRateAdj": 63.366120477181695,
+      "useRate": 0.4341923856610287,
+      "picksEstimate": 1927055
+    },
+    {
+      "brawlerKey": "CORDELIUS",
+      "winRateAdj": 63.23050741760817,
+      "useRate": 0.9561224129320265,
+      "picksEstimate": 4243512
+    },
+    {
+      "brawlerKey": "EMZ",
+      "winRateAdj": 63.10109963678086,
+      "useRate": 1.9539544272087452,
+      "picksEstimate": 8672142
+    },
+    {
+      "brawlerKey": "CHESTER",
+      "winRateAdj": 63.088475769733776,
+      "useRate": 1.5511257892295405,
+      "picksEstimate": 6884287
+    },
+    {
+      "brawlerKey": "BELLE",
+      "winRateAdj": 63.05480505572131,
+      "useRate": 0.5802268518648217,
+      "picksEstimate": 2575193
+    },
+    {
+      "brawlerKey": "BULL",
+      "winRateAdj": 63.007510350665676,
+      "useRate": 2.226924557615289,
+      "picksEstimate": 9883653
+    },
+    {
+      "brawlerKey": "ANGELO",
+      "winRateAdj": 62.953726162609826,
+      "useRate": 0.4489100328721428,
+      "picksEstimate": 1992376
+    },
+    {
+      "brawlerKey": "BIBI",
+      "winRateAdj": 62.89091831988224,
+      "useRate": 3.2223616163649065,
+      "picksEstimate": 14301653
+    },
+    {
+      "brawlerKey": "BEA",
+      "winRateAdj": 62.889918421373146,
+      "useRate": 0.8874775495268508,
+      "picksEstimate": 3938849
+    },
+    {
+      "brawlerKey": "FANG",
+      "winRateAdj": 62.790066910468745,
+      "useRate": 1.8017553714001913,
+      "picksEstimate": 7996645
+    },
+    {
+      "brawlerKey": "PENNY",
+      "winRateAdj": 62.77558135719492,
+      "useRate": 0.6091297405970542,
+      "picksEstimate": 2703471
+    },
+    {
+      "brawlerKey": "CROW",
+      "winRateAdj": 62.721776197116185,
+      "useRate": 3.563785748112977,
+      "picksEstimate": 15816980
+    },
+    {
+      "brawlerKey": "GROM",
+      "winRateAdj": 62.67503297736244,
+      "useRate": 0.7521899574029955,
+      "picksEstimate": 3338409
+    },
+    {
+      "brawlerKey": "MAX",
+      "winRateAdj": 62.64446659254001,
+      "useRate": 0.5067339379349615,
+      "picksEstimate": 2249013
+    },
+    {
+      "brawlerKey": "CARL",
+      "winRateAdj": 62.60664942131658,
+      "useRate": 0.6363170769835345,
+      "picksEstimate": 2824136
+    },
+    {
+      "brawlerKey": "EDGAR",
+      "winRateAdj": 62.52536207218136,
+      "useRate": 4.178065925843379,
+      "picksEstimate": 18543310
+    },
+    {
+      "brawlerKey": "LILY",
+      "winRateAdj": 62.46349037273083,
+      "useRate": 0.8397801424764851,
+      "picksEstimate": 3727156
+    },
+    {
+      "brawlerKey": "SHELLY",
+      "winRateAdj": 62.445063778734735,
+      "useRate": 1.0463968526710472,
+      "picksEstimate": 4644173
+    },
+    {
+      "brawlerKey": "TICK",
+      "winRateAdj": 62.40554047198427,
+      "useRate": 0.9791262766912463,
+      "picksEstimate": 4345609
+    },
+    {
+      "brawlerKey": "SQUEAK",
+      "winRateAdj": 62.23645356851154,
+      "useRate": 0.6905010258747977,
+      "picksEstimate": 3064618
+    },
+    {
+      "brawlerKey": "GRAY",
+      "winRateAdj": 62.106772577775274,
+      "useRate": 0.5221567721427057,
+      "picksEstimate": 2317463
+    },
+    {
+      "brawlerKey": "GUS",
+      "winRateAdj": 62.07297390483378,
+      "useRate": 0.7909660847357971,
+      "picksEstimate": 3510507
+    },
+    {
+      "brawlerKey": "BROCK",
+      "winRateAdj": 62.06422679241357,
+      "useRate": 1.4219317775819595,
+      "picksEstimate": 6310892
+    },
+    {
+      "brawlerKey": "NANI",
+      "winRateAdj": 61.699192330018235,
+      "useRate": 0.7147453700892182,
+      "picksEstimate": 3172220
+    },
+    {
+      "brawlerKey": "BUZZ",
+      "winRateAdj": 61.64825613189237,
+      "useRate": 0.9934411890922682,
+      "picksEstimate": 4409142
+    },
+    {
+      "brawlerKey": "KIT",
+      "winRateAdj": 61.63532342861361,
+      "useRate": 1.2016079588383612,
+      "picksEstimate": 5333039
+    },
+    {
+      "brawlerKey": "STU",
+      "winRateAdj": 61.4112971307743,
+      "useRate": 1.1262187060712083,
+      "picksEstimate": 4998443
+    },
+    {
+      "brawlerKey": "LEON",
+      "winRateAdj": 61.223879119490256,
+      "useRate": 2.0482270867617727,
+      "picksEstimate": 9090548
+    },
+    {
+      "brawlerKey": "GENE",
+      "winRateAdj": 61.11016413592284,
+      "useRate": 0.4653350960883526,
+      "picksEstimate": 2065274
+    },
+    {
+      "brawlerKey": "SURGE",
+      "winRateAdj": 60.79652902737583,
+      "useRate": 1.2453143315361863,
+      "picksEstimate": 5527019
+    },
+    {
+      "brawlerKey": "BYRON",
+      "winRateAdj": 60.79568237754114,
+      "useRate": 1.1729284377172646,
+      "picksEstimate": 5205752
+    },
+    {
+      "brawlerKey": "MANDY",
+      "winRateAdj": 60.586317130511716,
+      "useRate": 1.3640095221008375,
+      "picksEstimate": 6053818
+    },
+    {
+      "brawlerKey": "RICO",
+      "winRateAdj": 60.25366268499525,
+      "useRate": 2.730310723943633,
+      "picksEstimate": 12117807
+    },
+    {
+      "brawlerKey": "PIPER",
+      "winRateAdj": 60.24723787117915,
+      "useRate": 1.7769051953541743,
+      "picksEstimate": 7886353
+    },
+    {
+      "brawlerKey": "SPIKE",
+      "winRateAdj": 60.051312645621294,
+      "useRate": 1.7657341401568931,
+      "picksEstimate": 7836773
+    },
+    {
+      "brawlerKey": "DYNAMIKE",
+      "winRateAdj": 60.00990172673247,
+      "useRate": 1.8245707479516704,
+      "picksEstimate": 8097905
+    },
+    {
+      "brawlerKey": "COLT",
+      "winRateAdj": 59.77362364683256,
+      "useRate": 3.4549403661109195,
+      "picksEstimate": 15333896
+    },
+    {
+      "brawlerKey": "MORTIS",
+      "winRateAdj": 58.700028463840894,
+      "useRate": 4.333908851417396,
+      "picksEstimate": 19234980
+    }
+  ],
+  "topTeams": [
+    {
+      "brawlerKeys": [
+        "BIBI",
+        "COLT",
+        "MORTIS"
+      ],
+      "wins": 46923.49999708
+    },
+    {
+      "brawlerKeys": [
+        "BIBI",
+        "EDGAR",
+        "MORTIS"
+      ],
+      "wins": 44905.49999506
+    },
+    {
+      "brawlerKeys": [
+        "COLT",
+        "EDGAR",
+        "MORTIS"
+      ],
+      "wins": 39765.66665928
+    },
+    {
+      "brawlerKeys": [
+        "BIBI",
+        "DAMIAN",
+        "EDGAR"
+      ],
+      "wins": 36039.49999882
+    },
+    {
+      "brawlerKeys": [
+        "BIBI",
+        "MORTIS",
+        "RICO"
+      ],
+      "wins": 33361.83333145
+    },
+    {
+      "brawlerKeys": [
+        "DAMIAN",
+        "EDGAR",
+        "EMZ"
+      ],
+      "wins": 32030.66666528
+    },
+    {
+      "brawlerKeys": [
+        "DAMIAN",
+        "DAMIAN",
+        "DAMIAN"
+      ],
+      "wins": 31457.83333317
+    },
+    {
+      "brawlerKeys": [
+        "BIBI",
+        "DAMIAN",
+        "MORTIS"
+      ],
+      "wins": 31066.1666659
+    }
+  ],
+  "activeEvents": [
+    {
+      "id": "15000825",
+      "map": "Hellish Harvest",
+      "mode": "siege",
+      "powerplay": false
+    },
+    {
+      "id": "15001086",
+      "map": "Dodge or Die",
+      "mode": "dodgeball",
+      "powerplay": false
+    },
+    {
+      "id": "15000854",
+      "map": "Cool Box",
+      "mode": "airHockey",
+      "powerplay": false
+    },
+    {
+      "id": "15001119",
+      "map": "Kroket",
+      "mode": "soloShowdown",
+      "powerplay": false
+    },
+    {
+      "id": "15001201",
+      "map": "Palette Hangout",
+      "mode": "deathmatch",
+      "powerplay": false
+    },
+    {
+      "id": "15001107",
+      "map": "Truth",
+      "mode": "duoShowdown",
+      "powerplay": false
+    },
+    {
+      "id": "15000821",
+      "map": "Hoop Boot Hill",
+      "mode": "killConfirmed",
+      "powerplay": false
+    },
+    {
+      "id": "15000919",
+      "map": "Stockpile Stadium",
+      "mode": "brawlBall5V5",
+      "powerplay": false
+    },
+    {
+      "id": "15000933",
+      "map": "Plain Text",
+      "mode": "heist",
+      "powerplay": false
+    },
+    {
+      "id": "15000991",
+      "map": "Lilypond Grove",
+      "mode": "duoShowdown",
+      "powerplay": false
+    },
+    {
+      "id": "15001171",
+      "map": "Snake Pit",
+      "mode": "gemGrab",
+      "powerplay": false
+    },
+    {
+      "id": "15000367",
+      "map": "Goldarm Gulch",
+      "mode": "knockout",
+      "powerplay": false
+    }
+  ],
+  "windowStart": "2026-04-20",
+  "windowLabel": "近 30 天",
+  "sampleSize": 443825208,
+  "lastUpdated": "2026-05-20T07:45:32Z",
+  "sourceUrl": "https://brawltime.ninja/dashboard?cube=map&dimension=brawler&filter%5Bseason%5D=2026-04-20&metric=useRate&metric=winRateAdj&sort=winRateAdj"
+}
