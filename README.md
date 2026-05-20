@@ -17,6 +17,14 @@ npm run dev
 VITE_BRAWL_STARS_PROXY_BASE=https://你的-worker.workers.dev
 ```
 
+這個網址必須是 `workers/brawlstars-proxy` 部署後的 API Worker，不是前端網站網址。可以用下面指令確認：
+
+```sh
+curl -i -X OPTIONS -H "Origin: https://joe94113.github.io" -H "Access-Control-Request-Method: GET" "$VITE_BRAWL_STARS_PROXY_BASE/players/%232PVRQGQG"
+```
+
+正確回應應該是 `204`，並包含 `Access-Control-Allow-Origin: https://joe94113.github.io`。
+
 ## 建置
 
 ```sh
