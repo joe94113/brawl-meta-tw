@@ -41,6 +41,7 @@ jobs:
 
       - name: Fetch public meta data
         run: npm run data:meta
+        continue-on-error: true
 
       - name: Build
         run: npm run build
