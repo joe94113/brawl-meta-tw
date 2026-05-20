@@ -1,4 +1,5 @@
 import type { AbilityMetaStat, ActiveEvent, MetaSnapshot, MetaStat, MetaTeam } from '../types'
+import { isHomeActiveModeSlug } from '../data/modeFilters'
 import { brawlerStatKey } from '../utils/keys'
 
 const RECENT_WINDOW_DAYS = 30
@@ -155,6 +156,7 @@ function parseMetaSnapshot(
       return []
     })
     .filter((event) => event.id && event.map && event.mode && event.powerplay !== undefined)
+    .filter((event) => isHomeActiveModeSlug(String(event.mode)))
     .map((event) => ({
       id: String(event.id),
       map: String(event.map),
@@ -191,7 +193,7 @@ function recentStatsProxyPath(windowStart: string) {
 }
 
 function abilityStatsProxyPath(cube: 'gadget' | 'starpower', windowStart: string) {
-  return `/api/brawltime/dashboard?cube=${cube}&dimension=brawler&dimension=${cube}&filter%5Bseason%5D=${windowStart}&metric=useRate&metric=winRateAdj&sort=winRateAdj`
+  return `/api/brawltime/dashboard?cube=${cube}&dimension=brawler&dimension=${cube}&filter%5Bseason%5D=${windowStart}&metric=picks&metric=winRateAdj&sort=winRateAdj`
 }
 
 function parseAbilityStats(html: string, cube: 'gadget' | 'starpower'): AbilityMetaStat[] {
@@ -208,29 +210,19 @@ function parseAbilityStats(html: string, cube: 'gadget' | 'starpower'): AbilityM
         payload.query?.dimensionsIds?.includes('brawler') &&
         payload.query?.dimensionsIds?.includes(cube) &&
         payload.query?.metricsIds?.includes('winRateAdj') &&
-        payload.query?.metricsIds?.includes('useRate'),
+        payload.query?.metricsIds?.includes('picks'),
     )
     .sort((a, b) => (b?.data?.length || 0) - (a?.data?.length || 0))[0]
 
-  const samplePayload = payloads.find(
-    (payload) =>
-      payload?.kind === 'response' &&
-      payload.query?.cubeId === cube &&
-      payload.query.metricsIds?.includes('timestamp') &&
-      payload.query.metricsIds?.includes('picks') &&
-      !payload.query.dimensionsIds?.length,
-  )
-  const sample = samplePayload?.data?.[0]?.metricsRaw || {}
-  const sampleSize = typeof sample.picks === 'number' ? sample.picks : undefined
-
   return (statPayload?.data || [])
     .map((row) => {
-      const rawAbility = cube === 'gadget' ? row.dimensionsRaw?.gadget : row.dimensionsRaw?.starpower
-      const abilityId = Number(cube === 'gadget' ? rawAbility?.gadget : rawAbility?.starpower)
-      const brawlerName = row.dimensionsRaw?.brawler?.brawler || rawAbility?.brawler || ''
-      const abilityName = (cube === 'gadget' ? rawAbility?.gadgetName : rawAbility?.starpowerName) || ''
+      const rawGadget = row.dimensionsRaw?.gadget
+      const rawStarPower = row.dimensionsRaw?.starpower
+      const abilityId = Number(cube === 'gadget' ? rawGadget?.gadget : rawStarPower?.starpower)
+      const brawlerName = row.dimensionsRaw?.brawler?.brawler || rawGadget?.brawler || rawStarPower?.brawler || ''
+      const abilityName = (cube === 'gadget' ? rawGadget?.gadgetName : rawStarPower?.starpowerName) || ''
       const winRate = asNumber(row.metricsRaw?.winRateAdj)
-      const useRate = asNumber(row.metricsRaw?.useRate)
+      const picks = asNumber(row.metricsRaw?.picks)
 
       return {
         type: cube === 'gadget' ? ('gadget' as const) : ('starPower' as const),
@@ -238,8 +230,7 @@ function parseAbilityStats(html: string, cube: 'gadget' | 'starpower'): AbilityM
         abilityName,
         brawlerKey: brawlerStatKey(brawlerName),
         winRateAdj: winRate * 100,
-        useRate: useRate * 100,
-        picksEstimate: sampleSize ? Math.round(sampleSize * useRate) : undefined,
+        picks: Number.isFinite(picks) ? picks : undefined,
       }
     })
     .filter((stat) => stat.abilityId > 0 && stat.brawlerKey && Number.isFinite(stat.winRateAdj))

@@ -5,6 +5,8 @@ import { Search, Trophy } from '@lucide/vue'
 import MetaSourceNote from '../components/MetaSourceNote.vue'
 import SkeletonBlock from '../components/SkeletonBlock.vue'
 import { useBrawlData } from '../composables/useBrawlData'
+import { canonicalModeSlug, isHomeActiveModeSlug } from '../data/modeFilters'
+import type { MapItem } from '../types'
 import { formatPercent } from '../utils/format'
 
 const router = useRouter()
@@ -20,9 +22,10 @@ const {
   metaError,
   liveMetaCount,
   activeEvents,
-  rankedBrawlers,
   maps,
-  scoreForMode,
+  gameModes,
+  mapRecommendedBrawlers,
+  modeLabel,
   modeSlugLabel,
   modeNameFromSlug,
   rarityLabel,
@@ -46,18 +49,22 @@ const versionLabel = computed(() => {
 const heroVisualBrawlers = computed(() => heroBrawlers.value.slice(0, 4))
 
 const activeMapCards = computed(() =>
-  activeEvents.value.slice(0, 6).map((event) => {
-    const modeName = modeNameFromSlug(event.mode)
-    const map = maps.value.find((item) => String(item.id) === event.id || item.name === event.map)
-    const picks = rankedBrawlers.value
-      .slice()
-      .sort((a, b) => scoreForMode(b, modeName) - scoreForMode(a, modeName))
-      .slice(0, 3)
+  activeEvents.value.filter((event) => isHomeActiveModeSlug(event.mode)).slice(0, 6).map((event) => {
+    const map = maps.value.find((item) => String(item.id) === event.id || normalizeMapName(item.name) === normalizeMapName(event.map))
+    const fallbackModeName = modeNameFromSlug(canonicalModeSlug(event.mode))
+    const modeName = fallbackModeName || map?.modeName || event.mode
+    const gameMode = gameModes.value.find((mode) => mode.name === fallbackModeName || mode.name === map?.modeName)
+    const scoringMap = map || fallbackMapForEvent(event.id, event.map, modeName, gameMode?.imageUrl || '')
+    const picks = mapRecommendedBrawlers(scoringMap, 3)
 
     return {
       ...event,
+      mapId: map?.id || event.id,
       mapLabel: map?.localizedName || event.map,
-      modeLabel: modeSlugLabel(event.mode),
+      environmentLabel: map?.localizedEnvironmentName || '',
+      modeLabel: modeLabel(fallbackModeName) || (map ? modeLabel(map.modeName) : modeSlugLabel(event.mode)),
+      modeIconUrl: gameMode?.imageUrl || map?.modeImageUrl || '',
+      mapImageUrl: map?.imageUrl || '',
       picks,
     }
   }),
@@ -80,6 +87,26 @@ function runQuickSearch(kind: 'brawler' | 'map') {
 function onImageError(event: Event) {
   ;(event.target as HTMLImageElement).style.opacity = '0'
 }
+
+function normalizeMapName(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, '')
+}
+
+function fallbackMapForEvent(id: string, name: string, modeName: string, modeImageUrl: string): MapItem {
+  return {
+    id: Number(id) || 0,
+    name,
+    localizedName: name,
+    disabled: false,
+    link: '',
+    imageUrl: '',
+    environmentName: name,
+    localizedEnvironmentName: '',
+    modeName,
+    modeColor: '#8a2be2',
+    modeImageUrl,
+  }
+}
 </script>
 
 <template>
@@ -101,11 +128,8 @@ function onImageError(event: Event) {
       <h1 class="m-0 max-w-[760px] text-[4.6rem] font-black leading-[0.98] max-lg:text-[3.2rem] max-sm:text-[2.5rem]">
         荒野報馬仔
       </h1>
-      <p class="mt-6 max-w-[620px] text-[1.08rem] leading-8 text-slate-200 max-sm:text-base">
-        以真實天梯勝率、角色配件能力之星、地圖模式與對位模型，整理給台灣玩家的荒野亂鬥選角工具。
-      </p>
 
-      <div class="dark-panel mt-9 w-[min(760px,100%)] rounded-lg p-4 accent-ring">
+      <div class="dark-panel mt-8 w-[min(760px,100%)] rounded-lg p-4 accent-ring">
         <form class="grid grid-cols-[auto_1fr_auto] items-center gap-3 max-sm:grid-cols-1" role="search" @submit.prevent="runPlayerSearch">
           <span class="grid size-12 place-items-center rounded-lg bg-[#ffcc00] text-[#121824] max-sm:hidden">
             <Search class="size-6" />
@@ -177,15 +201,36 @@ function onImageError(event: Event) {
     </div>
 
     <div class="mx-auto grid w-[min(1180px,calc(100%_-_48px))] grid-cols-3 gap-4 max-lg:grid-cols-2 max-sm:w-[calc(100%_-_28px)] max-sm:grid-cols-1">
-      <article v-for="event in activeMapCards" :key="`${event.id}-${event.powerplay}`" class="dark-panel grid gap-3 rounded-lg p-4">
-        <div>
-          <span class="text-xs font-black text-[#ffcc00]">{{ event.modeLabel }}</span>
-          <h3 class="mb-0 mt-1 text-xl font-black text-white">{{ event.mapLabel }}</h3>
+      <article v-for="event in activeMapCards" :key="`${event.id}-${event.powerplay}`" class="dark-panel overflow-hidden rounded-lg p-0">
+        <div class="relative aspect-[16/9] overflow-hidden bg-[#121824]">
+          <img v-if="event.mapImageUrl" class="size-full object-cover" :src="event.mapImageUrl" :alt="event.mapLabel" @error="onImageError" />
+          <div v-else class="size-full bg-[linear-gradient(135deg,#121824,#263143)]" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#121824] via-[#121824]/35 to-transparent" />
+          <img
+            v-if="event.modeIconUrl"
+            class="absolute left-3 top-3 size-11 rounded-lg bg-[#121824]/80 p-1.5 ring-1 ring-white/15"
+            :src="event.modeIconUrl"
+            :alt="event.modeLabel"
+            @error="onImageError"
+          />
+          <div class="absolute inset-x-4 bottom-4">
+            <span class="inline-flex min-h-7 items-center rounded-lg bg-[#ffcc00] px-2 text-xs font-black text-[#121824]">{{ event.modeLabel }}</span>
+            <h3 class="mb-0 mt-2 text-xl font-black text-white">{{ event.mapLabel }}</h3>
+            <p v-if="event.environmentLabel" class="mb-0 mt-1 truncate text-xs font-black text-slate-300">{{ event.environmentLabel }}</p>
+          </div>
         </div>
-        <div class="flex gap-2">
-          <RouterLink v-for="brawler in event.picks" :key="brawler.id" :to="`/counter/${brawler.id}`" class="grid size-14 place-items-center rounded-lg bg-[#121824] ring-1 ring-white/10">
-            <img class="size-12 object-contain" :src="brawler.imageUrl" :alt="brawler.localizedName" @error="onImageError" />
-          </RouterLink>
+        <div class="grid gap-2 p-4">
+          <div class="flex items-center justify-between gap-3">
+            <span class="text-xs font-black text-slate-400">此圖推薦</span>
+            <RouterLink :to="`/maps/${event.mapId}`" class="text-xs font-black text-[#ffcc00] no-underline">地圖詳情</RouterLink>
+          </div>
+          <div class="flex gap-2">
+            <RouterLink v-for="pick in event.picks" :key="pick.brawler.id" :to="`/counter/${pick.brawler.id}`" class="relative grid size-16 place-items-center rounded-lg bg-[#121824] ring-1 ring-white/10">
+              <img class="size-12 object-contain" :src="pick.brawler.imageUrl" :alt="pick.brawler.localizedName" @error="onImageError" />
+              <span class="absolute bottom-1 right-1 rounded bg-[#00e676] px-1 font-score text-[10px] font-black text-[#121824]">{{ Math.round(pick.winRate) }}</span>
+            </RouterLink>
+          </div>
+          <p class="m-0 text-xs leading-5 text-slate-500">依模式定位、地圖環境與近 30 天勝率重新排序。</p>
         </div>
       </article>
     </div>

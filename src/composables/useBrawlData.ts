@@ -8,6 +8,7 @@ import type {
   Brawler,
   GameMode,
   MapItem,
+  MapMetaStat,
   MetaSnapshot,
   RankedBrawler,
 } from '../types'
@@ -221,27 +222,60 @@ export function useBrawlData() {
       .slice(0, 8)
   }
 
-  function estimateMapWinRate(brawler: Brawler, score: number) {
-    const map = selectedMap.value
-    const environment = map?.environmentName.toLowerCase() || ''
+  function terrainFitScore(brawler: Brawler, map: MapItem | null, modeName: string) {
+    const environment = `${map?.environmentName || ''} ${map?.name || ''}`.toLowerCase()
     let terrainBonus = 0
 
-    if (/mine|arcade|hub|zone/.test(environment) && brawler.tags.includes('control')) terrainBonus += 1.4
-    if (/canyon|beach|default|station/.test(environment) && brawler.tags.includes('range')) terrainBonus += 1.3
-    if (/jungle|bio|forest|swamp/.test(environment) && ['Tank', 'Assassin'].includes(brawler.role)) terrainBonus += 1.4
-    if ((map?.modeName || selectedMode.value).includes('Brawl') && brawler.tags.includes('mobility')) terrainBonus += 1.2
+    if (/mine|arcade|hub|zone|temple|station|warehouse|stadium|center/.test(environment) && brawler.tags.includes('control')) terrainBonus += 1.8
+    if (/canyon|beach|default|outback|shoot|open|rooftop|plaza/.test(environment) && brawler.tags.includes('range')) terrainBonus += 1.7
+    if (/jungle|bio|forest|swamp|grass|bush|snake|hideout|meadow|garden/.test(environment) && ['Tank', 'Assassin'].includes(brawler.role)) terrainBonus += 1.8
+    if (/wall|maze|mine|cavern|factory/.test(environment) && brawler.role === 'Artillery') terrainBonus += 1.3
+    if (modeName.includes('Brawl') && brawler.tags.includes('mobility')) terrainBonus += 1.3
+    if (modeName === 'Heist' && ['Damage Dealer', 'Marksman'].includes(brawler.role)) terrainBonus += 1.5
+    if (modeName === 'Hot Zone' && ['Controller', 'Support'].includes(brawler.role)) terrainBonus += 1.4
 
-    const live = metaByKey.value.get(brawler.statKey)?.winRateAdj
-    const baseline = live ?? 49 + (score - 62) * 0.42
-    return Math.round(clamp(baseline + terrainBonus + modeFitScore(brawler, selectedMap.value?.modeName || selectedMode.value) * 0.25, 43, 76) * 10) / 10
+    return terrainBonus + mapLayoutVariantScore(brawler, map)
   }
 
-  function mapRateRows() {
-    const mode = selectedMap.value?.modeName || selectedMode.value
+  function scoreForMap(brawler: Brawler, map: MapItem | null = selectedMap.value) {
+    const modeName = map?.modeName || selectedMode.value
+    return Math.round(clamp(scoreForMode(brawler, modeName) + terrainFitScore(brawler, map, modeName), 35, 88) * 10) / 10
+  }
+
+  function estimateMapWinRate(brawler: Brawler, score: number, targetMap: MapItem | null = selectedMap.value) {
+    const modeName = targetMap?.modeName || selectedMode.value
+    const live = metaByKey.value.get(brawler.statKey)?.winRateAdj
+    const baseline = live ?? 49 + (score - 62) * 0.42
+
+    return Math.round(clamp(baseline + terrainFitScore(brawler, targetMap, modeName) * 0.75 + modeFitScore(brawler, modeName) * 0.25, 43, 76) * 10) / 10
+  }
+
+  function mapRateRows(targetMap: MapItem | null = selectedMap.value, limit = 36) {
+    const liveRows = mapStatRowsFor(targetMap)
+    if (liveRows.length > 0) {
+      return liveRows
+        .map((row) => {
+          const brawler = findBrawlerByKey(row.brawlerKey)
+          if (!brawler) return null
+
+          return {
+            brawler,
+            score: Math.round(scoreForMap(brawler, targetMap)),
+            winRate: Math.round(row.winRateAdj * 10) / 10,
+            pickRate: Math.round(row.useRate * 10) / 10,
+            dataSource: 'live' as const,
+          }
+        })
+        .filter((row) => row !== null)
+        .sort((a, b) => b.winRate - a.winRate)
+        .slice(0, limit)
+    }
+
+    const mode = targetMap?.modeName || selectedMode.value
 
     return brawlers.value
       .map((brawler) => {
-        const score = scoreForMode(brawler, mode)
+        const score = fallbackMapRankingScore(brawler, targetMap, mode)
         const stat = metaByKey.value.get(brawler.statKey)
         const pickRate = stat?.useRate ?? clamp(2.4 + (score - 62) * 0.18, 0.8, 18)
 
@@ -253,8 +287,28 @@ export function useBrawlData() {
           dataSource: stat ? ('live' as const) : ('fallback' as const),
         }
       })
-      .sort((a, b) => b.winRate - a.winRate)
-      .slice(0, 36)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, limit)
+  }
+
+  function mapRecommendedBrawlers(map: MapItem | null, limit = 3) {
+    return mapRateRows(map, limit)
+  }
+
+  function mapStatRowsFor(map: MapItem | null) {
+    if (!map) return []
+
+    const mapKey = normalizeStatMapName(map.name)
+    return (metaSnapshot.value?.mapStats || []).filter(
+      (stat) => stat.eventId === String(map.id) || normalizeStatMapName(stat.mapName) === mapKey,
+    )
+  }
+
+  function fallbackMapRankingScore(brawler: Brawler, map: MapItem | null, modeName: string) {
+    const live = metaByKey.value.get(brawler.statKey)?.winRateAdj ?? brawler.metaScore
+    const fit = modeFitScore(brawler, modeName) * 9 + terrainFitScore(brawler, map, modeName) * 8
+
+    return Math.round(clamp(live * 0.42 + fit, 35, 95) * 10) / 10
   }
 
   return {
@@ -285,10 +339,12 @@ export function useBrawlData() {
     findMapById,
     findBrawlerByKey,
     scoreForMode,
+    scoreForMap,
     counterScore,
     counterRecommendations,
     strongAgainst,
     mapRateRows,
+    mapRecommendedBrawlers,
     roleName,
     modeLabel,
     modeSlugLabel,
@@ -347,8 +403,31 @@ function localizeAbilities(abilities: Ability[], translations: TranslationIndex,
     localizedDescription: translations.translate(cleanText(ability.description || '')),
     winRateAdj: abilityStatsById.get(ability.id)?.winRateAdj,
     useRate: abilityStatsById.get(ability.id)?.useRate,
-    picksEstimate: abilityStatsById.get(ability.id)?.picksEstimate,
+    picks: abilityStatsById.get(ability.id)?.picks,
   }))
+}
+
+function mapLayoutVariantScore(brawler: Brawler, map: MapItem | null) {
+  if (!map) return 0
+
+  const fallbackProfile = { roles: ['Controller', 'Support'], tags: ['control', 'healing'] }
+  const profiles = [
+    { roles: ['Marksman', 'Artillery'], tags: ['range', 'space'] },
+    fallbackProfile,
+    { roles: ['Tank', 'Assassin'], tags: ['durable', 'mobility'] },
+    { roles: ['Damage Dealer', 'Controller'], tags: ['control', 'range'] },
+  ]
+  const profile = profiles[Math.abs(map.id) % profiles.length] || fallbackProfile
+  let score = 0
+
+  if (profile.roles.includes(brawler.role)) score += 1.4
+  if (brawler.tags.some((tag) => profile.tags.includes(tag))) score += 0.9
+
+  return score
+}
+
+function normalizeStatMapName(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, '')
 }
 
 function buildMaps(list: ApiMap[], translations: TranslationIndex): MapItem[] {
@@ -363,6 +442,7 @@ function buildMaps(list: ApiMap[], translations: TranslationIndex): MapItem[] {
     localizedEnvironmentName: translations.translate(map.environment?.name || 'Unknown'),
     modeName: map.gameMode?.name || 'Unknown',
     modeColor: map.gameMode?.color || '#2db8ff',
+    modeImageUrl: map.gameMode?.imageUrl || map.gameMode?.imageUrl2 || '',
   }))
 }
 

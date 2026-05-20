@@ -19,6 +19,7 @@ export interface Ability {
   released?: boolean
   winRateAdj?: number
   useRate?: number
+  picks?: number
   picksEstimate?: number
 }
 
@@ -101,6 +102,7 @@ export interface MapItem {
   localizedEnvironmentName: string
   modeName: string
   modeColor: string
+  modeImageUrl: string
 }
 
 export interface MetaStat {
@@ -108,6 +110,15 @@ export interface MetaStat {
   winRateAdj: number
   useRate: number
   picksEstimate?: number
+}
+
+export interface MapMetaStat {
+  eventId: string
+  mapName: string
+  modeSlug: string
+  brawlerKey: string
+  winRateAdj: number
+  useRate: number
 }
 
 export type AbilityMetaType = 'gadget' | 'starPower'
@@ -118,8 +129,8 @@ export interface AbilityMetaStat {
   abilityName: string
   brawlerKey: string
   winRateAdj: number
-  useRate: number
-  picksEstimate?: number
+  useRate?: number
+  picks?: number
 }
 
 export interface MetaTeam {
@@ -136,6 +147,7 @@ export interface ActiveEvent {
 
 export interface MetaSnapshot {
   stats: MetaStat[]
+  mapStats?: MapMetaStat[]
   abilityStats?: AbilityMetaStat[]
   topTeams: MetaTeam[]
   activeEvents: ActiveEvent[]

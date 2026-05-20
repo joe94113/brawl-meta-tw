@@ -247,7 +247,7 @@ function battleResultClass(result?: string) {
                 <span v-else class="grid size-12 place-items-center rounded-lg bg-[#121824] text-xs font-black text-slate-500">?</span>
                 <span class="min-w-0">
                   <strong class="block truncate text-sm text-white">{{ displayBrawlerName(brawler) }}</strong>
-                  <small class="text-xs text-slate-400">戰力 {{ brawler.power }} · {{ brawler.trophies }} 盃</small>
+                  <small class="text-xs text-slate-400">等級 {{ brawler.power }} · {{ brawler.trophies }} 盃</small>
                 </span>
               </div>
             </div>
@@ -287,7 +287,7 @@ function battleResultClass(result?: string) {
                   </strong>
                   <small class="block truncate text-slate-400">
                     {{ player.brawler ? displayBrawlerName(player.brawler) : '未知角色' }}
-                    <span v-if="player.brawler"> · 戰力 {{ player.brawler.power }}</span>
+                    <span v-if="player.brawler"> · 等級 {{ player.brawler.power }}</span>
                   </small>
                 </span>
               </RouterLink>

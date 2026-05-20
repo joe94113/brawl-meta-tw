@@ -2,6 +2,29 @@ import { mkdir, writeFile } from 'node:fs/promises'
 
 const META_SOURCE_URL = 'https://brawltime.ninja/tier-list/brawler'
 const RECENT_WINDOW_DAYS = 30
+const HOME_ACTIVE_MODE_SLUGS = new Set([
+  'gemGrab',
+  'heist',
+  'bounty',
+  'brawlBall',
+  'soloShowdown',
+  'duoShowdown',
+  'hotZone',
+  'knockout',
+  'wipeout',
+  'wipeout5V5',
+  'trioWipeout',
+  'brawlBall5V5',
+  'gemGrab5V5',
+  'knockout5V5',
+  'trioShowdown',
+  'trophyEscape',
+])
+const MODE_SLUG_ALIASES = {
+  deathmatch: 'wipeout',
+  deathmatch5v5: 'wipeout5V5',
+  trophyThieves: 'trophyEscape',
+}
 const windowStart = recentWindowStart()
 const statsSourceUrl = recentStatsSourceUrl(windowStart)
 const gadgetSourceUrl = abilityStatsSourceUrl('gadget', windowStart)
@@ -71,6 +94,24 @@ const teamPayload = auxPayloads.find(
     payload.query?.metricsIds?.includes('wins'),
 )
 
+const activeEvents = auxQueries
+  .flatMap((query) => {
+    const data = query.state?.data
+    if (Array.isArray(data) && data[0]?.map && data[0]?.mode) return data
+    return []
+  })
+  .filter((event) => event.id && event.map && event.mode && event.powerplay !== undefined)
+  .filter((event) => isHomeActiveModeSlug(String(event.mode)))
+  .map((event) => ({
+    id: String(event.id),
+    map: String(event.map),
+    mode: String(event.mode),
+    powerplay: Boolean(event.powerplay),
+  }))
+  .slice(0, 12)
+
+const mapStats = await fetchActiveMapStats(activeEvents, windowStart)
+
 const snapshot = {
   stats: (statPayload?.data || [])
     .map((row) => {
@@ -86,6 +127,7 @@ const snapshot = {
       }
     })
     .filter((stat) => stat.brawlerKey && Number.isFinite(stat.winRateAdj)),
+  mapStats,
   abilityStats,
   topTeams: (teamPayload?.data || [])
     .map((row) => ({
@@ -94,20 +136,7 @@ const snapshot = {
     }))
     .filter((team) => team.brawlerKeys.length >= 3 && Number.isFinite(team.wins))
     .slice(0, 8),
-  activeEvents: auxQueries
-    .flatMap((query) => {
-      const data = query.state?.data
-      if (Array.isArray(data) && data[0]?.map && data[0]?.mode) return data
-      return []
-    })
-    .filter((event) => event.id && event.map && event.mode && event.powerplay !== undefined)
-    .map((event) => ({
-      id: String(event.id),
-      map: String(event.map),
-      mode: String(event.mode),
-      powerplay: Boolean(event.powerplay),
-    }))
-    .slice(0, 12),
+  activeEvents,
   windowStart,
   windowLabel: `近 ${RECENT_WINDOW_DAYS} 天`,
   sampleSize,
@@ -149,7 +178,68 @@ function recentStatsSourceUrl(start) {
 }
 
 function abilityStatsSourceUrl(cube, start) {
-  return `https://brawltime.ninja/dashboard?cube=${cube}&dimension=brawler&dimension=${cube}&filter%5Bseason%5D=${start}&metric=useRate&metric=winRateAdj&sort=winRateAdj`
+  return `https://brawltime.ninja/dashboard?cube=${cube}&dimension=brawler&dimension=${cube}&filter%5Bseason%5D=${start}&metric=picks&metric=winRateAdj&sort=winRateAdj`
+}
+
+function canonicalModeSlug(value) {
+  return MODE_SLUG_ALIASES[value] || value
+}
+
+function isHomeActiveModeSlug(value) {
+  return HOME_ACTIVE_MODE_SLUGS.has(canonicalModeSlug(value))
+}
+
+async function fetchActiveMapStats(events, start) {
+  const uniqueEvents = Array.from(new Map(events.map((event) => [event.id, event])).values())
+  const results = await Promise.all(
+    uniqueEvents.map(async (event) => {
+      const response = await fetch(mapStatsSourceUrl(event.map, start))
+      if (!response.ok) throw new Error(`Brawl Time Ninja ${response.status}`)
+      const html = await response.text()
+      return parseMapStats(html)
+    }),
+  )
+
+  return results.flat()
+}
+
+function mapStatsSourceUrl(mapName, start) {
+  return `https://brawltime.ninja/dashboard?cube=map&dimension=map&dimension=brawler&filter%5Bseason%5D=${start}&filter%5Bmap%5D=${encodeURIComponent(mapName)}&metric=useRate&metric=winRateAdj&sort=winRateAdj`
+}
+
+function parseMapStats(pageHtml) {
+  const pageContext = extractPageContext(pageHtml)
+  const queries = pageContext?.vueQueryState?.queries || []
+  const payloads = queries.map((query) => query.state?.data).filter(Boolean)
+  const statPayload = payloads
+    .filter(
+      (payload) =>
+        payload?.kind === 'response' &&
+        payload.query?.cubeId === 'map' &&
+        payload.query?.dimensionsIds?.includes('map') &&
+        payload.query?.dimensionsIds?.includes('brawler') &&
+        payload.query?.metricsIds?.includes('winRateAdj') &&
+        payload.query?.metricsIds?.includes('useRate'),
+    )
+    .sort((a, b) => (b?.data?.length || 0) - (a?.data?.length || 0))[0]
+
+  return (statPayload?.data || [])
+    .map((row) => {
+      const sourceMap = row.dimensionsRaw?.map || {}
+      const sourceName = row.dimensionsRaw?.brawler?.brawler || ''
+      const winRate = asNumber(row.metricsRaw?.winRateAdj)
+      const useRate = asNumber(row.metricsRaw?.useRate)
+
+      return {
+        eventId: String(sourceMap.eventId || ''),
+        mapName: String(sourceMap.map || ''),
+        modeSlug: String(sourceMap.mode || ''),
+        brawlerKey: brawlerStatKey(sourceName),
+        winRateAdj: winRate * 100,
+        useRate: useRate * 100,
+      }
+    })
+    .filter((stat) => stat.eventId && stat.mapName && stat.brawlerKey && Number.isFinite(stat.winRateAdj))
 }
 
 function parseAbilityStats(pageHtml, cube) {
@@ -164,29 +254,19 @@ function parseAbilityStats(pageHtml, cube) {
         payload.query?.dimensionsIds?.includes('brawler') &&
         payload.query?.dimensionsIds?.includes(cube) &&
         payload.query?.metricsIds?.includes('winRateAdj') &&
-        payload.query?.metricsIds?.includes('useRate'),
+        payload.query?.metricsIds?.includes('picks'),
     )
     .sort((a, b) => (b?.data?.length || 0) - (a?.data?.length || 0))[0]
 
-  const samplePayload = payloads.find(
-    (payload) =>
-      payload?.kind === 'response' &&
-      payload.query?.cubeId === cube &&
-      payload.query.metricsIds?.includes('timestamp') &&
-      payload.query.metricsIds?.includes('picks') &&
-      !payload.query.dimensionsIds?.length,
-  )
-  const sample = samplePayload?.data?.[0]?.metricsRaw || {}
-  const sampleSize = typeof sample.picks === 'number' ? sample.picks : undefined
-
   return (statPayload?.data || [])
     .map((row) => {
-      const rawAbility = cube === 'gadget' ? row.dimensionsRaw?.gadget : row.dimensionsRaw?.starpower
-      const abilityId = Number(cube === 'gadget' ? rawAbility?.gadget : rawAbility?.starpower)
-      const brawlerName = row.dimensionsRaw?.brawler?.brawler || rawAbility?.brawler || ''
-      const abilityName = (cube === 'gadget' ? rawAbility?.gadgetName : rawAbility?.starpowerName) || ''
+      const rawGadget = row.dimensionsRaw?.gadget
+      const rawStarPower = row.dimensionsRaw?.starpower
+      const abilityId = Number(cube === 'gadget' ? rawGadget?.gadget : rawStarPower?.starpower)
+      const brawlerName = row.dimensionsRaw?.brawler?.brawler || rawGadget?.brawler || rawStarPower?.brawler || ''
+      const abilityName = (cube === 'gadget' ? rawGadget?.gadgetName : rawStarPower?.starpowerName) || ''
       const winRate = asNumber(row.metricsRaw?.winRateAdj)
-      const useRate = asNumber(row.metricsRaw?.useRate)
+      const picks = asNumber(row.metricsRaw?.picks)
 
       return {
         type: cube === 'gadget' ? 'gadget' : 'starPower',
@@ -194,8 +274,7 @@ function parseAbilityStats(pageHtml, cube) {
         abilityName,
         brawlerKey: brawlerStatKey(brawlerName),
         winRateAdj: winRate * 100,
-        useRate: useRate * 100,
-        picksEstimate: sampleSize ? Math.round(sampleSize * useRate) : undefined,
+        picks: Number.isFinite(picks) ? picks : undefined,
       }
     })
     .filter((stat) => stat.abilityId > 0 && stat.brawlerKey && Number.isFinite(stat.winRateAdj))

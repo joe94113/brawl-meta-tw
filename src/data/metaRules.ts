@@ -66,9 +66,12 @@ export const modeRoleWeights: Record<string, Record<string, number>> = {
   'Brawl Ball': { Tank: 7, Assassin: 6, Controller: 5, Support: 4, 'Damage Dealer': 3 },
   Knockout: { Marksman: 8, Artillery: 6, Assassin: 5, Controller: 4 },
   Wipeout: { Marksman: 8, Assassin: 5, Artillery: 4, 'Damage Dealer': 4 },
+  'Wipeout 5v5': { Marksman: 8, Assassin: 5, Artillery: 4, 'Damage Dealer': 4, Support: 3 },
+  'Trio Wipeout': { Marksman: 8, Assassin: 6, Artillery: 4, 'Damage Dealer': 4 },
   'Hot Zone': { Controller: 9, Support: 6, Tank: 5, 'Damage Dealer': 3 },
   'Solo Showdown': { Assassin: 7, Tank: 6, 'Damage Dealer': 5, Marksman: 3 },
   'Duo Showdown': { Assassin: 6, Support: 5, Tank: 5, 'Damage Dealer': 4 },
+  'Trophy Escape': { Assassin: 7, Tank: 6, 'Damage Dealer': 5, Controller: 4, Marksman: 3 },
   Duels: { Assassin: 6, Marksman: 6, 'Damage Dealer': 5, Tank: 3 },
 }
 

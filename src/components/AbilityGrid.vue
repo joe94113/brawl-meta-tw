@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Ability } from '../types'
-import { formatPercent } from '../utils/format'
+import { formatCompact, formatPercent } from '../utils/format'
 
 defineProps<{
   title: string
@@ -37,8 +37,8 @@ function onImageError(event: Event) {
             <b class="font-score text-lg text-[#00e676]">{{ formatPercent(item.winRateAdj) }}</b>
           </span>
           <span class="grid justify-items-end max-sm:justify-items-start">
-            <small class="text-[10px] font-black uppercase tracking-normal text-slate-500">使用</small>
-            <b class="text-xs text-slate-300">{{ formatPercent(item.useRate) }}</b>
+            <small class="text-[10px] font-black uppercase tracking-normal text-slate-500">樣本</small>
+            <b class="text-xs text-slate-300">{{ formatCompact(item.picks) }}</b>
           </span>
         </div>
       </article>
