@@ -13,6 +13,9 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 concurrency:
   group: pages
   cancel-in-progress: false
@@ -20,8 +23,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -48,11 +49,12 @@ jobs:
       - name: Verify player proxy base
         run: |
           if [ -z "$VITE_BRAWL_STARS_PROXY_BASE" ]; then
-            echo "::error::VITE_BRAWL_STARS_PROXY_BASE is empty. Add it as a repository variable or a github-pages environment variable, then rerun this workflow."
+            echo "::error::VITE_BRAWL_STARS_PROXY_BASE is empty. Add it as a repository variable in Settings > Secrets and variables > Actions > Variables, then rerun this workflow."
             exit 1
           fi
-          echo "Using player proxy base: $VITE_BRAWL_STARS_PROXY_BASE"
           PROXY_BASE="${VITE_BRAWL_STARS_PROXY_BASE%/}"
+          PROXY_HOST="$(node -e "const value = process.env.VITE_BRAWL_STARS_PROXY_BASE; try { console.log(new URL(value).host) } catch { process.exit(1) }")"
+          echo "Using player proxy host: $PROXY_HOST"
           HEADERS="$(mktemp)"
           STATUS="$(curl -sS -o /dev/null -D "$HEADERS" -w "%{http_code}" -X OPTIONS \
             -H "Origin: https://joe94113.github.io" \
@@ -60,7 +62,7 @@ jobs:
             "$PROXY_BASE/players/%232PVRQGQG")"
           if [ "$STATUS" != "204" ]; then
             cat "$HEADERS"
-            echo "::error::Player proxy OPTIONS check returned HTTP $STATUS. Make sure VITE_BRAWL_STARS_PROXY_BASE points to the Cloudflare Worker API, not the frontend site."
+            echo "::error::Player proxy OPTIONS check returned HTTP $STATUS for $PROXY_HOST. VITE_BRAWL_STARS_PROXY_BASE should point to the Cloudflare Worker API, for example https://brawlstars-proxy.joe94113.workers.dev."
             exit 1
           fi
           if ! grep -qi "^access-control-allow-origin: https://joe94113.github.io" "$HEADERS"; then
@@ -69,13 +71,13 @@ jobs:
             exit 1
           fi
         env:
-          VITE_BRAWL_STARS_PROXY_BASE: ${{ vars.VITE_BRAWL_STARS_PROXY_BASE || secrets.VITE_BRAWL_STARS_PROXY_BASE }}
+          VITE_BRAWL_STARS_PROXY_BASE: ${{ vars.VITE_BRAWL_STARS_PROXY_BASE }}
 
       - name: Build
         run: npm run build
         env:
           GITHUB_PAGES: true
-          VITE_BRAWL_STARS_PROXY_BASE: ${{ vars.VITE_BRAWL_STARS_PROXY_BASE || secrets.VITE_BRAWL_STARS_PROXY_BASE }}
+          VITE_BRAWL_STARS_PROXY_BASE: ${{ vars.VITE_BRAWL_STARS_PROXY_BASE }}
 
       - name: SPA fallback
         run: cp dist/index.html dist/404.html
