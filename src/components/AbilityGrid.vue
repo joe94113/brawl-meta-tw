@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Ability } from '../types'
+import { formatPercent } from '../utils/format'
 
 defineProps<{
   title: string
@@ -13,15 +14,32 @@ function onImageError(event: Event) {
 
 <template>
   <section class="dark-panel-soft rounded-lg p-3">
-    <h3 class="m-0 text-base font-black text-white">{{ title }}</h3>
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="m-0 text-base font-black text-white">{{ title }}</h3>
+      <span class="rounded-lg bg-white/5 px-2 py-1 text-[11px] font-black text-slate-400">Brawl Time</span>
+    </div>
     <div class="mt-3 grid gap-2">
-      <article v-for="item in items" :key="item.id" class="grid min-h-[68px] grid-cols-[46px_1fr] items-center gap-3 rounded-lg border border-white/10 bg-[#1d2330] p-2">
+      <article
+        v-for="item in items"
+        :key="item.id"
+        class="grid min-h-[78px] grid-cols-[46px_minmax(0,1fr)_86px] items-center gap-3 rounded-lg border border-white/10 bg-[#1d2330] p-2 max-sm:grid-cols-[46px_minmax(0,1fr)]"
+      >
         <img class="size-[46px] object-contain" :src="item.imageUrl" :alt="item.localizedName || item.name" @error="onImageError" />
         <div class="min-w-0">
           <strong class="block truncate text-sm text-white">{{ item.localizedName || item.name }}</strong>
           <p v-if="item.localizedDescription" class="m-0 mt-1 line-clamp-2 text-xs leading-5 text-slate-400">
             {{ item.localizedDescription }}
           </p>
+        </div>
+        <div class="grid justify-items-end gap-0.5 max-sm:col-span-2 max-sm:grid-cols-2 max-sm:justify-items-start">
+          <span class="grid justify-items-end max-sm:justify-items-start">
+            <small class="text-[10px] font-black uppercase tracking-normal text-slate-500">勝率</small>
+            <b class="font-score text-lg text-[#00e676]">{{ formatPercent(item.winRateAdj) }}</b>
+          </span>
+          <span class="grid justify-items-end max-sm:justify-items-start">
+            <small class="text-[10px] font-black uppercase tracking-normal text-slate-500">使用</small>
+            <b class="text-xs text-slate-300">{{ formatPercent(item.useRate) }}</b>
+          </span>
         </div>
       </article>
       <p v-if="items.length === 0" class="m-0 text-sm text-slate-500">目前沒有資料</p>

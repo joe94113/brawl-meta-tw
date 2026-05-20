@@ -1,5 +1,6 @@
 import { computed, ref } from 'vue'
 import type {
+  AbilityMetaStat,
   Ability,
   ApiBrawler,
   ApiGameMode,
@@ -114,7 +115,7 @@ export function useBrawlData() {
           }),
         ])
 
-        brawlers.value = buildBrawlers(brawlerResponse.list, translationIndex)
+        brawlers.value = buildBrawlers(brawlerResponse.list, translationIndex, metaResult)
         maps.value = buildMaps(mapResponse.list, translationIndex)
         gameModes.value = buildModes(modeResponse.list)
         metaSnapshot.value = metaResult
@@ -296,7 +297,8 @@ export function useBrawlData() {
   }
 }
 
-function buildBrawlers(list: ApiBrawler[], translations: TranslationIndex): Brawler[] {
+function buildBrawlers(list: ApiBrawler[], translations: TranslationIndex, metaResult: MetaSnapshot | null): Brawler[] {
+  const abilityStatsById = new Map((metaResult?.abilityStats || []).map((stat) => [stat.abilityId, stat]))
   const scored = list
     .filter((brawler) => brawler.released)
     .map((brawler) => {
@@ -326,8 +328,8 @@ function buildBrawlers(list: ApiBrawler[], translations: TranslationIndex): Braw
         tier: 'B' as const,
         metaScore: Math.round(baseScore * 10) / 10,
         tags: inferTags(role, description),
-        starPowers: localizeAbilities(brawler.starPowers || [], translations),
-        gadgets: localizeAbilities(brawler.gadgets || [], translations),
+        starPowers: localizeAbilities(brawler.starPowers || [], translations, abilityStatsById),
+        gadgets: localizeAbilities(brawler.gadgets || [], translations, abilityStatsById),
       }
     })
     .sort((a, b) => b.metaScore - a.metaScore)
@@ -338,11 +340,14 @@ function buildBrawlers(list: ApiBrawler[], translations: TranslationIndex): Braw
   }))
 }
 
-function localizeAbilities(abilities: Ability[], translations: TranslationIndex) {
+function localizeAbilities(abilities: Ability[], translations: TranslationIndex, abilityStatsById: Map<number, AbilityMetaStat>) {
   return abilities.map((ability) => ({
     ...ability,
     localizedName: translations.translate(ability.name),
     localizedDescription: translations.translate(cleanText(ability.description || '')),
+    winRateAdj: abilityStatsById.get(ability.id)?.winRateAdj,
+    useRate: abilityStatsById.get(ability.id)?.useRate,
+    picksEstimate: abilityStatsById.get(ability.id)?.picksEstimate,
   }))
 }
 

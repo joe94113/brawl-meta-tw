@@ -102,7 +102,7 @@ function onImageError(event: Event) {
         荒野報馬仔
       </h1>
       <p class="mt-6 max-w-[620px] text-[1.08rem] leading-8 text-slate-200 max-sm:text-base">
-        以真實天梯勝率、角色配件星徽、地圖模式與對位模型，整理給台灣玩家的荒野亂鬥選角工具。
+        以真實天梯勝率、角色配件能力之星、地圖模式與對位模型，整理給台灣玩家的荒野亂鬥選角工具。
       </p>
 
       <div class="dark-panel mt-9 w-[min(760px,100%)] rounded-lg p-4 accent-ring">

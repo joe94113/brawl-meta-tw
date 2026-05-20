@@ -29,6 +29,6 @@ GitHub Pages 會由 `.github/workflows/deploy-pages.yml` 自動建置與部署�
 ## 資料說明
 
 - Meta 榜以 Brawl Time Ninja 近 30 天窗口的 adjusted win rate / use rate 為主要排序依據。
-- 角色、模式、配件與星徽資料來自 Brawlify game data。
+- 角色、模式、配件與能力之星資料來自 Brawlify game data。
 - 角色與技能繁中名稱使用 Brawl Stars assets localization 對照。
 - GitHub Pages 是純靜態部署，動態玩家戰績查詢仍需要本機 dev proxy 或額外後端代理。

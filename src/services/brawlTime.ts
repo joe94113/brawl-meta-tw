@@ -1,4 +1,4 @@
-import type { ActiveEvent, MetaSnapshot, MetaStat, MetaTeam } from '../types'
+import type { AbilityMetaStat, ActiveEvent, MetaSnapshot, MetaStat, MetaTeam } from '../types'
 import { brawlerStatKey } from '../utils/keys'
 
 const RECENT_WINDOW_DAYS = 30
@@ -25,6 +25,16 @@ interface VikeQuery {
           team?: {
             team?: string[]
           }
+          gadget?: {
+            gadgetName?: string
+            brawler?: string
+            gadget?: string
+          }
+          starpower?: {
+            starpowerName?: string
+            brawler?: string
+            starpower?: string
+          }
         }
       }>
     }
@@ -39,20 +49,31 @@ export async function fetchMetaSnapshot(): Promise<MetaSnapshot> {
   if (staticSnapshot?.stats?.length) return staticSnapshot as MetaSnapshot
 
   const windowStart = recentWindowStart()
-  const [statsResponse, auxResponse] = await Promise.all([
+  const [statsResponse, auxResponse, gadgetResponse, starPowerResponse] = await Promise.all([
     fetch(recentStatsProxyPath(windowStart)),
     fetch('/api/brawltime/tier-list/brawler').catch(() => null),
+    fetch(abilityStatsProxyPath('gadget', windowStart)).catch(() => null),
+    fetch(abilityStatsProxyPath('starpower', windowStart)).catch(() => null),
   ])
 
   if (!statsResponse.ok) throw new Error(`Brawl Time Ninja ${statsResponse.status}`)
 
   const statsHtml = await statsResponse.text()
   const auxHtml = auxResponse?.ok ? await auxResponse.text() : statsHtml
+  const gadgetHtml = gadgetResponse?.ok ? await gadgetResponse.text() : ''
+  const starPowerHtml = starPowerResponse?.ok ? await starPowerResponse.text() : ''
 
-  return parseMetaSnapshot(statsHtml, auxHtml, recentStatsSourceUrl(windowStart), windowStart)
+  return parseMetaSnapshot(statsHtml, auxHtml, recentStatsSourceUrl(windowStart), windowStart, gadgetHtml, starPowerHtml)
 }
 
-function parseMetaSnapshot(statsHtml: string, auxHtml: string, sourceUrl: string, windowStart: string): MetaSnapshot {
+function parseMetaSnapshot(
+  statsHtml: string,
+  auxHtml: string,
+  sourceUrl: string,
+  windowStart: string,
+  gadgetHtml = '',
+  starPowerHtml = '',
+): MetaSnapshot {
   const statsPageContext = extractPageContext(statsHtml)
   const auxPageContext = extractPageContext(auxHtml)
   const statsQueries: VikeQuery[] = statsPageContext?.vueQueryState?.queries || []
@@ -105,7 +126,12 @@ function parseMetaSnapshot(statsHtml: string, auxHtml: string, sourceUrl: string
         picksEstimate: sampleSize ? Math.round(sampleSize * useRate) : undefined,
       }
     })
-      .filter((stat) => stat.brawlerKey && Number.isFinite(stat.winRateAdj))
+    .filter((stat) => stat.brawlerKey && Number.isFinite(stat.winRateAdj))
+
+  const abilityStats = [
+    ...parseAbilityStats(gadgetHtml, 'gadget'),
+    ...parseAbilityStats(starPowerHtml, 'starpower'),
+  ]
 
   const teamPayload = auxPayloads.find(
     (payload) =>
@@ -120,7 +146,7 @@ function parseMetaSnapshot(statsHtml: string, auxHtml: string, sourceUrl: string
       wins: asNumber(row.metricsRaw?.wins),
     }))
     .filter((team) => team.brawlerKeys.length >= 3 && Number.isFinite(team.wins))
-      .slice(0, 8)
+    .slice(0, 8)
 
   const activeEvents: ActiveEvent[] = auxQueries
     .flatMap((query) => {
@@ -139,6 +165,7 @@ function parseMetaSnapshot(statsHtml: string, auxHtml: string, sourceUrl: string
 
   return {
     stats,
+    abilityStats,
     topTeams,
     activeEvents,
     windowStart,
@@ -161,6 +188,61 @@ function recentStatsSourceUrl(windowStart: string) {
 
 function recentStatsProxyPath(windowStart: string) {
   return `/api/brawltime/dashboard?cube=map&dimension=brawler&filter%5Bseason%5D=${windowStart}&metric=useRate&metric=winRateAdj&sort=winRateAdj`
+}
+
+function abilityStatsProxyPath(cube: 'gadget' | 'starpower', windowStart: string) {
+  return `/api/brawltime/dashboard?cube=${cube}&dimension=brawler&dimension=${cube}&filter%5Bseason%5D=${windowStart}&metric=useRate&metric=winRateAdj&sort=winRateAdj`
+}
+
+function parseAbilityStats(html: string, cube: 'gadget' | 'starpower'): AbilityMetaStat[] {
+  if (!html) return []
+
+  const pageContext = extractPageContext(html)
+  const queries: VikeQuery[] = pageContext?.vueQueryState?.queries || []
+  const payloads = queries.map((query) => query.state?.data).filter(Boolean)
+  const statPayload = payloads
+    .filter(
+      (payload) =>
+        payload?.kind === 'response' &&
+        payload.query?.cubeId === cube &&
+        payload.query?.dimensionsIds?.includes('brawler') &&
+        payload.query?.dimensionsIds?.includes(cube) &&
+        payload.query?.metricsIds?.includes('winRateAdj') &&
+        payload.query?.metricsIds?.includes('useRate'),
+    )
+    .sort((a, b) => (b?.data?.length || 0) - (a?.data?.length || 0))[0]
+
+  const samplePayload = payloads.find(
+    (payload) =>
+      payload?.kind === 'response' &&
+      payload.query?.cubeId === cube &&
+      payload.query.metricsIds?.includes('timestamp') &&
+      payload.query.metricsIds?.includes('picks') &&
+      !payload.query.dimensionsIds?.length,
+  )
+  const sample = samplePayload?.data?.[0]?.metricsRaw || {}
+  const sampleSize = typeof sample.picks === 'number' ? sample.picks : undefined
+
+  return (statPayload?.data || [])
+    .map((row) => {
+      const rawAbility = cube === 'gadget' ? row.dimensionsRaw?.gadget : row.dimensionsRaw?.starpower
+      const abilityId = Number(cube === 'gadget' ? rawAbility?.gadget : rawAbility?.starpower)
+      const brawlerName = row.dimensionsRaw?.brawler?.brawler || rawAbility?.brawler || ''
+      const abilityName = (cube === 'gadget' ? rawAbility?.gadgetName : rawAbility?.starpowerName) || ''
+      const winRate = asNumber(row.metricsRaw?.winRateAdj)
+      const useRate = asNumber(row.metricsRaw?.useRate)
+
+      return {
+        type: cube === 'gadget' ? ('gadget' as const) : ('starPower' as const),
+        abilityId,
+        abilityName,
+        brawlerKey: brawlerStatKey(brawlerName),
+        winRateAdj: winRate * 100,
+        useRate: useRate * 100,
+        picksEstimate: sampleSize ? Math.round(sampleSize * useRate) : undefined,
+      }
+    })
+    .filter((stat) => stat.abilityId > 0 && stat.brawlerKey && Number.isFinite(stat.winRateAdj))
 }
 
 function extractPageContext(html: string) {

@@ -4,13 +4,23 @@ const META_SOURCE_URL = 'https://brawltime.ninja/tier-list/brawler'
 const RECENT_WINDOW_DAYS = 30
 const windowStart = recentWindowStart()
 const statsSourceUrl = recentStatsSourceUrl(windowStart)
+const gadgetSourceUrl = abilityStatsSourceUrl('gadget', windowStart)
+const starPowerSourceUrl = abilityStatsSourceUrl('starpower', windowStart)
 
-const [statsHtml, auxHtml] = await Promise.all([
+const [statsHtml, auxHtml, gadgetHtml, starPowerHtml] = await Promise.all([
   fetch(statsSourceUrl).then((response) => {
     if (!response.ok) throw new Error(`Brawl Time Ninja ${response.status}`)
     return response.text()
   }),
   fetch(META_SOURCE_URL).then((response) => {
+    if (!response.ok) throw new Error(`Brawl Time Ninja ${response.status}`)
+    return response.text()
+  }),
+  fetch(gadgetSourceUrl).then((response) => {
+    if (!response.ok) throw new Error(`Brawl Time Ninja ${response.status}`)
+    return response.text()
+  }),
+  fetch(starPowerSourceUrl).then((response) => {
     if (!response.ok) throw new Error(`Brawl Time Ninja ${response.status}`)
     return response.text()
   }),
@@ -22,6 +32,7 @@ const statsQueries = statsPageContext?.vueQueryState?.queries || []
 const auxQueries = auxPageContext?.vueQueryState?.queries || []
 const statsPayloads = statsQueries.map((query) => query.state?.data).filter(Boolean)
 const auxPayloads = auxQueries.map((query) => query.state?.data).filter(Boolean)
+const abilityStats = [...parseAbilityStats(gadgetHtml, 'gadget'), ...parseAbilityStats(starPowerHtml, 'starpower')]
 
 const statPayload = statsPayloads
   .filter(
@@ -75,6 +86,7 @@ const snapshot = {
       }
     })
     .filter((stat) => stat.brawlerKey && Number.isFinite(stat.winRateAdj)),
+  abilityStats,
   topTeams: (teamPayload?.data || [])
     .map((row) => ({
       brawlerKeys: (row.dimensionsRaw?.team?.team || []).map((name) => brawlerStatKey(name)),
@@ -134,4 +146,57 @@ function recentWindowStart() {
 
 function recentStatsSourceUrl(start) {
   return `https://brawltime.ninja/dashboard?cube=map&dimension=brawler&filter%5Bseason%5D=${start}&metric=useRate&metric=winRateAdj&sort=winRateAdj`
+}
+
+function abilityStatsSourceUrl(cube, start) {
+  return `https://brawltime.ninja/dashboard?cube=${cube}&dimension=brawler&dimension=${cube}&filter%5Bseason%5D=${start}&metric=useRate&metric=winRateAdj&sort=winRateAdj`
+}
+
+function parseAbilityStats(pageHtml, cube) {
+  const pageContext = extractPageContext(pageHtml)
+  const queries = pageContext?.vueQueryState?.queries || []
+  const payloads = queries.map((query) => query.state?.data).filter(Boolean)
+  const statPayload = payloads
+    .filter(
+      (payload) =>
+        payload?.kind === 'response' &&
+        payload.query?.cubeId === cube &&
+        payload.query?.dimensionsIds?.includes('brawler') &&
+        payload.query?.dimensionsIds?.includes(cube) &&
+        payload.query?.metricsIds?.includes('winRateAdj') &&
+        payload.query?.metricsIds?.includes('useRate'),
+    )
+    .sort((a, b) => (b?.data?.length || 0) - (a?.data?.length || 0))[0]
+
+  const samplePayload = payloads.find(
+    (payload) =>
+      payload?.kind === 'response' &&
+      payload.query?.cubeId === cube &&
+      payload.query.metricsIds?.includes('timestamp') &&
+      payload.query.metricsIds?.includes('picks') &&
+      !payload.query.dimensionsIds?.length,
+  )
+  const sample = samplePayload?.data?.[0]?.metricsRaw || {}
+  const sampleSize = typeof sample.picks === 'number' ? sample.picks : undefined
+
+  return (statPayload?.data || [])
+    .map((row) => {
+      const rawAbility = cube === 'gadget' ? row.dimensionsRaw?.gadget : row.dimensionsRaw?.starpower
+      const abilityId = Number(cube === 'gadget' ? rawAbility?.gadget : rawAbility?.starpower)
+      const brawlerName = row.dimensionsRaw?.brawler?.brawler || rawAbility?.brawler || ''
+      const abilityName = (cube === 'gadget' ? rawAbility?.gadgetName : rawAbility?.starpowerName) || ''
+      const winRate = asNumber(row.metricsRaw?.winRateAdj)
+      const useRate = asNumber(row.metricsRaw?.useRate)
+
+      return {
+        type: cube === 'gadget' ? 'gadget' : 'starPower',
+        abilityId,
+        abilityName,
+        brawlerKey: brawlerStatKey(brawlerName),
+        winRateAdj: winRate * 100,
+        useRate: useRate * 100,
+        picksEstimate: sampleSize ? Math.round(sampleSize * useRate) : undefined,
+      }
+    })
+    .filter((stat) => stat.abilityId > 0 && stat.brawlerKey && Number.isFinite(stat.winRateAdj))
 }

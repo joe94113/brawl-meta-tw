@@ -17,6 +17,9 @@ export interface Ability {
   localizedDescription?: string
   imageUrl?: string
   released?: boolean
+  winRateAdj?: number
+  useRate?: number
+  picksEstimate?: number
 }
 
 export interface ApiBrawler {
@@ -107,6 +110,18 @@ export interface MetaStat {
   picksEstimate?: number
 }
 
+export type AbilityMetaType = 'gadget' | 'starPower'
+
+export interface AbilityMetaStat {
+  type: AbilityMetaType
+  abilityId: number
+  abilityName: string
+  brawlerKey: string
+  winRateAdj: number
+  useRate: number
+  picksEstimate?: number
+}
+
 export interface MetaTeam {
   brawlerKeys: string[]
   wins: number
@@ -121,6 +136,7 @@ export interface ActiveEvent {
 
 export interface MetaSnapshot {
   stats: MetaStat[]
+  abilityStats?: AbilityMetaStat[]
   topTeams: MetaTeam[]
   activeEvents: ActiveEvent[]
   windowStart?: string

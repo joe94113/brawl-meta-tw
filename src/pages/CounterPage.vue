@@ -72,7 +72,7 @@ function onImageError(event: Event) {
 
 <template>
   <section class="bg-[#121824] py-[72px]">
-    <PageHeader eyebrow="Counter lab" title="對戰陣容相剋建議" note="點英雄可看配件、星徽、推薦 Counter，以及這隻角色比較能壓制誰。" />
+    <PageHeader eyebrow="Counter lab" title="對戰陣容相剋建議" note="點英雄可看配件、能力之星勝率、推薦 Counter，以及這隻角色比較能壓制誰。" />
 
     <div class="mx-auto mb-5 flex w-[min(1180px,calc(100%_-_48px))] flex-wrap justify-end gap-3 max-sm:w-[calc(100%_-_28px)]">
       <label class="grid gap-1 text-sm font-black text-slate-300">
@@ -121,9 +121,12 @@ function onImageError(event: Event) {
 
       <div class="grid gap-5">
         <div class="grid grid-cols-2 gap-3 max-lg:grid-cols-1">
-          <AbilityGrid title="推薦配件" :items="selectedBrawler.gadgets" />
-          <AbilityGrid title="星徽之力" :items="selectedBrawler.starPowers" />
+          <AbilityGrid title="配件勝率" :items="selectedBrawler.gadgets" />
+          <AbilityGrid title="能力之星勝率" :items="selectedBrawler.starPowers" />
         </div>
+        <p class="m-0 text-sm leading-6 text-slate-500">
+          配件與能力之星勝率來自 Brawl Time Ninja 樣本統計；官方 API 不會在對戰紀錄中回傳實際裝備。
+        </p>
 
         <section class="grid gap-3">
           <h2 class="m-0 text-xl font-black text-white">打 {{ selectedBrawler.localizedName }} 優先考慮</h2>
