@@ -20,6 +20,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -43,11 +45,21 @@ jobs:
         run: npm run data:meta
         continue-on-error: true
 
+      - name: Verify player proxy base
+        run: |
+          if [ -z "$VITE_BRAWL_STARS_PROXY_BASE" ]; then
+            echo "::error::VITE_BRAWL_STARS_PROXY_BASE is empty. Add it as a repository variable or a github-pages environment variable, then rerun this workflow."
+            exit 1
+          fi
+          echo "Using player proxy base: $VITE_BRAWL_STARS_PROXY_BASE"
+        env:
+          VITE_BRAWL_STARS_PROXY_BASE: ${{ vars.VITE_BRAWL_STARS_PROXY_BASE || secrets.VITE_BRAWL_STARS_PROXY_BASE }}
+
       - name: Build
         run: npm run build
         env:
           GITHUB_PAGES: true
-          VITE_BRAWL_STARS_PROXY_BASE: ${{ vars.VITE_BRAWL_STARS_PROXY_BASE }}
+          VITE_BRAWL_STARS_PROXY_BASE: ${{ vars.VITE_BRAWL_STARS_PROXY_BASE || secrets.VITE_BRAWL_STARS_PROXY_BASE }}
 
       - name: SPA fallback
         run: cp dist/index.html dist/404.html
