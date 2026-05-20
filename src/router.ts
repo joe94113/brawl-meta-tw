@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 import HomePage from './pages/HomePage.vue'
 import MetaPage from './pages/MetaPage.vue'
 import DraftPage from './pages/DraftPage.vue'
@@ -9,7 +9,10 @@ import MapsPage from './pages/MapsPage.vue'
 import MapDetailPage from './pages/MapDetailPage.vue'
 
 export const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history:
+    import.meta.env.PROD && import.meta.env.BASE_URL !== '/'
+      ? createWebHashHistory(import.meta.env.BASE_URL)
+      : createWebHistory(import.meta.env.BASE_URL),
   scrollBehavior() {
     return { top: 0 }
   },
