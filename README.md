@@ -25,6 +25,25 @@ curl -i -X OPTIONS -H "Origin: https://joe94113.github.io" -H "Access-Control-Re
 
 正確回應應該是 `204`，並包含 `Access-Control-Allow-Origin: https://joe94113.github.io`。
 
+目前前端網站若是 `https://brawl-meta-tw.joe94113.workers.dev`，不要把它填進 `VITE_BRAWL_STARS_PROXY_BASE`。這個專案的 proxy Worker 預設名稱是 `brawlstars-proxy`，部署後通常會是：
+
+```sh
+https://brawlstars-proxy.<你的 Cloudflare Workers subdomain>.workers.dev
+```
+
+GitHub Actions 可以用 `.github/workflows/deploy-worker.yml` 部署 Worker。需要先在 Repository secrets 設定：
+
+```sh
+CLOUDFLARE_API_TOKEN
+CLOUDFLARE_ACCOUNT_ID
+```
+
+並在 Repository variables 設定：
+
+```sh
+CLOUDFLARE_WORKERS_SUBDOMAIN
+```
+
 ## 建置
 
 ```sh

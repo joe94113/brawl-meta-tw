@@ -1,0 +1,43 @@
+name: Deploy Cloudflare Worker
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - workers/brawlstars-proxy/**
+      - .github/workflows/deploy-worker.yml
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy player proxy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy --config workers/brawlstars-proxy/wrangler.toml
+
+      - name: Verify proxy CORS
+        run: |
+          if [ -z "${{ vars.CLOUDFLARE_WORKERS_SUBDOMAIN }}" ]; then
+            echo "::error::CLOUDFLARE_WORKERS_SUBDOMAIN is empty. Set it to your Cloudflare Workers subdomain, for example joe94113."
+            exit 1
+          fi
+          PROXY_BASE="https://brawlstars-proxy.${{ vars.CLOUDFLARE_WORKERS_SUBDOMAIN }}.workers.dev"
+          HEADERS="$(mktemp)"
+          STATUS="$(curl -sS -o /dev/null -D "$HEADERS" -w "%{http_code}" -X OPTIONS \
+            -H "Origin: https://joe94113.github.io" \
+            -H "Access-Control-Request-Method: GET" \
+            "$PROXY_BASE/players/%232PVRQGQG")"
+          cat "$HEADERS"
+          if [ "$STATUS" != "204" ]; then
+            echo "::error::Worker deployed, but OPTIONS check returned HTTP $STATUS."
+            exit 1
+          fi
+          echo "Worker proxy is ready: $PROXY_BASE"
