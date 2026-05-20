@@ -16,6 +16,30 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Validate Cloudflare inputs
+        run: |
+          missing=0
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::error::CLOUDFLARE_API_TOKEN is empty. Add it in Settings > Secrets and variables > Actions > Secrets."
+            missing=1
+          fi
+          if [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::error::CLOUDFLARE_ACCOUNT_ID is empty. Add your Cloudflare account id in Settings > Secrets and variables > Actions > Secrets."
+            missing=1
+          fi
+          if [ -z "$CLOUDFLARE_WORKERS_SUBDOMAIN" ]; then
+            echo "::error::CLOUDFLARE_WORKERS_SUBDOMAIN is empty. Add it in Settings > Secrets and variables > Actions > Variables, for example joe94113."
+            missing=1
+          fi
+          exit "$missing"
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_WORKERS_SUBDOMAIN: ${{ vars.CLOUDFLARE_WORKERS_SUBDOMAIN }}
+
+      - name: Show Wrangler version
+        run: npx wrangler --version
+
       - name: Deploy player proxy
         uses: cloudflare/wrangler-action@v3
         with:
@@ -25,11 +49,7 @@ jobs:
 
       - name: Verify proxy CORS
         run: |
-          if [ -z "${{ vars.CLOUDFLARE_WORKERS_SUBDOMAIN }}" ]; then
-            echo "::error::CLOUDFLARE_WORKERS_SUBDOMAIN is empty. Set it to your Cloudflare Workers subdomain, for example joe94113."
-            exit 1
-          fi
-          PROXY_BASE="https://brawlstars-proxy.${{ vars.CLOUDFLARE_WORKERS_SUBDOMAIN }}.workers.dev"
+          PROXY_BASE="https://brawlstars-proxy.$CLOUDFLARE_WORKERS_SUBDOMAIN.workers.dev"
           HEADERS="$(mktemp)"
           STATUS="$(curl -sS -o /dev/null -D "$HEADERS" -w "%{http_code}" -X OPTIONS \
             -H "Origin: https://joe94113.github.io" \
@@ -41,3 +61,5 @@ jobs:
             exit 1
           fi
           echo "Worker proxy is ready: $PROXY_BASE"
+        env:
+          CLOUDFLARE_WORKERS_SUBDOMAIN: ${{ vars.CLOUDFLARE_WORKERS_SUBDOMAIN }}
