@@ -1,7 +1,15 @@
-import { mkdir, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
 
 const META_SOURCE_URL = 'https://brawltime.ninja/tier-list/brawler'
 const RECENT_WINDOW_DAYS = 30
+const SNAPSHOT_URL = new URL('../public/data/meta-snapshot.json', import.meta.url)
+const BRAWL_TIME_HEADERS = {
+  Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'Accept-Language': 'zh-TW,zh;q=0.9,en;q=0.8',
+  'Cache-Control': 'no-cache',
+  'User-Agent':
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36',
+}
 const HOME_ACTIVE_MODE_SLUGS = new Set([
   'gemGrab',
   'heist',
@@ -30,23 +38,18 @@ const statsSourceUrl = recentStatsSourceUrl(windowStart)
 const gadgetSourceUrl = abilityStatsSourceUrl('gadget', windowStart)
 const starPowerSourceUrl = abilityStatsSourceUrl('starpower', windowStart)
 
-const [statsHtml, auxHtml, gadgetHtml, starPowerHtml] = await Promise.all([
-  fetch(statsSourceUrl).then((response) => {
-    if (!response.ok) throw new Error(`Brawl Time Ninja ${response.status}`)
-    return response.text()
-  }),
-  fetch(META_SOURCE_URL).then((response) => {
-    if (!response.ok) throw new Error(`Brawl Time Ninja ${response.status}`)
-    return response.text()
-  }),
-  fetch(gadgetSourceUrl).then((response) => {
-    if (!response.ok) throw new Error(`Brawl Time Ninja ${response.status}`)
-    return response.text()
-  }),
-  fetch(starPowerSourceUrl).then((response) => {
-    if (!response.ok) throw new Error(`Brawl Time Ninja ${response.status}`)
-    return response.text()
-  }),
+let requiredPages
+try {
+  requiredPages = await Promise.all([fetchBrawlTimeText(statsSourceUrl), fetchBrawlTimeText(META_SOURCE_URL)])
+} catch (error) {
+  await keepExistingSnapshotOrThrow(error)
+  process.exit(0)
+}
+
+const [statsHtml, auxHtml] = requiredPages
+const [gadgetHtml, starPowerHtml] = await Promise.all([
+  fetchOptionalBrawlTimeText(gadgetSourceUrl),
+  fetchOptionalBrawlTimeText(starPowerSourceUrl),
 ])
 
 const statsPageContext = extractPageContext(statsHtml)
@@ -145,7 +148,7 @@ const snapshot = {
 }
 
 await mkdir(new URL('../public/data/', import.meta.url), { recursive: true })
-await writeFile(new URL('../public/data/meta-snapshot.json', import.meta.url), `${JSON.stringify(snapshot, null, 2)}\n`, 'utf8')
+await writeFile(SNAPSHOT_URL, `${JSON.stringify(snapshot, null, 2)}\n`, 'utf8')
 
 function extractPageContext(pageHtml) {
   const match = pageHtml.match(/<script id="vike_pageContext" type="application\/json">([\s\S]*?)<\/script>/)
@@ -181,6 +184,41 @@ function abilityStatsSourceUrl(cube, start) {
   return `https://brawltime.ninja/dashboard?cube=${cube}&dimension=brawler&dimension=${cube}&filter%5Bseason%5D=${start}&metric=picks&metric=winRateAdj&sort=winRateAdj`
 }
 
+async function fetchBrawlTimeText(url) {
+  const response = await fetch(url, { headers: BRAWL_TIME_HEADERS })
+  if (!response.ok) throw new Error(`Brawl Time Ninja ${response.status}: ${url}`)
+  return response.text()
+}
+
+async function fetchOptionalBrawlTimeText(url) {
+  try {
+    return await fetchBrawlTimeText(url)
+  } catch (error) {
+    console.warn(`[data:meta] Optional Brawl Time request failed: ${errorMessage(error)}`)
+    return ''
+  }
+}
+
+async function keepExistingSnapshotOrThrow(error) {
+  const existing = await readExistingSnapshot()
+  if (!existing?.stats?.length) throw error
+
+  console.warn(`[data:meta] ${errorMessage(error)}`)
+  console.warn('[data:meta] Keeping existing public/data/meta-snapshot.json so deployment can continue.')
+}
+
+async function readExistingSnapshot() {
+  try {
+    return JSON.parse(await readFile(SNAPSHOT_URL, 'utf8'))
+  } catch {
+    return null
+  }
+}
+
+function errorMessage(error) {
+  return error instanceof Error ? error.message : String(error)
+}
+
 function canonicalModeSlug(value) {
   return MODE_SLUG_ALIASES[value] || value
 }
@@ -193,10 +231,13 @@ async function fetchActiveMapStats(events, start) {
   const uniqueEvents = Array.from(new Map(events.map((event) => [event.id, event])).values())
   const results = await Promise.all(
     uniqueEvents.map(async (event) => {
-      const response = await fetch(mapStatsSourceUrl(event.map, start))
-      if (!response.ok) throw new Error(`Brawl Time Ninja ${response.status}`)
-      const html = await response.text()
-      return parseMapStats(html)
+      try {
+        const html = await fetchBrawlTimeText(mapStatsSourceUrl(event.map, start))
+        return parseMapStats(html)
+      } catch (error) {
+        console.warn(`[data:meta] Map stats skipped for ${event.map}: ${errorMessage(error)}`)
+        return []
+      }
     }),
   )
 
@@ -243,6 +284,8 @@ function parseMapStats(pageHtml) {
 }
 
 function parseAbilityStats(pageHtml, cube) {
+  if (!pageHtml) return []
+
   const pageContext = extractPageContext(pageHtml)
   const queries = pageContext?.vueQueryState?.queries || []
   const payloads = queries.map((query) => query.state?.data).filter(Boolean)

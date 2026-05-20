@@ -2,1144 +2,624 @@
   "stats": [
     {
       "brawlerKey": "DAMIAN",
-      "winRateAdj": 74.47141916041116,
-      "useRate": 3.644973212546413,
-      "picksEstimate": 16183233
+      "winRateAdj": 74.47131364379499,
+      "useRate": 3.644895351510116,
+      "picksEstimate": 16186655
     },
     {
       "brawlerKey": "TRUNK",
-      "winRateAdj": 72.18675128057646,
-      "useRate": 0.48701935100748567,
-      "picksEstimate": 2162306
+      "winRateAdj": 72.18643750064129,
+      "useRate": 0.48703781086510506,
+      "picksEstimate": 2162891
     },
     {
       "brawlerKey": "GIGI",
-      "winRateAdj": 71.83981244177244,
-      "useRate": 0.44512896699651777,
-      "picksEstimate": 1976318
+      "winRateAdj": 71.83988659785928,
+      "useRate": 0.44511953227915835,
+      "picksEstimate": 1976736
     },
     {
       "brawlerKey": "OLLIE",
-      "winRateAdj": 71.30218931984797,
-      "useRate": 0.22540966379427885,
-      "picksEstimate": 1000791
+      "winRateAdj": 71.30235450141848,
+      "useRate": 0.22540979532440644,
+      "picksEstimate": 1001025
     },
     {
       "brawlerKey": "GLOWY",
-      "winRateAdj": 70.65107005139228,
-      "useRate": 0.36924018221547483,
-      "picksEstimate": 1639381
+      "winRateAdj": 70.65121388561055,
+      "useRate": 0.36924389384067835,
+      "picksEstimate": 1639779
     },
     {
       "brawlerKey": "JAEYONG",
-      "winRateAdj": 70.0816081448085,
-      "useRate": 0.2710106376737684,
-      "picksEstimate": 1203254
+      "winRateAdj": 70.08201317895471,
+      "useRate": 0.2710183459632432,
+      "picksEstimate": 1203568
     },
     {
       "brawlerKey": "NAJIA",
-      "winRateAdj": 69.94618488658035,
-      "useRate": 2.0267303300231876,
-      "picksEstimate": 8998433
+      "winRateAdj": 69.94608389587907,
+      "useRate": 2.0266620590939475,
+      "picksEstimate": 9000225
     },
     {
       "brawlerKey": "GLOWBERT",
       "winRateAdj": 69.7302771936529,
-      "useRate": 0.1122731467133906,
-      "picksEstimate": 498479
+      "useRate": 0.11226536239944578,
+      "picksEstimate": 498560
     },
     {
       "brawlerKey": "ZIGGY",
-      "winRateAdj": 68.84260143059427,
-      "useRate": 0.6134435994757521,
-      "picksEstimate": 2723614
+      "winRateAdj": 68.84249725680633,
+      "useRate": 0.6134232135857973,
+      "picksEstimate": 2724158
     },
     {
       "brawlerKey": "FINX",
-      "winRateAdj": 68.29499722467996,
-      "useRate": 0.4506477744925046,
-      "picksEstimate": 2000821
+      "winRateAdj": 68.29470569110894,
+      "useRate": 0.4506781601661832,
+      "picksEstimate": 2001421
     },
     {
       "brawlerKey": "ASH",
-      "winRateAdj": 68.20395739001248,
-      "useRate": 0.21384241505352,
-      "picksEstimate": 949434
+      "winRateAdj": 68.20391065032962,
+      "useRate": 0.21383595083303295,
+      "picksEstimate": 949626
     },
     {
       "brawlerKey": "MEG",
-      "winRateAdj": 68.20362597440479,
-      "useRate": 0.3564028575994619,
-      "picksEstimate": 1582385
+      "winRateAdj": 68.20326074191553,
+      "useRate": 0.3563973997474371,
+      "picksEstimate": 1582729
     },
     {
       "brawlerKey": "ROSA",
-      "winRateAdj": 68.13815259374924,
-      "useRate": 0.2506425172721663,
-      "picksEstimate": 1112822
+      "winRateAdj": 68.13855956562395,
+      "useRate": 0.2506531056038994,
+      "picksEstimate": 1113128
     },
     {
       "brawlerKey": "SAM",
-      "winRateAdj": 68.11933389175664,
-      "useRate": 0.21893059911026932,
-      "picksEstimate": 972025
+      "winRateAdj": 68.1201690722634,
+      "useRate": 0.21893625761802965,
+      "picksEstimate": 972276
     },
     {
       "brawlerKey": "BUSTER",
-      "winRateAdj": 68.01435244661074,
-      "useRate": 0.2726912680269586,
-      "picksEstimate": 1210716
+      "winRateAdj": 68.0146013187582,
+      "useRate": 0.2726901814811489,
+      "picksEstimate": 1210993
     },
     {
       "brawlerKey": "EVE",
-      "winRateAdj": 67.86594066791807,
-      "useRate": 0.24956640701822644,
-      "picksEstimate": 1108044
+      "winRateAdj": 67.86598305278442,
+      "useRate": 0.24956185072694315,
+      "picksEstimate": 1108282
     },
     {
       "brawlerKey": "DRACO",
-      "winRateAdj": 67.84149135215382,
-      "useRate": 0.3302581985380939,
-      "picksEstimate": 1466306
+      "winRateAdj": 67.84101569307506,
+      "useRate": 0.3302549373262209,
+      "picksEstimate": 1466633
     },
     {
       "brawlerKey": "PEARL",
-      "winRateAdj": 67.68104067507743,
-      "useRate": 0.3320355143666537,
-      "picksEstimate": 1474197
+      "winRateAdj": 67.68071003713047,
+      "useRate": 0.33203204096658245,
+      "picksEstimate": 1474525
     },
     {
       "brawlerKey": "LUMI",
-      "winRateAdj": 67.66343188292097,
-      "useRate": 0.4829009435504075,
-      "picksEstimate": 2144021
+      "winRateAdj": 67.66297735546522,
+      "useRate": 0.48290439948695435,
+      "picksEstimate": 2144535
     },
     {
       "brawlerKey": "CLANCY",
-      "winRateAdj": 67.57905286302889,
-      "useRate": 1.3485425920970104,
-      "picksEstimate": 5987363
+      "winRateAdj": 67.57881832302607,
+      "useRate": 1.348498409412833,
+      "picksEstimate": 5988561
     },
     {
       "brawlerKey": "SIRIUS",
-      "winRateAdj": 67.41316673108813,
-      "useRate": 1.6453513059242764,
-      "picksEstimate": 7305157
+      "winRateAdj": 67.41305885343237,
+      "useRate": 1.645316083890683,
+      "picksEstimate": 7306702
     },
     {
       "brawlerKey": "BONNIE",
-      "winRateAdj": 67.3682259887312,
-      "useRate": 0.23180640406318753,
-      "picksEstimate": 1029192
+      "winRateAdj": 67.36808494534677,
+      "useRate": 0.231809718386149,
+      "picksEstimate": 1029446
     },
     {
       "brawlerKey": "DOUG",
-      "winRateAdj": 67.2362105952786,
-      "useRate": 0.5738921110263753,
-      "picksEstimate": 2548010
+      "winRateAdj": 67.23573372003212,
+      "useRate": 0.5739133781530001,
+      "picksEstimate": 2548698
     },
     {
       "brawlerKey": "MRP",
-      "winRateAdj": 67.14596415528163,
-      "useRate": 0.28894202515682327,
-      "picksEstimate": 1282867
+      "winRateAdj": 67.14612317494023,
+      "useRate": 0.2889421295355169,
+      "picksEstimate": 1283166
     },
     {
       "brawlerKey": "RT",
-      "winRateAdj": 67.11156182632497,
-      "useRate": 0.32881125030872826,
-      "picksEstimate": 1459881
+      "winRateAdj": 67.11204291091548,
+      "useRate": 0.3288055751202643,
+      "picksEstimate": 1460196
     },
     {
       "brawlerKey": "JACKY",
-      "winRateAdj": 67.07935286773241,
-      "useRate": 0.3432108892456949,
-      "picksEstimate": 1523814
+      "winRateAdj": 67.07876183688765,
+      "useRate": 0.34321286589504146,
+      "picksEstimate": 1524178
     },
     {
       "brawlerKey": "JUJU",
-      "winRateAdj": 67.03455005164388,
-      "useRate": 0.28995122326493994,
-      "picksEstimate": 1287348
+      "winRateAdj": 67.03444221609412,
+      "useRate": 0.28994478464014595,
+      "picksEstimate": 1287619
     },
     {
       "brawlerKey": "LOLA",
-      "winRateAdj": 66.93959637265314,
-      "useRate": 0.2590036745258842,
-      "picksEstimate": 1149944
+      "winRateAdj": 66.9391248511182,
+      "useRate": 0.2589998193877979,
+      "picksEstimate": 1150195
     },
     {
       "brawlerKey": "NITA",
-      "winRateAdj": 66.89627381939654,
-      "useRate": 0.8756238731058593,
-      "picksEstimate": 3887662
+      "winRateAdj": 66.89607695019662,
+      "useRate": 0.8756136525028952,
+      "picksEstimate": 3888522
     },
     {
       "brawlerKey": "SANDY",
-      "winRateAdj": 66.75892065970747,
-      "useRate": 0.4764880301148317,
-      "picksEstimate": 2115548
+      "winRateAdj": 66.75904132733001,
+      "useRate": 0.4764766856970689,
+      "picksEstimate": 2115990
     },
     {
       "brawlerKey": "MOE",
-      "winRateAdj": 66.66021284761669,
-      "useRate": 0.31951543947883954,
-      "picksEstimate": 1418609
+      "winRateAdj": 66.66068986089951,
+      "useRate": 0.31951084892279763,
+      "picksEstimate": 1418919
     },
     {
       "brawlerKey": "PAM",
-      "winRateAdj": 66.5653055048669,
-      "useRate": 0.25098822690395595,
-      "picksEstimate": 1114357
+      "winRateAdj": 66.56582811267286,
+      "useRate": 0.25098553150018743,
+      "picksEstimate": 1114604
     },
     {
       "brawlerKey": "CHARLIE",
-      "winRateAdj": 66.5489916206175,
-      "useRate": 0.3483572620523494,
-      "picksEstimate": 1546663
+      "winRateAdj": 66.54856964254604,
+      "useRate": 0.3483590012786504,
+      "picksEstimate": 1547031
     },
     {
       "brawlerKey": "WILLOW",
-      "winRateAdj": 66.4757366615495,
-      "useRate": 0.38628265893219427,
-      "picksEstimate": 1715047
+      "winRateAdj": 66.47547097665186,
+      "useRate": 0.38628016970571477,
+      "picksEstimate": 1715436
     },
     {
       "brawlerKey": "CHUCK",
-      "winRateAdj": 66.40368238389655,
-      "useRate": 0.3625786590199034,
-      "picksEstimate": 1609805
+      "winRateAdj": 66.40425792023986,
+      "useRate": 0.3625712278767742,
+      "picksEstimate": 1610146
     },
     {
       "brawlerKey": "MAISIE",
-      "winRateAdj": 66.07701857480485,
-      "useRate": 0.5408215063910744,
-      "picksEstimate": 2401181
+      "winRateAdj": 66.07710985673658,
+      "useRate": 0.5408220584837322,
+      "picksEstimate": 2401742
     },
     {
       "brawlerKey": "LOU",
-      "winRateAdj": 65.96091273548008,
-      "useRate": 0.42924972211422713,
-      "picksEstimate": 1905816
+      "winRateAdj": 65.96100164935294,
+      "useRate": 0.42925015797614946,
+      "picksEstimate": 1906262
     },
     {
       "brawlerKey": "JANET",
-      "winRateAdj": 65.83783425035286,
-      "useRate": 0.5140266078328481,
-      "picksEstimate": 2282215
+      "winRateAdj": 65.83781436563065,
+      "useRate": 0.5140157087868293,
+      "picksEstimate": 2282698
     },
     {
       "brawlerKey": "KAZE",
-      "winRateAdj": 65.60298500756524,
-      "useRate": 0.6983206099259431,
-      "picksEstimate": 3100458
+      "winRateAdj": 65.60275282068174,
+      "useRate": 0.6983214088793832,
+      "picksEstimate": 3101183
     },
     {
       "brawlerKey": "ALLI",
-      "winRateAdj": 65.54946673206784,
-      "useRate": 0.5250932165271969,
-      "picksEstimate": 2331349
+      "winRateAdj": 65.54925757579716,
+      "useRate": 0.5250955239817207,
+      "picksEstimate": 2331902
     },
     {
       "brawlerKey": "HANK",
-      "winRateAdj": 65.32260953927849,
-      "useRate": 0.2808242145943883,
-      "picksEstimate": 1246825
+      "winRateAdj": 65.32292805051478,
+      "useRate": 0.28082345610522563,
+      "picksEstimate": 1247112
     },
     {
       "brawlerKey": "SHADE",
-      "winRateAdj": 65.06553335102646,
-      "useRate": 0.7607726444923985,
-      "picksEstimate": 3377737
+      "winRateAdj": 65.06564075884413,
+      "useRate": 0.7608057954900866,
+      "picksEstimate": 3378671
     },
     {
       "brawlerKey": "LARRYANDLAWRIE",
-      "winRateAdj": 64.99011566512186,
-      "useRate": 0.31979759193698803,
-      "picksEstimate": 1419862
+      "winRateAdj": 64.99029412582084,
+      "useRate": 0.3197960509484683,
+      "picksEstimate": 1420186
     },
     {
       "brawlerKey": "FRANK",
-      "winRateAdj": 64.87857243023684,
-      "useRate": 1.1509153382228619,
-      "picksEstimate": 5109923
+      "winRateAdj": 64.87853775896856,
+      "useRate": 1.1509129130376259,
+      "picksEstimate": 5111101
     },
     {
       "brawlerKey": "GALE",
-      "winRateAdj": 64.82245742299233,
-      "useRate": 0.5385935660574349,
-      "picksEstimate": 2391289
+      "winRateAdj": 64.82237942305844,
+      "useRate": 0.538579584808444,
+      "picksEstimate": 2391784
     },
     {
       "brawlerKey": "JESSIE",
-      "winRateAdj": 64.8105189975653,
-      "useRate": 0.7292806303585189,
-      "picksEstimate": 3237916
+      "winRateAdj": 64.81057618379515,
+      "useRate": 0.7292728377995269,
+      "picksEstimate": 3238636
     },
     {
       "brawlerKey": "PIERCE",
-      "winRateAdj": 64.7880171844781,
-      "useRate": 1.7151962827403437,
-      "picksEstimate": 7615260
+      "winRateAdj": 64.78794960401724,
+      "useRate": 1.7151877521790304,
+      "picksEstimate": 7616996
     },
     {
       "brawlerKey": "MINA",
-      "winRateAdj": 64.7703951979259,
-      "useRate": 1.0683626070807148,
-      "picksEstimate": 4743399
+      "winRateAdj": 64.77012883435037,
+      "useRate": 1.0684041233939245,
+      "picksEstimate": 4744687
     },
     {
       "brawlerKey": "OTIS",
-      "winRateAdj": 64.64212090397065,
-      "useRate": 0.8530413633678193,
-      "picksEstimate": 3787399
+      "winRateAdj": 64.64234209729966,
+      "useRate": 0.8530399564171001,
+      "picksEstimate": 3788274
     },
     {
       "brawlerKey": "8BIT",
-      "winRateAdj": 64.59043116959973,
-      "useRate": 0.5331485819967908,
-      "picksEstimate": 2367114
+      "winRateAdj": 64.5904282456655,
+      "useRate": 0.5331338662650577,
+      "picksEstimate": 2367600
     },
     {
       "brawlerKey": "GRIFF",
-      "winRateAdj": 64.50618404408621,
-      "useRate": 1.8569075427285742,
-      "picksEstimate": 8244441
+      "winRateAdj": 64.50607888707854,
+      "useRate": 1.856888355723222,
+      "picksEstimate": 8246275
     },
     {
       "brawlerKey": "DARRYL",
-      "winRateAdj": 64.41632238758108,
-      "useRate": 0.5430753336245169,
-      "picksEstimate": 2411188
+      "winRateAdj": 64.41630411697169,
+      "useRate": 0.5430823733804152,
+      "picksEstimate": 2411780
     },
     {
       "brawlerKey": "KENJI",
-      "winRateAdj": 64.34466202313905,
-      "useRate": 0.8692396373075889,
-      "picksEstimate": 3859317
+      "winRateAdj": 64.34469361195944,
+      "useRate": 0.8692376644427979,
+      "picksEstimate": 3860207
     },
     {
       "brawlerKey": "BERRY",
-      "winRateAdj": 64.31771363131483,
-      "useRate": 0.36197508711586146,
-      "picksEstimate": 1607125
+      "winRateAdj": 64.31751427377534,
+      "useRate": 0.3619697204968078,
+      "picksEstimate": 1607475
     },
     {
       "brawlerKey": "AMBER",
-      "winRateAdj": 64.26541405555348,
-      "useRate": 0.5306715636586081,
-      "picksEstimate": 2356116
+      "winRateAdj": 64.26522368081422,
+      "useRate": 0.5306721241895234,
+      "picksEstimate": 2356667
     },
     {
       "brawlerKey": "TARA",
-      "winRateAdj": 64.05752919830937,
-      "useRate": 0.6364261609665299,
-      "picksEstimate": 2825654
+      "winRateAdj": 64.05753100854643,
+      "useRate": 0.636423930795921,
+      "picksEstimate": 2826302
     },
     {
       "brawlerKey": "MICO",
-      "winRateAdj": 64.04608205416869,
-      "useRate": 0.6653209490220188,
-      "picksEstimate": 2953943
+      "winRateAdj": 64.04615795710433,
+      "useRate": 0.6653545868027899,
+      "picksEstimate": 2954780
     },
     {
       "brawlerKey": "SPROUT",
-      "winRateAdj": 64.04056729375408,
-      "useRate": 0.29983949221453804,
-      "picksEstimate": 1331250
+      "winRateAdj": 64.04041348703113,
+      "useRate": 0.2998495794755032,
+      "picksEstimate": 1331605
     },
     {
       "brawlerKey": "MELODIE",
-      "winRateAdj": 63.97359977343344,
-      "useRate": 0.5373182645730318,
-      "picksEstimate": 2385627
+      "winRateAdj": 63.973769611248834,
+      "useRate": 0.5373178445480931,
+      "picksEstimate": 2386181
     },
     {
       "brawlerKey": "COLETTE",
-      "winRateAdj": 63.93386146807541,
-      "useRate": 2.0306445922224907,
-      "picksEstimate": 9015812
+      "winRateAdj": 63.93369487377362,
+      "useRate": 2.0307087810050666,
+      "picksEstimate": 9018196
     },
     {
       "brawlerKey": "POCO",
-      "winRateAdj": 63.82841275324552,
-      "useRate": 0.9585399503106738,
-      "picksEstimate": 4255799
+      "winRateAdj": 63.828186222791636,
+      "useRate": 0.958547197124447,
+      "picksEstimate": 4256822
     },
     {
       "brawlerKey": "BARLEY",
-      "winRateAdj": 63.638626796068905,
-      "useRate": 0.41582841226358985,
-      "picksEstimate": 1846227
+      "winRateAdj": 63.63879464721729,
+      "useRate": 0.41582084987032636,
+      "picksEstimate": 1846623
     },
     {
       "brawlerKey": "BO",
-      "winRateAdj": 63.609696028337126,
-      "useRate": 1.4589419809936364,
-      "picksEstimate": 6477523
+      "winRateAdj": 63.609611871247715,
+      "useRate": 1.4589586175860687,
+      "picksEstimate": 6479105
     },
     {
       "brawlerKey": "MEEPLE",
-      "winRateAdj": 63.54802844007039,
-      "useRate": 0.6982585160165127,
-      "picksEstimate": 3100182
+      "winRateAdj": 63.54749382752589,
+      "useRate": 0.6982497115632258,
+      "picksEstimate": 3100865
     },
     {
       "brawlerKey": "ELPRIMO",
-      "winRateAdj": 63.43974539791319,
-      "useRate": 0.9783431289833944,
-      "picksEstimate": 4343723
+      "winRateAdj": 63.439691313969924,
+      "useRate": 0.9783567563613762,
+      "picksEstimate": 4344795
     },
     {
       "brawlerKey": "RUFFS",
-      "winRateAdj": 63.366956563232776,
-      "useRate": 0.4342220086218272,
-      "picksEstimate": 1927892
+      "winRateAdj": 63.36701362848376,
+      "useRate": 0.43420643101933903,
+      "picksEstimate": 1928272
     },
     {
       "brawlerKey": "CORDELIUS",
-      "winRateAdj": 63.230559371006876,
-      "useRate": 0.9561556490753217,
-      "picksEstimate": 4245213
+      "winRateAdj": 63.23050890113405,
+      "useRate": 0.9561781844518055,
+      "picksEstimate": 4246302
     },
     {
       "brawlerKey": "EMZ",
-      "winRateAdj": 63.10139455493925,
-      "useRate": 1.9538628135826592,
-      "picksEstimate": 8674911
+      "winRateAdj": 63.101344191789266,
+      "useRate": 1.9538519315753253,
+      "picksEstimate": 8676882
     },
     {
       "brawlerKey": "CHESTER",
-      "winRateAdj": 63.08748256037462,
-      "useRate": 1.5511960367910556,
-      "picksEstimate": 6887120
+      "winRateAdj": 63.087453919552004,
+      "useRate": 1.5512231959110065,
+      "picksEstimate": 6888844
     },
     {
       "brawlerKey": "BELLE",
-      "winRateAdj": 63.05515528242097,
-      "useRate": 0.5802652353815358,
-      "picksEstimate": 2576306
+      "winRateAdj": 63.055268529514386,
+      "useRate": 0.5802643355951793,
+      "picksEstimate": 2576902
     },
     {
       "brawlerKey": "BULL",
-      "winRateAdj": 63.00716463159439,
-      "useRate": 2.2271401926744874,
-      "picksEstimate": 9888228
+      "winRateAdj": 63.00688837216575,
+      "useRate": 2.227140918852726,
+      "picksEstimate": 9890534
     },
     {
       "brawlerKey": "ANGELO",
-      "winRateAdj": 62.95353328085195,
-      "useRate": 0.4488709386146059,
-      "picksEstimate": 1992932
+      "winRateAdj": 62.95311903002617,
+      "useRate": 0.44886190463150255,
+      "picksEstimate": 1993356
     },
     {
       "brawlerKey": "BIBI",
-      "winRateAdj": 62.89078661742376,
-      "useRate": 3.222176141441277,
-      "picksEstimate": 14306066
+      "winRateAdj": 62.89084614066488,
+      "useRate": 3.2221436237356973,
+      "picksEstimate": 14309252
     },
     {
       "brawlerKey": "BEA",
-      "winRateAdj": 62.88948469575042,
-      "useRate": 0.8874867012171633,
-      "picksEstimate": 3940332
+      "winRateAdj": 62.889553444526044,
+      "useRate": 0.8874764962199265,
+      "picksEstimate": 3941204
     },
     {
       "brawlerKey": "FANG",
-      "winRateAdj": 62.79030504516042,
-      "useRate": 1.8017261285473916,
-      "picksEstimate": 7999442
+      "winRateAdj": 62.79006092551918,
+      "useRate": 1.8017417982300337,
+      "picksEstimate": 8001374
     },
     {
       "brawlerKey": "PENNY",
-      "winRateAdj": 62.774990547136724,
-      "useRate": 0.6090827490393675,
-      "picksEstimate": 2704252
+      "winRateAdj": 62.77508464055528,
+      "useRate": 0.609074839017497,
+      "picksEstimate": 2704847
     },
     {
       "brawlerKey": "CROW",
-      "winRateAdj": 62.72128528104305,
-      "useRate": 3.5635763407282957,
-      "picksEstimate": 15821841
+      "winRateAdj": 62.7212319554842,
+      "useRate": 3.5635707662059426,
+      "picksEstimate": 15825499
     },
     {
       "brawlerKey": "GROM",
-      "winRateAdj": 62.674632448487465,
-      "useRate": 0.7522143796964532,
-      "picksEstimate": 3339739
+      "winRateAdj": 62.67447093980781,
+      "useRate": 0.7522001089213659,
+      "picksEstimate": 3340453
     },
     {
       "brawlerKey": "MAX",
-      "winRateAdj": 62.64332497878606,
-      "useRate": 0.5067176873848209,
-      "picksEstimate": 2249764
+      "winRateAdj": 62.64364156419323,
+      "useRate": 0.5067138102645076,
+      "picksEstimate": 2250271
     },
     {
       "brawlerKey": "CARL",
-      "winRateAdj": 62.60695349625342,
-      "useRate": 0.6362884502451401,
-      "picksEstimate": 2825042
+      "winRateAdj": 62.60665002281325,
+      "useRate": 0.6362794499115754,
+      "picksEstimate": 2825660
     },
     {
       "brawlerKey": "EDGAR",
-      "winRateAdj": 62.525231871725616,
-      "useRate": 4.178306011313041,
-      "picksEstimate": 18551165
+      "winRateAdj": 62.52494832620968,
+      "useRate": 4.178504214250512,
+      "picksEstimate": 18556364
     },
     {
       "brawlerKey": "LILY",
-      "winRateAdj": 62.46338104743367,
-      "useRate": 0.8398031441588831,
-      "picksEstimate": 3728623
+      "winRateAdj": 62.463224437331654,
+      "useRate": 0.8398048673651218,
+      "picksEstimate": 3729498
     },
     {
       "brawlerKey": "SHELLY",
-      "winRateAdj": 62.445014266092635,
-      "useRate": 1.0466335128310948,
-      "picksEstimate": 4646924
+      "winRateAdj": 62.44493888387906,
+      "useRate": 1.046673930102815,
+      "picksEstimate": 4648185
     },
     {
       "brawlerKey": "TICK",
-      "winRateAdj": 62.40496352972583,
-      "useRate": 0.9791567553913992,
-      "picksEstimate": 4347336
+      "winRateAdj": 62.405056947450035,
+      "useRate": 0.9791610417120511,
+      "picksEstimate": 4348367
     },
     {
       "brawlerKey": "SQUEAK",
-      "winRateAdj": 62.236650401066896,
-      "useRate": 0.6904716887948517,
-      "picksEstimate": 3065609
+      "winRateAdj": 62.23654218226831,
+      "useRate": 0.6904554037582264,
+      "picksEstimate": 3066251
     },
     {
       "brawlerKey": "GRAY",
-      "winRateAdj": 62.1067705847305,
-      "useRate": 0.5222076758924139,
-      "picksEstimate": 2318538
+      "winRateAdj": 62.106251950468405,
+      "useRate": 0.5221997984681944,
+      "picksEstimate": 2319043
     },
     {
       "brawlerKey": "GUS",
-      "winRateAdj": 62.07296160074859,
-      "useRate": 0.790938161624285,
-      "picksEstimate": 3511668
+      "winRateAdj": 62.07291732480258,
+      "useRate": 0.7909252279274664,
+      "picksEstimate": 3512428
     },
     {
       "brawlerKey": "BROCK",
-      "winRateAdj": 62.063032308859135,
-      "useRate": 1.421868917957307,
-      "picksEstimate": 6312923
+      "winRateAdj": 62.06287727774893,
+      "useRate": 1.4218798797480214,
+      "picksEstimate": 6314442
     },
     {
       "brawlerKey": "NANI",
-      "winRateAdj": 61.699108324133064,
-      "useRate": 0.7147386123020248,
-      "picksEstimate": 3173352
+      "winRateAdj": 61.699349903338344,
+      "useRate": 0.7147387692392346,
+      "picksEstimate": 3174091
     },
     {
       "brawlerKey": "BUZZ",
-      "winRateAdj": 61.64838143067498,
-      "useRate": 0.9936090086269342,
-      "picksEstimate": 4411502
+      "winRateAdj": 61.64845319645437,
+      "useRate": 0.99361239358483,
+      "picksEstimate": 4412544
     },
     {
       "brawlerKey": "KIT",
-      "winRateAdj": 61.63477629302098,
-      "useRate": 1.2016530133178793,
-      "picksEstimate": 5335192
+      "winRateAdj": 61.634818481669406,
+      "useRate": 1.201656987033227,
+      "picksEstimate": 5336451
     },
     {
       "brawlerKey": "STU",
-      "winRateAdj": 61.410856916099874,
-      "useRate": 1.1262434042531937,
-      "picksEstimate": 5000382
+      "winRateAdj": 61.4110800045414,
+      "useRate": 1.126248184133491,
+      "picksEstimate": 5001568
     },
     {
       "brawlerKey": "LEON",
-      "winRateAdj": 61.22288766781552,
-      "useRate": 2.0481814906980307,
-      "picksEstimate": 9093674
+      "winRateAdj": 61.22283541601743,
+      "useRate": 2.048164396975222,
+      "picksEstimate": 9095715
     },
     {
       "brawlerKey": "GENE",
-      "winRateAdj": 61.10947898920255,
-      "useRate": 0.46531187326739637,
-      "picksEstimate": 2065927
+      "winRateAdj": 61.10961056471097,
+      "useRate": 0.46531270235720895,
+      "picksEstimate": 2066412
     },
     {
       "brawlerKey": "SURGE",
-      "winRateAdj": 60.79656741190295,
-      "useRate": 1.2453445608522062,
-      "picksEstimate": 5529177
+      "winRateAdj": 60.796682144010816,
+      "useRate": 1.2453312013912958,
+      "picksEstimate": 5530405
     },
     {
       "brawlerKey": "BYRON",
-      "winRateAdj": 60.79528284088605,
-      "useRate": 1.1729467826591824,
-      "picksEstimate": 5207739
+      "winRateAdj": 60.7950360935251,
+      "useRate": 1.1729398076431463,
+      "picksEstimate": 5208921
     },
     {
       "brawlerKey": "MANDY",
-      "winRateAdj": 60.5856234307194,
-      "useRate": 1.363973165053984,
-      "picksEstimate": 6055873
+      "winRateAdj": 60.58568935857558,
+      "useRate": 1.3639667507031394,
+      "picksEstimate": 6057254
     },
     {
       "brawlerKey": "RICO",
-      "winRateAdj": 60.25341330312383,
-      "useRate": 2.7303125828572408,
-      "picksEstimate": 12122252
+      "winRateAdj": 60.253337480130156,
+      "useRate": 2.730284480890572,
+      "picksEstimate": 12124949
     },
     {
       "brawlerKey": "PIPER",
-      "winRateAdj": 60.246772911751215,
-      "useRate": 1.776860500538247,
-      "picksEstimate": 7889042
+      "winRateAdj": 60.246792024306785,
+      "useRate": 1.776853163284978,
+      "picksEstimate": 7890846
     },
     {
       "brawlerKey": "SPIKE",
-      "winRateAdj": 60.05097297257899,
-      "useRate": 1.7656211681364764,
-      "picksEstimate": 7839141
+      "winRateAdj": 60.05081765994697,
+      "useRate": 1.7656063883436712,
+      "picksEstimate": 7840900
     },
     {
       "brawlerKey": "DYNAMIKE",
-      "winRateAdj": 60.00941226130144,
-      "useRate": 1.8246426113676404,
-      "picksEstimate": 8101189
+      "winRateAdj": 60.00931132303011,
+      "useRate": 1.824670392051005,
+      "picksEstimate": 8103198
     },
     {
       "brawlerKey": "COLT",
-      "winRateAdj": 59.77313135764062,
-      "useRate": 3.454938342663173,
-      "picksEstimate": 15339501
+      "winRateAdj": 59.77296009556768,
+      "useRate": 3.454903793920363,
+      "picksEstimate": 15342919
     },
     {
       "brawlerKey": "MORTIS",
-      "winRateAdj": 58.699970880796904,
-      "useRate": 4.333987256065214,
-      "picksEstimate": 19242370
+      "winRateAdj": 58.6998085267214,
+      "useRate": 4.334019611931037,
+      "picksEstimate": 19246994
     }
   ],
   "mapStats": [
-    {
-      "eventId": "15000825",
-      "mapName": "Hellish Harvest",
-      "modeSlug": "siege",
-      "brawlerKey": "EMZ",
-      "winRateAdj": 89.97165354330708,
-      "useRate": 12.341153470185729
-    },
-    {
-      "eventId": "15000825",
-      "mapName": "Hellish Harvest",
-      "modeSlug": "siege",
-      "brawlerKey": "ALLI",
-      "winRateAdj": 89.96026991234154,
-      "useRate": 7.4046920821114375
-    },
-    {
-      "eventId": "15000825",
-      "mapName": "Hellish Harvest",
-      "modeSlug": "siege",
-      "brawlerKey": "COLT",
-      "winRateAdj": 89.90923988402874,
-      "useRate": 9.872922776148583
-    },
-    {
-      "eventId": "15000825",
-      "mapName": "Hellish Harvest",
-      "modeSlug": "siege",
-      "brawlerKey": "BIBI",
-      "winRateAdj": 89.90351264425806,
-      "useRate": 7.453567937438906
-    },
-    {
-      "eventId": "15000825",
-      "mapName": "Hellish Harvest",
-      "modeSlug": "siege",
-      "brawlerKey": "LUMI",
-      "winRateAdj": 89.89777889954567,
-      "useRate": 4.9853372434017595
-    },
-    {
-      "eventId": "15000825",
-      "mapName": "Hellish Harvest",
-      "modeSlug": "siege",
-      "brawlerKey": "CORDELIUS",
-      "winRateAdj": 89.89777889954567,
-      "useRate": 4.9853372434017595
-    },
-    {
-      "eventId": "15000825",
-      "mapName": "Hellish Harvest",
-      "modeSlug": "siege",
-      "brawlerKey": "8BIT",
-      "winRateAdj": 89.8525148115467,
-      "useRate": 9.872922776148583
-    },
-    {
-      "eventId": "15000825",
-      "mapName": "Hellish Harvest",
-      "modeSlug": "siege",
-      "brawlerKey": "NITA",
-      "winRateAdj": 79.9595908574315,
-      "useRate": 2.4682306940371457
-    },
-    {
-      "eventId": "15000825",
-      "mapName": "Hellish Harvest",
-      "modeSlug": "siege",
-      "brawlerKey": "GRIFF",
-      "winRateAdj": 79.9595908574315,
-      "useRate": 2.4682306940371457
-    },
-    {
-      "eventId": "15000825",
-      "mapName": "Hellish Harvest",
-      "modeSlug": "siege",
-      "brawlerKey": "PENNY",
-      "winRateAdj": 56.824235591239315,
-      "useRate": 6.133919843597263
-    },
-    {
-      "eventId": "15000825",
-      "mapName": "Hellish Harvest",
-      "modeSlug": "siege",
-      "brawlerKey": "SPIKE",
-      "winRateAdj": 56.76806771221747,
-      "useRate": 9.872922776148583
-    },
-    {
-      "eventId": "15000825",
-      "mapName": "Hellish Harvest",
-      "modeSlug": "siege",
-      "brawlerKey": "AMBER",
-      "winRateAdj": 56.76806771221747,
-      "useRate": 9.872922776148583
-    },
-    {
-      "eventId": "15000825",
-      "mapName": "Hellish Harvest",
-      "modeSlug": "siege",
-      "brawlerKey": "CHUCK",
-      "winRateAdj": 56.03110875438729,
-      "useRate": 3.6656891495601176
-    },
-    {
-      "eventId": "15000825",
-      "mapName": "Hellish Harvest",
-      "modeSlug": "siege",
-      "brawlerKey": "CROW",
-      "winRateAdj": 56.03110875438729,
-      "useRate": 3.6656891495601176
-    },
-    {
-      "eventId": "15000825",
-      "mapName": "Hellish Harvest",
-      "modeSlug": "siege",
-      "brawlerKey": "SIRIUS",
-      "winRateAdj": 54.96180796666877,
-      "useRate": 4.936461388074291
-    },
-    {
-      "eventId": "15001086",
-      "mapName": "Dodge or Die",
-      "modeSlug": "dodgeball",
-      "brawlerKey": "AMBER",
-      "winRateAdj": 90.02269002899281,
-      "useRate": 5.155420773313116
-    },
-    {
-      "eventId": "15001086",
-      "mapName": "Dodge or Die",
-      "modeSlug": "dodgeball",
-      "brawlerKey": "CROW",
-      "winRateAdj": 90.02269002899281,
-      "useRate": 5.155420773313116
-    },
-    {
-      "eventId": "15001086",
-      "mapName": "Dodge or Die",
-      "modeSlug": "dodgeball",
-      "brawlerKey": "MEEPLE",
-      "winRateAdj": 90.01135790005048,
-      "useRate": 2.577710386656558
-    },
-    {
-      "eventId": "15001086",
-      "mapName": "Dodge or Die",
-      "modeSlug": "dodgeball",
-      "brawlerKey": "NAJIA",
-      "winRateAdj": 90.01135790005048,
-      "useRate": 2.577710386656558
-    },
-    {
-      "eventId": "15001086",
-      "mapName": "Dodge or Die",
-      "modeSlug": "dodgeball",
-      "brawlerKey": "COLT",
-      "winRateAdj": 89.93208401458936,
-      "useRate": 10.23502653525398
-    },
-    {
-      "eventId": "15001086",
-      "mapName": "Dodge or Die",
-      "modeSlug": "dodgeball",
-      "brawlerKey": "LEON",
-      "winRateAdj": 89.92067489297406,
-      "useRate": 7.657316148597422
-    },
-    {
-      "eventId": "15001086",
-      "mapName": "Dodge or Die",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "STU",
-      "winRateAdj": 89.88121425428949,
-      "useRate": 11.574425069497094
-    },
-    {
-      "eventId": "15001086",
-      "mapName": "Dodge or Die",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "PIERCE",
-      "winRateAdj": 89.77964718438068,
-      "useRate": 14.076320444781402
-    },
-    {
-      "eventId": "15001086",
-      "mapName": "Dodge or Die",
-      "modeSlug": "dodgeball",
-      "brawlerKey": "OTIS",
-      "winRateAdj": 79.97981581935159,
-      "useRate": 3.8665655799848366
-    },
-    {
-      "eventId": "15001086",
-      "mapName": "Dodge or Die",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "BO",
-      "winRateAdj": 79.93947799773042,
-      "useRate": 5.104877432398282
-    },
-    {
-      "eventId": "15001086",
-      "mapName": "Dodge or Die",
-      "modeSlug": "dodgeball",
-      "brawlerKey": "PIPER",
-      "winRateAdj": 79.92935536773054,
-      "useRate": 3.8665655799848366
-    },
-    {
-      "eventId": "15001086",
-      "mapName": "Dodge or Die",
-      "modeSlug": "dodgeball",
-      "brawlerKey": "CHESTER",
-      "winRateAdj": 79.92935536773054,
-      "useRate": 3.8665655799848366
-    },
-    {
-      "eventId": "15001086",
-      "mapName": "Dodge or Die",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "CLANCY",
-      "winRateAdj": 79.91922251672347,
-      "useRate": 2.552438716199141
-    },
-    {
-      "eventId": "15001086",
-      "mapName": "Dodge or Die",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "MEG",
-      "winRateAdj": 79.84877126654064,
-      "useRate": 6.419004296183978
-    },
-    {
-      "eventId": "15001086",
-      "mapName": "Dodge or Die",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "PENNY",
-      "winRateAdj": 63.92578961962138,
-      "useRate": 7.657316148597422
-    },
-    {
-      "eventId": "15001086",
-      "mapName": "Dodge or Die",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "CHARLIE",
-      "winRateAdj": 63.92578961962138,
-      "useRate": 7.657316148597422
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "LEON",
-      "winRateAdj": 90.09519069246562,
-      "useRate": 7.2131234011129575
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "SAM",
-      "winRateAdj": 90.01135790005048,
-      "useRate": 0.5327425692960941
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "COLETTE",
-      "winRateAdj": 89.94346733668341,
-      "useRate": 2.6848115620961575
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "airHockey",
-      "brawlerKey": "ELPRIMO",
-      "winRateAdj": 89.90923988402874,
-      "useRate": 1.07075981749611
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "LOU",
-      "winRateAdj": 89.90351264425806,
-      "useRate": 0.7991138539441411
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "airHockey",
-      "brawlerKey": "DAMIAN",
-      "winRateAdj": 89.89777889954567,
-      "useRate": 0.5380172482000158
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "MORTIS",
-      "winRateAdj": 89.88121425428949,
-      "useRate": 2.402616240736345
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "CLANCY",
-      "winRateAdj": 89.85826771653544,
-      "useRate": 1.3318564232402352
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "MAX",
-      "winRateAdj": 89.80735331150844,
-      "useRate": 1.5982277078882823
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "FANG",
-      "winRateAdj": 89.62772624717974,
-      "useRate": 3.745022021784424
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "MINA",
-      "winRateAdj": 89.59250408753616,
-      "useRate": 2.1309702771843764
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "CROW",
-      "winRateAdj": 89.57957022734351,
-      "useRate": 6.659282116201176
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "BULL",
-      "winRateAdj": 89.5149160190524,
-      "useRate": 3.729197985072659
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "PIERCE",
-      "winRateAdj": 89.44971300224607,
-      "useRate": 5.8707176200648785
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "CHARLIE",
-      "winRateAdj": 89.32542161149281,
-      "useRate": 5.327425692960941
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "STU",
-      "winRateAdj": 88.94084855992567,
-      "useRate": 9.333544320489489
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "CARL",
-      "winRateAdj": 85.22796754937248,
-      "useRate": 1.0654851385921882
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "BEA",
-      "winRateAdj": 85.1901468092676,
-      "useRate": 1.5982277078882823
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "MEEPLE",
-      "winRateAdj": 83.66576181213526,
-      "useRate": 6.134451565260965
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "SPIKE",
-      "winRateAdj": 83.30400053679718,
-      "useRate": 2.1309702771843764
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "RUFFS",
-      "winRateAdj": 83.30400053679718,
-      "useRate": 2.1309702771843764
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "MELODIE",
-      "winRateAdj": 80.01007683587353,
-      "useRate": 1.5982277078882823
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "airHockey",
-      "brawlerKey": "GIGI",
-      "winRateAdj": 79.9595908574315,
-      "useRate": 0.2690086241000079
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "BO",
-      "winRateAdj": 79.91426049678478,
-      "useRate": 1.0654851385921882
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "TARA",
-      "winRateAdj": 79.87919969799925,
-      "useRate": 2.136244956088298
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "CHESTER",
-      "winRateAdj": 78.07113043443312,
-      "useRate": 3.1964554157765646
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "EMZ",
-      "winRateAdj": 72.1154122907932,
-      "useRate": 3.4628267004246114
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "GALE",
-      "winRateAdj": 70.78155770452817,
-      "useRate": 2.397341561832423
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "COLT",
-      "winRateAdj": 65.16684601697905,
-      "useRate": 3.995569269720706
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "NAJIA",
-      "winRateAdj": 64.06127951218284,
-      "useRate": 1.8645989925363295
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "OTIS",
-      "winRateAdj": 59.70454889829509,
-      "useRate": 6.126539546905082
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "SIRIUS",
-      "winRateAdj": 55.50745365697638,
-      "useRate": 3.729197985072659
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "JAEYONG",
-      "winRateAdj": 55.312387633184244,
-      "useRate": 1.0654851385921882
-    },
-    {
-      "eventId": "15000854",
-      "mapName": "Cool Box",
-      "modeSlug": "brawlHockey",
-      "brawlerKey": "BELLE",
-      "winRateAdj": 54.99306081251577,
-      "useRate": 1.0654851385921882
-    },
     {
       "eventId": "15001138",
       "mapName": "Kroket",
@@ -3603,102 +3083,6 @@
       "brawlerKey": "MORTIS",
       "winRateAdj": 59.38878001152806,
       "useRate": 2.859196441526976
-    },
-    {
-      "eventId": "15000821",
-      "mapName": "Hoop Boot Hill",
-      "modeSlug": "siege",
-      "brawlerKey": "SIRIUS",
-      "winRateAdj": 90.02269002899281,
-      "useRate": 12.066905615292713
-    },
-    {
-      "eventId": "15000821",
-      "mapName": "Hoop Boot Hill",
-      "modeSlug": "siege",
-      "brawlerKey": "BULL",
-      "winRateAdj": 90.02269002899281,
-      "useRate": 12.066905615292713
-    },
-    {
-      "eventId": "15000821",
-      "mapName": "Hoop Boot Hill",
-      "modeSlug": "siege",
-      "brawlerKey": "RICO",
-      "winRateAdj": 90.01135790005048,
-      "useRate": 6.0334528076463565
-    },
-    {
-      "eventId": "15000821",
-      "mapName": "Hoop Boot Hill",
-      "modeSlug": "killConfirmed",
-      "brawlerKey": "EMZ",
-      "winRateAdj": 90.01135790005048,
-      "useRate": 6.093189964157706
-    },
-    {
-      "eventId": "15000821",
-      "mapName": "Hoop Boot Hill",
-      "modeSlug": "killConfirmed",
-      "brawlerKey": "GRIFF",
-      "winRateAdj": 90.01135790005048,
-      "useRate": 6.093189964157706
-    },
-    {
-      "eventId": "15000821",
-      "mapName": "Hoop Boot Hill",
-      "modeSlug": "killConfirmed",
-      "brawlerKey": "CHUCK",
-      "winRateAdj": 90.01135790005048,
-      "useRate": 6.093189964157706
-    },
-    {
-      "eventId": "15000821",
-      "mapName": "Hoop Boot Hill",
-      "modeSlug": "siege",
-      "brawlerKey": "BIBI",
-      "winRateAdj": 89.90923988402874,
-      "useRate": 12.066905615292713
-    },
-    {
-      "eventId": "15000821",
-      "mapName": "Hoop Boot Hill",
-      "modeSlug": "killConfirmed",
-      "brawlerKey": "BO",
-      "winRateAdj": 89.90351264425806,
-      "useRate": 9.13978494623656
-    },
-    {
-      "eventId": "15000821",
-      "mapName": "Hoop Boot Hill",
-      "modeSlug": "killConfirmed",
-      "brawlerKey": "FANG",
-      "winRateAdj": 89.90351264425806,
-      "useRate": 9.13978494623656
-    },
-    {
-      "eventId": "15000821",
-      "mapName": "Hoop Boot Hill",
-      "modeSlug": "killConfirmed",
-      "brawlerKey": "LEON",
-      "winRateAdj": 89.90351264425806,
-      "useRate": 9.13978494623656
-    },
-    {
-      "eventId": "15000821",
-      "mapName": "Hoop Boot Hill",
-      "modeSlug": "killConfirmed",
-      "brawlerKey": "CORDELIUS",
-      "winRateAdj": 70.93636788225346,
-      "useRate": 6.0334528076463565
-    },
-    {
-      "eventId": "15000821",
-      "mapName": "Hoop Boot Hill",
-      "modeSlug": "killConfirmed",
-      "brawlerKey": "CROW",
-      "winRateAdj": 70.93636788225346,
-      "useRate": 6.0334528076463565
     },
     {
       "eventId": "15000919",
@@ -7051,6 +6435,2886 @@
       "brawlerKey": "MORTIS",
       "winRateAdj": 61.49469172349832,
       "useRate": 2.962936106612193
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "ASH",
+      "winRateAdj": 82.75823727808458,
+      "useRate": 0.12090292938497196
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "GIGI",
+      "winRateAdj": 78.68916139843095,
+      "useRate": 0.5579448521420148
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "GLOWBERT",
+      "winRateAdj": 78.40641180178118,
+      "useRate": 0.10303886836506768
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "BEA",
+      "winRateAdj": 77.82645002756587,
+      "useRate": 0.12842033338169573
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "JANET",
+      "winRateAdj": 77.17658416934648,
+      "useRate": 0.13279469823665666
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "DAMIAN",
+      "winRateAdj": 77.07090543972595,
+      "useRate": 0.5697858767044256
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "RT",
+      "winRateAdj": 76.45086919652321,
+      "useRate": 0.24438863953421297
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "MINA",
+      "winRateAdj": 75.89822734354817,
+      "useRate": 0.1675213972616103
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "ZIGGY",
+      "winRateAdj": 75.70663121017039,
+      "useRate": 0.48998892842455866
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "OTIS",
+      "winRateAdj": 75.40452384505511,
+      "useRate": 0.3504680228647554
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "NAJIA",
+      "winRateAdj": 75.22868885058995,
+      "useRate": 0.48920187414194255
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "GALE",
+      "winRateAdj": 75.00938974663646,
+      "useRate": 0.12186810647891694
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "TRUNK",
+      "winRateAdj": 74.9499579806907,
+      "useRate": 0.5112145397094258
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "ROSA",
+      "winRateAdj": 74.93232640042655,
+      "useRate": 0.12111419132398997
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "PIERCE",
+      "winRateAdj": 74.86208275034978,
+      "useRate": 0.3794119441079615
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "ALLI",
+      "winRateAdj": 74.85818587262726,
+      "useRate": 0.11771432394263658
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "SAM",
+      "winRateAdj": 74.8553738995471,
+      "useRate": 0.17320061526932945
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "LOU",
+      "winRateAdj": 74.19440737288195,
+      "useRate": 0.15390328697687167
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "SHADE",
+      "winRateAdj": 73.90482823585981,
+      "useRate": 0.49418724166367123
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "LUMI",
+      "winRateAdj": 73.80190662294545,
+      "useRate": 0.6624294149525194
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "MRP",
+      "winRateAdj": 73.64424807834739,
+      "useRate": 0.1688697455194605
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "WILLOW",
+      "winRateAdj": 73.59151611711533,
+      "useRate": 0.25022319720297476
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "LILY",
+      "winRateAdj": 73.55076136985747,
+      "useRate": 0.3745177091873778
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "DOUG",
+      "winRateAdj": 73.49224283058629,
+      "useRate": 0.18799620018477134
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "SPROUT",
+      "winRateAdj": 73.34150767670117,
+      "useRate": 0.22179811042765113
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "CHARLIE",
+      "winRateAdj": 73.29062207885326,
+      "useRate": 0.20974685952396266
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "KENJI",
+      "winRateAdj": 73.1501586595341,
+      "useRate": 0.25795807672515825
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "SIRIUS",
+      "winRateAdj": 73.07628391550284,
+      "useRate": 1.5566514941241738
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "LOLA",
+      "winRateAdj": 73.03018081777883,
+      "useRate": 0.3797971864673472
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "BELLE",
+      "winRateAdj": 72.85693720697573,
+      "useRate": 0.13709760684753797
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "BONNIE",
+      "winRateAdj": 72.84171919504621,
+      "useRate": 0.1282639581229128
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "MOE",
+      "winRateAdj": 72.7656790129403,
+      "useRate": 0.16474081732894696
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "CORDELIUS",
+      "winRateAdj": 72.68525771580762,
+      "useRate": 0.7663578617764912
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "SURGE",
+      "winRateAdj": 72.56580137594618,
+      "useRate": 0.25609089399942564
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "MEG",
+      "winRateAdj": 72.41584384941456,
+      "useRate": 0.22792367106143277
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "MAISIE",
+      "winRateAdj": 72.31384910616549,
+      "useRate": 0.2037579977918985
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "DRACO",
+      "winRateAdj": 72.31229429075702,
+      "useRate": 0.3536007060291154
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "FINX",
+      "winRateAdj": 72.25991774332066,
+      "useRate": 0.11027148298321328
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "TARA",
+      "winRateAdj": 72.19148324373093,
+      "useRate": 0.23917544050962178
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "BUZZ",
+      "winRateAdj": 72.06251900699458,
+      "useRate": 0.5175658606505895
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "STU",
+      "winRateAdj": 71.85429728354374,
+      "useRate": 0.1320728866116785
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "JACKY",
+      "winRateAdj": 71.7088878014811,
+      "useRate": 0.10972675857182372
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "BYRON",
+      "winRateAdj": 71.40412065985123,
+      "useRate": 0.2473359507030621
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "PEARL",
+      "winRateAdj": 71.14118553170275,
+      "useRate": 0.18896034168097603
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "OLLIE",
+      "winRateAdj": 70.89891611515941,
+      "useRate": 0.05026377192243911
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "NITA",
+      "winRateAdj": 70.84999947563266,
+      "useRate": 5.149700313547928
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "POCO",
+      "winRateAdj": 70.58786746987228,
+      "useRate": 0.20937507993520058
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "JUJU",
+      "winRateAdj": 70.49244393396388,
+      "useRate": 0.1965844122449491
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "SHELLY",
+      "winRateAdj": 70.40939229845155,
+      "useRate": 0.40771172355671076
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "KIT",
+      "winRateAdj": 70.22142406816575,
+      "useRate": 0.40103626052283814
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "GUS",
+      "winRateAdj": 70.16263181150792,
+      "useRate": 0.11101297096525684
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "CHESTER",
+      "winRateAdj": 70.06792271790204,
+      "useRate": 0.5011630280422263
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "SANDY",
+      "winRateAdj": 69.96564345816711,
+      "useRate": 0.09378373136014682
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "BERRY",
+      "winRateAdj": 69.83462294209818,
+      "useRate": 2.132435552940326
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "GLOWY",
+      "winRateAdj": 69.78855401977818,
+      "useRate": 0.18704655705693063
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "GROM",
+      "winRateAdj": 69.72730188827315,
+      "useRate": 0.4297917029773124
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "ANGELO",
+      "winRateAdj": 69.57118887987735,
+      "useRate": 0.06824381988925525
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "CARL",
+      "winRateAdj": 69.52474997238438,
+      "useRate": 0.8475176566825724
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "CLANCY",
+      "winRateAdj": 69.47717385241788,
+      "useRate": 1.4439018257484602
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "LARRYANDLAWRIE",
+      "winRateAdj": 69.45407849423742,
+      "useRate": 0.515968968935071
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "MEEPLE",
+      "winRateAdj": 69.3644809068546,
+      "useRate": 0.10384145661378802
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "KAZE",
+      "winRateAdj": 69.31362877700532,
+      "useRate": 2.2639575015541733
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "FRANK",
+      "winRateAdj": 69.30072970896745,
+      "useRate": 0.6442049659189961
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "DARRYL",
+      "winRateAdj": 69.0637245229657,
+      "useRate": 0.5771790089723152
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "FANG",
+      "winRateAdj": 68.90845072674351,
+      "useRate": 0.30972346537100964
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "BARLEY",
+      "winRateAdj": 68.59356702290306,
+      "useRate": 1.3402043172205718
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "PAM",
+      "winRateAdj": 68.41400834819471,
+      "useRate": 0.1961618883669131
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "GRIFF",
+      "winRateAdj": 68.3090447849752,
+      "useRate": 1.6809449705108364
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "MELODIE",
+      "winRateAdj": 68.27271255444418,
+      "useRate": 2.702118905468464
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "NANI",
+      "winRateAdj": 68.17319609642959,
+      "useRate": 0.3541506084292064
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "EVE",
+      "winRateAdj": 68.15621576956028,
+      "useRate": 0.1252151583755158
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "BUSTER",
+      "winRateAdj": 67.92225630407333,
+      "useRate": 0.05416279741460953
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "AMBER",
+      "winRateAdj": 67.88420002101199,
+      "useRate": 1.0097533630777717
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "MAX",
+      "winRateAdj": 67.85525412243516,
+      "useRate": 0.15916619469299653
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "MICO",
+      "winRateAdj": 67.21793814432989,
+      "useRate": 5.383678088999062
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "JESSIE",
+      "winRateAdj": 67.10927713047404,
+      "useRate": 5.447366314428807
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "ELPRIMO",
+      "winRateAdj": 67.09258251804522,
+      "useRate": 0.8453946813149895
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "HANK",
+      "winRateAdj": 67.04833056546887,
+      "useRate": 0.31641964035968795
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "BULL",
+      "winRateAdj": 66.9083816273788,
+      "useRate": 4.46578431667999
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "SQUEAK",
+      "winRateAdj": 66.73717535607584,
+      "useRate": 0.4878131375722213
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "TICK",
+      "winRateAdj": 66.68446633798605,
+      "useRate": 0.3685661289739639
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "PENNY",
+      "winRateAdj": 66.5328424238235,
+      "useRate": 1.7472449734415783
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "BO",
+      "winRateAdj": 66.49471131649274,
+      "useRate": 0.8695613901822642
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "EMZ",
+      "winRateAdj": 66.36088996097578,
+      "useRate": 1.7178008584898148
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "LEON",
+      "winRateAdj": 66.19557810772014,
+      "useRate": 0.5264657876305928
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "BIBI",
+      "winRateAdj": 66.03826653205827,
+      "useRate": 2.8559838753289446
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "GRAY",
+      "winRateAdj": 66.01312926036049,
+      "useRate": 0.07352329716922465
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "EDGAR",
+      "winRateAdj": 65.99904963569368,
+      "useRate": 5.205011588856513
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "DYNAMIKE",
+      "winRateAdj": 65.62271572278881,
+      "useRate": 2.3753588216720365
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "GENE",
+      "winRateAdj": 65.52169258819404,
+      "useRate": 0.04459387429438253
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "COLETTE",
+      "winRateAdj": 65.28481185247594,
+      "useRate": 5.834950160305352
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "MORTIS",
+      "winRateAdj": 64.80445878997148,
+      "useRate": 0.4082989074754519
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "JAEYONG",
+      "winRateAdj": 64.62423363508597,
+      "useRate": 0.0672372188856989
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "BROCK",
+      "winRateAdj": 64.43200572449058,
+      "useRate": 1.205967031331699
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "CHUCK",
+      "winRateAdj": 64.0512956151275,
+      "useRate": 3.4258784897961005
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "CROW",
+      "winRateAdj": 63.98214007427424,
+      "useRate": 3.6251119610606968
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "PIPER",
+      "winRateAdj": 63.92657925015111,
+      "useRate": 0.2774625245656729
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "MANDY",
+      "winRateAdj": 63.802865528216444,
+      "useRate": 1.0049046944577604
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "RICO",
+      "winRateAdj": 63.391119418290096,
+      "useRate": 1.810529315752612
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "SPIKE",
+      "winRateAdj": 63.33698091604636,
+      "useRate": 1.026863508942749
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "8BIT",
+      "winRateAdj": 63.177846574500386,
+      "useRate": 3.343151835508969
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "RUFFS",
+      "winRateAdj": 62.947013845580024,
+      "useRate": 1.7769013859301
+    },
+    {
+      "eventId": "15001170",
+      "mapName": "Quintillion",
+      "modeSlug": "heist",
+      "brawlerKey": "COLT",
+      "winRateAdj": 62.86553671884846,
+      "useRate": 5.715853313379436
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "DAMIAN",
+      "winRateAdj": 74.74577505968824,
+      "useRate": 3.4506273251750375
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "OLLIE",
+      "winRateAdj": 70.80170704162187,
+      "useRate": 0.2474994296941927
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "MEG",
+      "winRateAdj": 70.6025904607206,
+      "useRate": 0.5533463041860845
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "GLOWY",
+      "winRateAdj": 70.42676414204627,
+      "useRate": 0.82572269118699
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "TRUNK",
+      "winRateAdj": 70.24173340550797,
+      "useRate": 0.466803083626686
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "GIGI",
+      "winRateAdj": 69.86951738459787,
+      "useRate": 0.5209949148028082
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "BUSTER",
+      "winRateAdj": 69.68411809965166,
+      "useRate": 0.2766874431297812
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "JAEYONG",
+      "winRateAdj": 69.53405897911178,
+      "useRate": 0.4383076358176764
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "SIRIUS",
+      "winRateAdj": 69.49662719282182,
+      "useRate": 2.069996209555346
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "NAJIA",
+      "winRateAdj": 69.07814806396398,
+      "useRate": 1.7439919376742472
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "ASH",
+      "winRateAdj": 68.74127758682023,
+      "useRate": 0.22824940320685544
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "MINA",
+      "winRateAdj": 68.64970225082402,
+      "useRate": 0.8643608175627729
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "FINX",
+      "winRateAdj": 68.62414978791675,
+      "useRate": 0.8131408624420369
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "BONNIE",
+      "winRateAdj": 68.61943577367452,
+      "useRate": 0.41109640255623736
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "ALLI",
+      "winRateAdj": 68.5752782401467,
+      "useRate": 1.2760024781361263
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "EVE",
+      "winRateAdj": 68.56860289662124,
+      "useRate": 0.8649788499362057
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "CHARLIE",
+      "winRateAdj": 68.55963479772602,
+      "useRate": 0.46637984907711
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "CHUCK",
+      "winRateAdj": 68.51648523353155,
+      "useRate": 0.2009911194552297
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "SAM",
+      "winRateAdj": 68.50203336976357,
+      "useRate": 0.2456211477424901
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "DRACO",
+      "winRateAdj": 68.46340200165938,
+      "useRate": 0.38501196257613685
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "PEARL",
+      "winRateAdj": 68.4328984508425,
+      "useRate": 0.5560648990980361
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "OTIS",
+      "winRateAdj": 68.33754031599418,
+      "useRate": 0.8550360260216737
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "JUJU",
+      "winRateAdj": 68.26413349858733,
+      "useRate": 0.6557367454542296
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "ZIGGY",
+      "winRateAdj": 68.25870822207682,
+      "useRate": 0.5070532389466201
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "ROSA",
+      "winRateAdj": 67.91622393028501,
+      "useRate": 0.1951040917672057
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "DOUG",
+      "winRateAdj": 67.78660408007781,
+      "useRate": 0.4346913439364163
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "LOLA",
+      "winRateAdj": 67.67239167597822,
+      "useRate": 0.5397722377672425
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "LUMI",
+      "winRateAdj": 67.66412010346329,
+      "useRate": 0.5537649216314833
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "MOE",
+      "winRateAdj": 67.46588408789393,
+      "useRate": 0.3472332771636227
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "RT",
+      "winRateAdj": 67.4271604629571,
+      "useRate": 0.34714445287373763
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "MRP",
+      "winRateAdj": 67.2598856755236,
+      "useRate": 0.3824345191347451
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "PIERCE",
+      "winRateAdj": 67.23137889065336,
+      "useRate": 1.6805590824185261
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "PAM",
+      "winRateAdj": 67.23054997861935,
+      "useRate": 0.3848213421322499
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "MAISIE",
+      "winRateAdj": 67.20696613948547,
+      "useRate": 0.7469238933674689
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "WILLOW",
+      "winRateAdj": 67.0294834912257,
+      "useRate": 0.4034245343105729
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "LOU",
+      "winRateAdj": 66.74005074779845,
+      "useRate": 0.6023856669625637
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "ANGELO",
+      "winRateAdj": 66.64946877638029,
+      "useRate": 1.3366411059162313
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "SANDY",
+      "winRateAdj": 66.41619571148101,
+      "useRate": 0.4754128836066315
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "GALE",
+      "winRateAdj": 66.39764017741444,
+      "useRate": 0.585636571904539
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "RUFFS",
+      "winRateAdj": 66.3938889994878,
+      "useRate": 0.46703437855975294
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "HANK",
+      "winRateAdj": 66.30832853971552,
+      "useRate": 0.2292341655692195
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "LARRYANDLAWRIE",
+      "winRateAdj": 66.26867113818282,
+      "useRate": 0.30119964920649583
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "JANET",
+      "winRateAdj": 66.02869884362451,
+      "useRate": 1.1225947946068344
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "MICO",
+      "winRateAdj": 65.99943546383332,
+      "useRate": 1.0161907706360873
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "SPROUT",
+      "winRateAdj": 65.96656360804411,
+      "useRate": 0.24070744958743898
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "DARRYL",
+      "winRateAdj": 65.94957050578435,
+      "useRate": 0.5290194418627687
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "CLANCY",
+      "winRateAdj": 65.77319728256353,
+      "useRate": 0.42463880883215005
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "MELODIE",
+      "winRateAdj": 65.74621215549516,
+      "useRate": 0.5044452346728174
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "SHADE",
+      "winRateAdj": 65.68726985642269,
+      "useRate": 0.9763060261324622
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "KENJI",
+      "winRateAdj": 65.68224112125668,
+      "useRate": 0.7445568579592949
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "JACKY",
+      "winRateAdj": 65.64732566899764,
+      "useRate": 0.19805815899219414
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "KAZE",
+      "winRateAdj": 65.5483178239881,
+      "useRate": 1.0032921205997372
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "AMBER",
+      "winRateAdj": 65.41700781777526,
+      "useRate": 0.7219075434870257
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "BERRY",
+      "winRateAdj": 65.35830195361007,
+      "useRate": 0.3694828823314093
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "CHESTER",
+      "winRateAdj": 65.35006003103912,
+      "useRate": 1.4013612537889744
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "BELLE",
+      "winRateAdj": 65.31700094171399,
+      "useRate": 0.6796405930900731
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "LILY",
+      "winRateAdj": 65.07666639887566,
+      "useRate": 1.1323080824851288
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "CORDELIUS",
+      "winRateAdj": 65.06049797936441,
+      "useRate": 1.1584543037163624
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "GENE",
+      "winRateAdj": 64.92329352431241,
+      "useRate": 0.4831907253862676
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "GRIFF",
+      "winRateAdj": 64.87936177868922,
+      "useRate": 1.1827492860346451
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "GROM",
+      "winRateAdj": 64.75812499983363,
+      "useRate": 0.2642168646092881
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "MEEPLE",
+      "winRateAdj": 64.650043934976,
+      "useRate": 0.9581320047805144
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "SQUEAK",
+      "winRateAdj": 64.64565657785704,
+      "useRate": 0.6607581760400818
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "PENNY",
+      "winRateAdj": 64.54594772537871,
+      "useRate": 0.555669587035627
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "CARL",
+      "winRateAdj": 64.52588560560521,
+      "useRate": 0.7261961736813264
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "GRAY",
+      "winRateAdj": 64.39393378593645,
+      "useRate": 0.609152143065291
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "NITA",
+      "winRateAdj": 64.28144346015272,
+      "useRate": 0.6021339248538549
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "8BIT",
+      "winRateAdj": 64.08824494574944,
+      "useRate": 0.574599054575805
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "FRANK",
+      "winRateAdj": 64.05570687270846,
+      "useRate": 0.593691879659014
+    },
+    {
+      "eventId": "15000959",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "soloShowdown",
+      "brawlerKey": "GLOWBERT",
+      "winRateAdj": 63.94881000372818,
+      "useRate": 0.00335795390944095
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "BROCK",
+      "winRateAdj": 63.88799481102014,
+      "useRate": 1.5427075221727138
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "JESSIE",
+      "winRateAdj": 63.87726946783556,
+      "useRate": 0.5242178733805922
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "FANG",
+      "winRateAdj": 63.80142318574775,
+      "useRate": 1.4006280136732154
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "BARLEY",
+      "winRateAdj": 63.795731457668566,
+      "useRate": 0.32097668515634403
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "BO",
+      "winRateAdj": 63.73484800039767,
+      "useRate": 1.0262940938863025
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "GUS",
+      "winRateAdj": 63.71749196523716,
+      "useRate": 1.026832316316101
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "NANI",
+      "winRateAdj": 63.61401848233494,
+      "useRate": 1.0982773863539768
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "MAX",
+      "winRateAdj": 63.52141510439881,
+      "useRate": 0.8762316122644385
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "BEA",
+      "winRateAdj": 63.52057651331262,
+      "useRate": 1.1661606903123038
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "TARA",
+      "winRateAdj": 63.31107229423828,
+      "useRate": 0.5268971129759858
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "POCO",
+      "winRateAdj": 63.274770608874405,
+      "useRate": 0.7265987411931568
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "SHELLY",
+      "winRateAdj": 63.21213580082243,
+      "useRate": 1.1944973976824595
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "BULL",
+      "winRateAdj": 63.136347406620445,
+      "useRate": 1.0862946818415402
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "STU",
+      "winRateAdj": 63.06743458910057,
+      "useRate": 1.3592640369360596
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "ELPRIMO",
+      "winRateAdj": 63.033314458275704,
+      "useRate": 0.6227464367976713
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "COLETTE",
+      "winRateAdj": 63.01935279947395,
+      "useRate": 0.9701474687463987
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "EMZ",
+      "winRateAdj": 62.71837041444947,
+      "useRate": 1.4208197095505963
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "KIT",
+      "winRateAdj": 62.569746588907705,
+      "useRate": 2.386077664973348
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "LEON",
+      "winRateAdj": 62.361450876618775,
+      "useRate": 2.578629597441085
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "EDGAR",
+      "winRateAdj": 62.14943649411392,
+      "useRate": 4.5499081621701905
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "CROW",
+      "winRateAdj": 62.12610391713491,
+      "useRate": 3.3429487605892816
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "MANDY",
+      "winRateAdj": 62.06868284160808,
+      "useRate": 1.5091141317657728
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "BYRON",
+      "winRateAdj": 62.04137639452541,
+      "useRate": 1.4530398412579781
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "BIBI",
+      "winRateAdj": 61.965102938335825,
+      "useRate": 1.6685581293514846
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "TICK",
+      "winRateAdj": 61.56126025275191,
+      "useRate": 0.4805132446877034
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "BUZZ",
+      "winRateAdj": 61.48665877631555,
+      "useRate": 1.0554926607028674
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "SPIKE",
+      "winRateAdj": 61.23267711326776,
+      "useRate": 1.8673668975656281
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "SURGE",
+      "winRateAdj": 60.7694994204819,
+      "useRate": 1.4599250428966906
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "PIPER",
+      "winRateAdj": 60.678272155557025,
+      "useRate": 2.7588608973430353
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "RICO",
+      "winRateAdj": 60.411723745780186,
+      "useRate": 1.4649216290648275
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "COLT",
+      "winRateAdj": 60.12707348419841,
+      "useRate": 3.908227420866061
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "DYNAMIKE",
+      "winRateAdj": 59.99848437688193,
+      "useRate": 1.1380979311233284
+    },
+    {
+      "eventId": "15000960",
+      "mapName": "Flying Fantasies",
+      "modeSlug": "duoShowdown",
+      "brawlerKey": "MORTIS",
+      "winRateAdj": 59.86506996645332,
+      "useRate": 3.114795217259629
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "GLOWBERT",
+      "winRateAdj": 77.19635668998684,
+      "useRate": 0.0172451456206329
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "JAEYONG",
+      "winRateAdj": 76.04472214270795,
+      "useRate": 0.05740659975443004
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "BELLE",
+      "winRateAdj": 73.69042926537286,
+      "useRate": 0.04546503891773115
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "GLOWY",
+      "winRateAdj": 72.04868842099758,
+      "useRate": 0.11731562635911008
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "SAM",
+      "winRateAdj": 71.64574143196472,
+      "useRate": 0.13772212100215703
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "OLLIE",
+      "winRateAdj": 71.01960498432128,
+      "useRate": 0.09023658441031922
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "BONNIE",
+      "winRateAdj": 70.83460932293194,
+      "useRate": 0.04294990639330939
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "EVE",
+      "winRateAdj": 70.58386528534795,
+      "useRate": 0.08709591904353363
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "GIGI",
+      "winRateAdj": 70.43352227403673,
+      "useRate": 0.30479819059144175
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "DAMIAN",
+      "winRateAdj": 70.39878694833168,
+      "useRate": 1.2275498456820524
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "ASH",
+      "winRateAdj": 70.14669249930806,
+      "useRate": 0.1804589857424932
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "ROSA",
+      "winRateAdj": 70.12006369168463,
+      "useRate": 0.16218586243712543
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "JANET",
+      "winRateAdj": 70.07112466762841,
+      "useRate": 0.09617752126840473
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "FINX",
+      "winRateAdj": 69.03462086136093,
+      "useRate": 0.16379830113376187
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "PEARL",
+      "winRateAdj": 68.79366013326205,
+      "useRate": 0.13270899383940568
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "TRUNK",
+      "winRateAdj": 68.78276262654201,
+      "useRate": 1.3976229769719022
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "DRACO",
+      "winRateAdj": 68.54224924012158,
+      "useRate": 0.2109085771163403
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "ANGELO",
+      "winRateAdj": 68.49806831885698,
+      "useRate": 0.04544465074289737
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "BUSTER",
+      "winRateAdj": 68.39038122756968,
+      "useRate": 0.1331519195506496
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "GENE",
+      "winRateAdj": 68.36525946877062,
+      "useRate": 0.04994689161162556
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "LOLA",
+      "winRateAdj": 68.04298233967369,
+      "useRate": 0.07839962377494142
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "PAM",
+      "winRateAdj": 67.72269440423516,
+      "useRate": 0.18630625518866123
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "MAISIE",
+      "winRateAdj": 67.72068364779362,
+      "useRate": 0.19779513944789134
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "GUS",
+      "winRateAdj": 67.18069051761526,
+      "useRate": 0.11045456230635241
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "DOUG",
+      "winRateAdj": 67.17731942532996,
+      "useRate": 2.474015189917134
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "MAX",
+      "winRateAdj": 67.13866764251239,
+      "useRate": 0.09808839556768051
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "SPROUT",
+      "winRateAdj": 66.91583346590456,
+      "useRate": 0.10578360190385487
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "BEA",
+      "winRateAdj": 66.854213769179,
+      "useRate": 0.1313066419877955
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "GRAY",
+      "winRateAdj": 66.78031572101457,
+      "useRate": 0.1116964680864446
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "MEG",
+      "winRateAdj": 66.6323414801571,
+      "useRate": 0.19102449251830958
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "LOU",
+      "winRateAdj": 66.10022241304117,
+      "useRate": 0.4122704652369637
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "BYRON",
+      "winRateAdj": 65.78304308352159,
+      "useRate": 0.1268058785230408
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "MELODIE",
+      "winRateAdj": 65.6225173881181,
+      "useRate": 0.2284001537197467
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "SIRIUS",
+      "winRateAdj": 65.40894235200778,
+      "useRate": 3.01409853222545
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "MRP",
+      "winRateAdj": 65.3951998532675,
+      "useRate": 0.18129312802590986
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "BIBI",
+      "winRateAdj": 65.26261417941865,
+      "useRate": 5.2469313647252385
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "MOE",
+      "winRateAdj": 64.91459241680005,
+      "useRate": 0.18480787207877603
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "EDGAR",
+      "winRateAdj": 64.5672666004414,
+      "useRate": 5.1188401447452865
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "CHUCK",
+      "winRateAdj": 64.28888369658863,
+      "useRate": 0.3162826426387515
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "SANDY",
+      "winRateAdj": 64.23681315333198,
+      "useRate": 0.27682827404665333
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "JUJU",
+      "winRateAdj": 64.18850552396455,
+      "useRate": 3.473894423961535
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "HANK",
+      "winRateAdj": 64.13863587463243,
+      "useRate": 1.7656446022420886
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "ELPRIMO",
+      "winRateAdj": 64.09157414009472,
+      "useRate": 0.8666173956381261
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "JACKY",
+      "winRateAdj": 64.08051719390284,
+      "useRate": 1.7300226195571513
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "AMBER",
+      "winRateAdj": 64.04333102884274,
+      "useRate": 0.3468982942192158
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "RUFFS",
+      "winRateAdj": 63.82918183219321,
+      "useRate": 0.22255849840867784
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "PIPER",
+      "winRateAdj": 63.76482123335157,
+      "useRate": 0.09101103957320801
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "8BIT",
+      "winRateAdj": 63.674143596840125,
+      "useRate": 0.2227425829437712
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "NITA",
+      "winRateAdj": 63.54925339422813,
+      "useRate": 1.6298401515974854
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "POCO",
+      "winRateAdj": 63.27628458858457,
+      "useRate": 0.3364190678354496
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "KAZE",
+      "winRateAdj": 63.17935871208277,
+      "useRate": 0.5507939301543265
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "DARRYL",
+      "winRateAdj": 63.11065151018074,
+      "useRate": 0.2889338267244065
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "FRANK",
+      "winRateAdj": 62.947773478168266,
+      "useRate": 0.7156497570522926
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "ZIGGY",
+      "winRateAdj": 62.94247875545521,
+      "useRate": 0.7676910165366979
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "TARA",
+      "winRateAdj": 62.919817862496984,
+      "useRate": 0.31279508281899704
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "TICK",
+      "winRateAdj": 62.55431189130298,
+      "useRate": 1.1697100710826034
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "KENJI",
+      "winRateAdj": 62.49958645497171,
+      "useRate": 2.108568679772692
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "CHARLIE",
+      "winRateAdj": 62.43808230461837,
+      "useRate": 0.24077223007431245
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "BROCK",
+      "winRateAdj": 62.42709191775614,
+      "useRate": 0.26066931582730973
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "NANI",
+      "winRateAdj": 62.379233256841104,
+      "useRate": 0.10942244789049183
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "RT",
+      "winRateAdj": 62.358252975226215,
+      "useRate": 1.9102880653791208
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "LARRYANDLAWRIE",
+      "winRateAdj": 62.33141128585705,
+      "useRate": 1.50274558833803
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "PENNY",
+      "winRateAdj": 62.26405157841046,
+      "useRate": 0.41606827989114525
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "BARLEY",
+      "winRateAdj": 62.2638849232177,
+      "useRate": 1.768427440366502
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "CARL",
+      "winRateAdj": 61.8411001902943,
+      "useRate": 0.35908303574994654
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "JESSIE",
+      "winRateAdj": 61.8070154404103,
+      "useRate": 0.6343231005251282
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "BERRY",
+      "winRateAdj": 61.71862935394894,
+      "useRate": 1.3103982283018827
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "FANG",
+      "winRateAdj": 61.50767472685269,
+      "useRate": 0.5850909769558635
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "LUMI",
+      "winRateAdj": 61.10450246832808,
+      "useRate": 0.3873652754947249
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "MANDY",
+      "winRateAdj": 61.059641683467284,
+      "useRate": 0.15188008327984368
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "WILLOW",
+      "winRateAdj": 60.92931225161067,
+      "useRate": 1.002227124439027
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "STU",
+      "winRateAdj": 60.89048871659975,
+      "useRate": 0.5283078416782345
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "SHADE",
+      "winRateAdj": 60.73067931011388,
+      "useRate": 4.117729051267812
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "ALLI",
+      "winRateAdj": 60.63705574119077,
+      "useRate": 0.28818980608337097
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "BUZZ",
+      "winRateAdj": 60.12459461229371,
+      "useRate": 1.3016434278359414
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "MICO",
+      "winRateAdj": 59.93521071456009,
+      "useRate": 2.6114391707974463
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "DYNAMIKE",
+      "winRateAdj": 59.91774097108929,
+      "useRate": 2.4456274635286506
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "GALE",
+      "winRateAdj": 59.71388876275744,
+      "useRate": 0.5198550225844688
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "SHELLY",
+      "winRateAdj": 59.390717846176734,
+      "useRate": 0.7091438609147552
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "MORTIS",
+      "winRateAdj": 59.379196703875195,
+      "useRate": 2.345498477592824
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "CROW",
+      "winRateAdj": 59.10618833850424,
+      "useRate": 3.832524783134013
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "SURGE",
+      "winRateAdj": 58.987398993712084,
+      "useRate": 2.2226074241186633
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "EMZ",
+      "winRateAdj": 58.85445744998139,
+      "useRate": 2.6194626562965238
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "COLT",
+      "winRateAdj": 58.76607502619456,
+      "useRate": 0.5202013260758482
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "KIT",
+      "winRateAdj": 58.751481900140604,
+      "useRate": 0.8764669524484028
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "SQUEAK",
+      "winRateAdj": 58.72331816006368,
+      "useRate": 0.63435974014367
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "NAJIA",
+      "winRateAdj": 58.53765479797466,
+      "useRate": 1.2259388843893892
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "BO",
+      "winRateAdj": 58.36097330346196,
+      "useRate": 0.8679999502764919
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "BULL",
+      "winRateAdj": 58.3161033841945,
+      "useRate": 2.8199877428065783
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "LILY",
+      "winRateAdj": 58.26481289322633,
+      "useRate": 0.9338505047008469
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "PIERCE",
+      "winRateAdj": 57.96357788293551,
+      "useRate": 0.5082127837927933
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "LEON",
+      "winRateAdj": 57.37491137879187,
+      "useRate": 1.825066381016321
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "MINA",
+      "winRateAdj": 57.37163842805024,
+      "useRate": 1.7623148291667001
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "COLETTE",
+      "winRateAdj": 56.97043198330655,
+      "useRate": 1.4103451980681785
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "GROM",
+      "winRateAdj": 56.811465506276235,
+      "useRate": 1.0078060973236145
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "GRIFF",
+      "winRateAdj": 56.689024405917365,
+      "useRate": 1.347993727214571
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "CORDELIUS",
+      "winRateAdj": 56.367813621972196,
+      "useRate": 2.282907371814721
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "CLANCY",
+      "winRateAdj": 56.27458615784412,
+      "useRate": 0.7691666476253918
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "OTIS",
+      "winRateAdj": 56.224419245231395,
+      "useRate": 0.8360425204073294
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "SPIKE",
+      "winRateAdj": 56.097809841340606,
+      "useRate": 1.5991597897229834
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "CHESTER",
+      "winRateAdj": 55.2301058776577,
+      "useRate": 2.0292752265938057
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "RICO",
+      "winRateAdj": 55.01649105664096,
+      "useRate": 1.033711785036682
+    },
+    {
+      "eventId": "15000293",
+      "mapName": "Parallel Plays",
+      "modeSlug": "hotZone",
+      "brawlerKey": "MEEPLE",
+      "winRateAdj": 54.62271345675601,
+      "useRate": 1.4369928380567185
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "wipeout",
+      "brawlerKey": "SPROUT",
+      "winRateAdj": 90.03380493301614,
+      "useRate": 1.0773738180849648
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "MRP",
+      "winRateAdj": 90.01135790005048,
+      "useRate": 0.13450526035424157
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "COLETTE",
+      "winRateAdj": 89.94929260047577,
+      "useRate": 1.0800372885870289
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "CHESTER",
+      "winRateAdj": 89.89777889954567,
+      "useRate": 0.13583699560527365
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "MEEPLE",
+      "winRateAdj": 89.81990995497749,
+      "useRate": 1.2172060194433347
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "TICK",
+      "winRateAdj": 89.7405364753071,
+      "useRate": 0.9415368224796911
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "PENNY",
+      "winRateAdj": 89.69081823860088,
+      "useRate": 1.34771607404448
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "EDGAR",
+      "winRateAdj": 89.67830939988713,
+      "useRate": 0.8782793980556666
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "FANG",
+      "winRateAdj": 89.50899855772245,
+      "useRate": 0.8782793980556666
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "OTIS",
+      "winRateAdj": 89.36968484242121,
+      "useRate": 1.2172060194433347
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "MORTIS",
+      "winRateAdj": 89.34110931877403,
+      "useRate": 2.154081768544413
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "KIT",
+      "winRateAdj": 89.33515426159289,
+      "useRate": 2.0894926088693566
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "PIPER",
+      "winRateAdj": 89.07669488906743,
+      "useRate": 2.630177120788387
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "LEON",
+      "winRateAdj": 89.04833836858006,
+      "useRate": 5.391530163803436
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "CROW",
+      "winRateAdj": 88.85438445455664,
+      "useRate": 3.2341190571314424
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "CHARLIE",
+      "winRateAdj": 88.66695347550856,
+      "useRate": 3.29005193767479
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "wipeout",
+      "brawlerKey": "EVE",
+      "winRateAdj": 88.48026739523385,
+      "useRate": 1.6200559328805435
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "wipeout",
+      "brawlerKey": "RT",
+      "winRateAdj": 88.4331093463653,
+      "useRate": 4.035157810627248
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "BYRON",
+      "winRateAdj": 87.66128059809478,
+      "useRate": 5.652550273005726
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "wipeout",
+      "brawlerKey": "SQUEAK",
+      "winRateAdj": 87.30827248205443,
+      "useRate": 2.3498468504461316
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "MINA",
+      "winRateAdj": 86.33737040624533,
+      "useRate": 1.2172060194433347
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "wipeout",
+      "brawlerKey": "MANDY",
+      "winRateAdj": 84.5122722210227,
+      "useRate": 2.0848315354907445
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "JAEYONG",
+      "winRateAdj": 83.78853850606991,
+      "useRate": 3.847383140231722
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "wipeout",
+      "brawlerKey": "GRAY",
+      "winRateAdj": 80.08053353466718,
+      "useRate": 0.5380210414169663
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "wipeout",
+      "brawlerKey": "GIGI",
+      "winRateAdj": 80.04034800151305,
+      "useRate": 0.26901052070848314
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "GLOWY",
+      "winRateAdj": 80.02019437081913,
+      "useRate": 0.13450526035424157
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "SIRIUS",
+      "winRateAdj": 79.97981581935159,
+      "useRate": 0.20175789053136234
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "wipeout",
+      "brawlerKey": "CLANCY",
+      "winRateAdj": 79.91922251672347,
+      "useRate": 0.13450526035424157
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "COLT",
+      "winRateAdj": 79.91447616651993,
+      "useRate": 0.6052736715940871
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "wipeout",
+      "brawlerKey": "BROCK",
+      "winRateAdj": 79.0704400261823,
+      "useRate": 5.4807564256225865
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "GENE",
+      "winRateAdj": 78.95951177357253,
+      "useRate": 8.622985750432814
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "PEARL",
+      "winRateAdj": 76.57765055641478,
+      "useRate": 0.5420162471700626
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "wipeout",
+      "brawlerKey": "PIERCE",
+      "winRateAdj": 75.4974083212839,
+      "useRate": 5.08256758556399
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "NANI",
+      "winRateAdj": 75.345592271077,
+      "useRate": 6.287787987748036
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "ANGELO",
+      "winRateAdj": 71.95975498822249,
+      "useRate": 5.376881076042083
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "wipeout",
+      "brawlerKey": "BELLE",
+      "winRateAdj": 71.65747354203944,
+      "useRate": 3.7028898654947398
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "wipeout",
+      "brawlerKey": "ZIGGY",
+      "winRateAdj": 70.94938585478795,
+      "useRate": 0.20175789053136234
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "wipeout",
+      "brawlerKey": "ALLI",
+      "winRateAdj": 69.77380571162412,
+      "useRate": 1.4795578638966573
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "DARRYL",
+      "winRateAdj": 69.27774445954648,
+      "useRate": 0.9448661606072714
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "wipeout",
+      "brawlerKey": "NAJIA",
+      "winRateAdj": 69.25741306118137,
+      "useRate": 2.1627380476761218
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "CARL",
+      "winRateAdj": 66.40724660554112,
+      "useRate": 0.8769476628046344
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "wipeout",
+      "brawlerKey": "SPIKE",
+      "winRateAdj": 65.97593909408737,
+      "useRate": 0.9029165001997602
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "RUFFS",
+      "winRateAdj": 65.96470682021402,
+      "useRate": 2.828605673192169
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "OLLIE",
+      "winRateAdj": 64.02908576766733,
+      "useRate": 0.13450526035424157
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "wipeout",
+      "brawlerKey": "BO",
+      "winRateAdj": 60.82044748230297,
+      "useRate": 0.9442002929817552
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "wipeout",
+      "brawlerKey": "8BIT",
+      "winRateAdj": 59.550596545317994,
+      "useRate": 1.277799973365295
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "GALE",
+      "winRateAdj": 59.03053945889988,
+      "useRate": 0.13450526035424157
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "LOU",
+      "winRateAdj": 58.95605297377824,
+      "useRate": 0.13450526035424157
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "deathmatch",
+      "brawlerKey": "GUS",
+      "winRateAdj": 57.52292178158768,
+      "useRate": 2.2246637368491142
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "wipeout",
+      "brawlerKey": "BULL",
+      "winRateAdj": 55.28121557598771,
+      "useRate": 0.13450526035424157
+    },
+    {
+      "eventId": "15001104",
+      "mapName": "Deathmatch",
+      "modeSlug": "wipeout",
+      "brawlerKey": "SHELLY",
+      "winRateAdj": 55.211460098920206,
+      "useRate": 0.13450526035424157
     }
   ],
   "abilityStats": [
@@ -10358,7 +12622,7 @@
         "COLT",
         "MORTIS"
       ],
-      "wins": 46955.49999708
+      "wins": 46972.49999708
     },
     {
       "brawlerKeys": [
@@ -10366,7 +12630,7 @@
         "EDGAR",
         "MORTIS"
       ],
-      "wins": 44937.49999506
+      "wins": 44971.49999506
     },
     {
       "brawlerKeys": [
@@ -10374,7 +12638,7 @@
         "EDGAR",
         "MORTIS"
       ],
-      "wins": 39808.99999261
+      "wins": 39830.99999261
     },
     {
       "brawlerKeys": [
@@ -10382,7 +12646,7 @@
         "DAMIAN",
         "EDGAR"
       ],
-      "wins": 36050.16666548
+      "wins": 36053.16666548
     },
     {
       "brawlerKeys": [
@@ -10390,7 +12654,7 @@
         "MORTIS",
         "RICO"
       ],
-      "wins": 33379.83333145
+      "wins": 33391.83333145
     },
     {
       "brawlerKeys": [
@@ -10398,7 +12662,7 @@
         "EDGAR",
         "EMZ"
       ],
-      "wins": 32032.66666528
+      "wins": 32034.66666528
     },
     {
       "brawlerKeys": [
@@ -10414,28 +12678,10 @@
         "DAMIAN",
         "MORTIS"
       ],
-      "wins": 31077.1666659
+      "wins": 31082.1666659
     }
   ],
   "activeEvents": [
-    {
-      "id": "15000825",
-      "map": "Hellish Harvest",
-      "mode": "siege",
-      "powerplay": false
-    },
-    {
-      "id": "15001086",
-      "map": "Dodge or Die",
-      "mode": "dodgeball",
-      "powerplay": false
-    },
-    {
-      "id": "15000854",
-      "map": "Cool Box",
-      "mode": "airHockey",
-      "powerplay": false
-    },
     {
       "id": "15001119",
       "map": "Kroket",
@@ -10452,12 +12698,6 @@
       "id": "15001107",
       "map": "Truth",
       "mode": "duoShowdown",
-      "powerplay": false
-    },
-    {
-      "id": "15000821",
-      "map": "Hoop Boot Hill",
-      "mode": "killConfirmed",
       "powerplay": false
     },
     {
@@ -10489,11 +12729,35 @@
       "map": "Goldarm Gulch",
       "mode": "knockout",
       "powerplay": false
+    },
+    {
+      "id": "15001170",
+      "map": "Quintillion",
+      "mode": "heist",
+      "powerplay": false
+    },
+    {
+      "id": "15000960",
+      "map": "Flying Fantasies",
+      "mode": "duoShowdown",
+      "powerplay": false
+    },
+    {
+      "id": "15000293",
+      "map": "Parallel Plays",
+      "mode": "hotZone",
+      "powerplay": false
+    },
+    {
+      "id": "15001104",
+      "map": "Deathmatch",
+      "mode": "deathmatch",
+      "powerplay": false
     }
   ],
   "windowStart": "2026-04-20",
   "windowLabel": "近 30 天",
-  "sampleSize": 443987697,
-  "lastUpdated": "2026-05-20T08:08:00Z",
+  "sampleSize": 444091067,
+  "lastUpdated": "2026-05-20T08:23:33Z",
   "sourceUrl": "https://brawltime.ninja/dashboard?cube=map&dimension=brawler&filter%5Bseason%5D=2026-04-20&metric=useRate&metric=winRateAdj&sort=winRateAdj"
 }
