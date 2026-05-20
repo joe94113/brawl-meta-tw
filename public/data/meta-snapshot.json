@@ -619,6 +619,3716 @@
       "picksEstimate": 19234980
     }
   ],
+  "abilityStats": [
+    {
+      "type": "gadget",
+      "abilityId": 23001247,
+      "abilityName": "SPIRITUAL HEALING",
+      "brawlerKey": "DAMIAN",
+      "winRateAdj": 77.44332814516062,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23001248,
+      "abilityName": "WALL OF SOUND",
+      "brawlerKey": "DAMIAN",
+      "winRateAdj": 76.79676019308343,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23001001,
+      "abilityName": "WORKER ANTS",
+      "brawlerKey": "TRUNK",
+      "winRateAdj": 72.21627249644295,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000886,
+      "abilityName": "ALL EYEZ ON ME",
+      "brawlerKey": "OLLIE",
+      "winRateAdj": 71.78623306919827,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23001000,
+      "abilityName": "FOR THE QUEEN!",
+      "brawlerKey": "TRUNK",
+      "winRateAdj": 71.40681017306862,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23001071,
+      "abilityName": "DISAPPEARING ACT",
+      "brawlerKey": "GIGI",
+      "winRateAdj": 70.98091583581227,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23001070,
+      "abilityName": "LONGER STRINGS",
+      "brawlerKey": "GIGI",
+      "winRateAdj": 70.65983828446281,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23001218,
+      "abilityName": "POISON PUDDLES",
+      "brawlerKey": "NAJIA",
+      "winRateAdj": 70.55066303055978,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23001184,
+      "abilityName": "MORE LUMENS!",
+      "brawlerKey": "GLOWY",
+      "winRateAdj": 70.46121294934814,
+      "useRate": 73.42137770023793,
+      "picksEstimate": 33591982
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23001183,
+      "abilityName": "SLIPPERY SAVIOR",
+      "brawlerKey": "GLOWY",
+      "winRateAdj": 70.13070284262818,
+      "useRate": 73.18771195618756,
+      "picksEstimate": 33485075
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23001049,
+      "abilityName": "ELECTRIC SHUFFLE",
+      "brawlerKey": "ZIGGY",
+      "winRateAdj": 70.03808573967505,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000932,
+      "abilityName": "TIME FOR A SLOW SONG",
+      "brawlerKey": "JAEYONG",
+      "winRateAdj": 69.83076881190232,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23001183,
+      "abilityName": "SLIPPERY SAVIOR",
+      "brawlerKey": "GLOWBERT",
+      "winRateAdj": 69.75997708772411,
+      "useRate": 26.812288043812433,
+      "picksEstimate": 12267243
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23001219,
+      "abilityName": "NAJIA JAR",
+      "brawlerKey": "NAJIA",
+      "winRateAdj": 69.69584558236248,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23001184,
+      "abilityName": "MORE LUMENS!",
+      "brawlerKey": "GLOWBERT",
+      "winRateAdj": 69.62155395977231,
+      "useRate": 26.578622299762085,
+      "picksEstimate": 12160336
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000885,
+      "abilityName": "REGULATE",
+      "brawlerKey": "OLLIE",
+      "winRateAdj": 69.5553637009156,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000918,
+      "abilityName": "NO ESCAPE",
+      "brawlerKey": "FINX",
+      "winRateAdj": 69.39906094875052,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000736,
+      "abilityName": "UPPER CUT",
+      "brawlerKey": "DRACO",
+      "winRateAdj": 69.32140427846939,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000595,
+      "abilityName": "DOUBLE SAUSAGE",
+      "brawlerKey": "DOUG",
+      "winRateAdj": 69.09546879711519,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000556,
+      "abilityName": "HACKS!",
+      "brawlerKey": "RT",
+      "winRateAdj": 69.04261944039798,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23001050,
+      "abilityName": "NOW YOU SEE ME...",
+      "brawlerKey": "ZIGGY",
+      "winRateAdj": 68.91045101494248,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23001192,
+      "abilityName": "MASTER OF SHADOWS",
+      "brawlerKey": "SIRIUS",
+      "winRateAdj": 68.8736571658024,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000917,
+      "abilityName": "BACK TO THE FINXTURE",
+      "brawlerKey": "FINX",
+      "winRateAdj": 68.86824212703135,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000775,
+      "abilityName": "TACTICAL RETREAT",
+      "brawlerKey": "CLANCY",
+      "winRateAdj": 68.78094045961457,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000489,
+      "abilityName": "TOOLBOX",
+      "brawlerKey": "MEG",
+      "winRateAdj": 68.70139763113117,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23001191,
+      "abilityName": "A STARR IS BORN",
+      "brawlerKey": "SIRIUS",
+      "winRateAdj": 68.64588454671355,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000423,
+      "abilityName": "JOLTING VOLTS",
+      "brawlerKey": "MEG",
+      "winRateAdj": 68.41220813611302,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000931,
+      "abilityName": "WEEKEND WARRIOR",
+      "brawlerKey": "JAEYONG",
+      "winRateAdj": 68.40949686539379,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000270,
+      "abilityName": "SLEEP STIMULATOR",
+      "brawlerKey": "SANDY",
+      "winRateAdj": 68.16174288041455,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000506,
+      "abilityName": "PULSE REPELLENT",
+      "brawlerKey": "SAM",
+      "winRateAdj": 67.96810565860379,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000907,
+      "abilityName": "HIT THE LIGHTS",
+      "brawlerKey": "LUMI",
+      "winRateAdj": 67.93418762895128,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000774,
+      "abilityName": "SNAPPY SHOOTING",
+      "brawlerKey": "CLANCY",
+      "winRateAdj": 67.89815690811714,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000850,
+      "abilityName": "VOODOO CHILE",
+      "brawlerKey": "JUJU",
+      "winRateAdj": 67.84765070151167,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000626,
+      "abilityName": "PERSONAL SPACE",
+      "brawlerKey": "CHARLIE",
+      "winRateAdj": 67.8373641504135,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000465,
+      "abilityName": "ROTTEN BANANA",
+      "brawlerKey": "ASH",
+      "winRateAdj": 67.83513581332718,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000472,
+      "abilityName": "DROP THE BASS",
+      "brawlerKey": "JANET",
+      "winRateAdj": 67.8250520402614,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000572,
+      "abilityName": "FINISH THEM!",
+      "brawlerKey": "MAISIE",
+      "winRateAdj": 67.77349555566612,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000625,
+      "abilityName": "SPIDERS",
+      "brawlerKey": "CHARLIE",
+      "winRateAdj": 67.74839151254557,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000587,
+      "abilityName": "REPLANTING",
+      "brawlerKey": "CORDELIUS",
+      "winRateAdj": 67.68176368977143,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000555,
+      "abilityName": "OUT OF LINE",
+      "brawlerKey": "RT",
+      "winRateAdj": 67.5795931800975,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000908,
+      "abilityName": "GRIM AND FROSTBITTEN",
+      "brawlerKey": "LUMI",
+      "winRateAdj": 67.51167280817553,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000878,
+      "abilityName": "RAGEQUIT",
+      "brawlerKey": "MEEPLE",
+      "winRateAdj": 67.46704481905365,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23001042,
+      "abilityName": "CAPO-WHAT?",
+      "brawlerKey": "MINA",
+      "winRateAdj": 67.45236872019066,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000596,
+      "abilityName": "EXTRA MUSTARD",
+      "brawlerKey": "DOUG",
+      "winRateAdj": 67.38889291089211,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000497,
+      "abilityName": "DORMANT STAR",
+      "brawlerKey": "OTIS",
+      "winRateAdj": 67.32415435706262,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23001041,
+      "abilityName": "WINDMILL",
+      "brawlerKey": "MINA",
+      "winRateAdj": 67.24423079930364,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000737,
+      "abilityName": "LAST STAND",
+      "brawlerKey": "DRACO",
+      "winRateAdj": 67.1783972809077,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000851,
+      "abilityName": "ELEMENTALIST",
+      "brawlerKey": "JUJU",
+      "winRateAdj": 67.14460209401518,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000521,
+      "abilityName": "UTILITY BELT",
+      "brawlerKey": "BUSTER",
+      "winRateAdj": 67.10883605048105,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000348,
+      "abilityName": "UNFRIENDLY BUSHES",
+      "brawlerKey": "ROSA",
+      "winRateAdj": 67.10761944439656,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000940,
+      "abilityName": "GRACIOUS HOST",
+      "brawlerKey": "KAZE",
+      "winRateAdj": 67.1066669978256,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000480,
+      "abilityName": "SUGAR RUSH",
+      "brawlerKey": "BONNIE",
+      "winRateAdj": 67.09950176593951,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000522,
+      "abilityName": "SLO-MO REPLAY",
+      "brawlerKey": "BUSTER",
+      "winRateAdj": 67.07302796992987,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23001062,
+      "abilityName": "BOTTOMLESS MAGS",
+      "brawlerKey": "PIERCE",
+      "winRateAdj": 66.99397117930755,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000604,
+      "abilityName": "MADE WITH LOVE",
+      "brawlerKey": "PEARL",
+      "winRateAdj": 66.93372425284544,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000242,
+      "abilityName": "GROW LIGHT",
+      "brawlerKey": "ROSA",
+      "winRateAdj": 66.91821275381604,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000992,
+      "abilityName": "COLD-BLOODED",
+      "brawlerKey": "ALLI",
+      "winRateAdj": 66.80684531257243,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000349,
+      "abilityName": "PORTER REINFORCEMENTS",
+      "brawlerKey": "MRP",
+      "winRateAdj": 66.78185101016393,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000405,
+      "abilityName": "SWEET DREAMS",
+      "brawlerKey": "SANDY",
+      "winRateAdj": 66.72880585423704,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000991,
+      "abilityName": "FEED THE GATORS",
+      "brawlerKey": "ALLI",
+      "winRateAdj": 66.7173916806876,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000611,
+      "abilityName": "REROUTING",
+      "brawlerKey": "CHUCK",
+      "winRateAdj": 66.69636931326927,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000505,
+      "abilityName": "MAGNETIC FIELD",
+      "brawlerKey": "SAM",
+      "winRateAdj": 66.67917107188855,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000563,
+      "abilityName": "SPELLBOUND",
+      "brawlerKey": "WILLOW",
+      "winRateAdj": 66.64439644536205,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000649,
+      "abilityName": "CHEESEBURGER",
+      "brawlerKey": "KIT",
+      "winRateAdj": 66.58991850382996,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000640,
+      "abilityName": "PRESTO",
+      "brawlerKey": "MICO",
+      "winRateAdj": 66.57149518835422,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000454,
+      "abilityName": "GOTTA GO!",
+      "brawlerKey": "EVE",
+      "winRateAdj": 66.55892214116547,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000416,
+      "abilityName": "CHILL PILL",
+      "brawlerKey": "ASH",
+      "winRateAdj": 66.53908882445198,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000498,
+      "abilityName": "PHAT SPLATTER",
+      "brawlerKey": "OTIS",
+      "winRateAdj": 66.51539236463044,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000612,
+      "abilityName": "GHOST TRAIN",
+      "brawlerKey": "CHUCK",
+      "winRateAdj": 66.46144126313158,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000807,
+      "abilityName": "RAT RACE",
+      "brawlerKey": "MOE",
+      "winRateAdj": 66.427827788962,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000433,
+      "abilityName": "FREEZE FRAME",
+      "brawlerKey": "LOLA",
+      "winRateAdj": 66.37813093577056,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23001063,
+      "abilityName": "YOU ONLY BRAWL TWICE",
+      "brawlerKey": "PIERCE",
+      "winRateAdj": 66.31661583569168,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000473,
+      "abilityName": "BACKSTAGE PASS",
+      "brawlerKey": "JANET",
+      "winRateAdj": 66.3146614779171,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000314,
+      "abilityName": "FAUX FUR",
+      "brawlerKey": "NITA",
+      "winRateAdj": 66.29788167517468,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000326,
+      "abilityName": "ICE BLOCK",
+      "brawlerKey": "LOU",
+      "winRateAdj": 66.25378442698427,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000603,
+      "abilityName": "OVERCOOKED",
+      "brawlerKey": "PEARL",
+      "winRateAdj": 66.20342629484398,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000256,
+      "abilityName": "PNEUMATIC BOOSTER",
+      "brawlerKey": "JACKY",
+      "winRateAdj": 66.09870981315888,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000941,
+      "abilityName": "HENSOJUTSU",
+      "brawlerKey": "KAZE",
+      "winRateAdj": 66.02090977540236,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000400,
+      "abilityName": "CRYO SYRUP",
+      "brawlerKey": "LOU",
+      "winRateAdj": 66.01490817787491,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000755,
+      "abilityName": "REPOT",
+      "brawlerKey": "LILY",
+      "winRateAdj": 66.00184902155759,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000481,
+      "abilityName": "CRASH TEST",
+      "brawlerKey": "BONNIE",
+      "winRateAdj": 65.95162429878457,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000806,
+      "abilityName": "DODGY DIGGING",
+      "brawlerKey": "MOE",
+      "winRateAdj": 65.92565641096944,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000404,
+      "abilityName": "SCRAPSUCKER",
+      "brawlerKey": "PAM",
+      "winRateAdj": 65.86917827597398,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000440,
+      "abilityName": "CORN-FU",
+      "brawlerKey": "FANG",
+      "winRateAdj": 65.81105043629782,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000877,
+      "abilityName": "MANSIONS OF MEEPLE",
+      "brawlerKey": "MEEPLE",
+      "winRateAdj": 65.74911794460417,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000564,
+      "abilityName": "DIVE",
+      "brawlerKey": "WILLOW",
+      "winRateAdj": 65.6217166562596,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000835,
+      "abilityName": "JUMP SCARE",
+      "brawlerKey": "SHADE",
+      "winRateAdj": 65.59527473239946,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000313,
+      "abilityName": "TAR BARREL",
+      "brawlerKey": "DARRYL",
+      "winRateAdj": 65.54200923372615,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000817,
+      "abilityName": "DASHI DASH",
+      "brawlerKey": "KENJI",
+      "winRateAdj": 65.47591095723327,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000277,
+      "abilityName": "SPRING EJECTOR",
+      "brawlerKey": "GALE",
+      "winRateAdj": 65.46428798877766,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000678,
+      "abilityName": "MASTER FLETCHER",
+      "brawlerKey": "ANGELO",
+      "winRateAdj": 65.4272098185705,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000456,
+      "abilityName": "STUNT DOUBLE",
+      "brawlerKey": "LOLA",
+      "winRateAdj": 65.37338012344068,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000669,
+      "abilityName": "PERFECT PITCH",
+      "brawlerKey": "MELODIE",
+      "winRateAdj": 65.36910324780476,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000269,
+      "abilityName": "SERVICE BELL",
+      "brawlerKey": "MRP",
+      "winRateAdj": 65.28916568832068,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000244,
+      "abilityName": "GARDEN MULCHER",
+      "brawlerKey": "SPROUT",
+      "winRateAdj": 65.19121035148203,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000249,
+      "abilityName": "BEAR PAWS",
+      "brawlerKey": "NITA",
+      "winRateAdj": 65.16709357140327,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000347,
+      "abilityName": "TAKE COVER",
+      "brawlerKey": "RUFFS",
+      "winRateAdj": 65.12019948882681,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000571,
+      "abilityName": "DISENGAGE!",
+      "brawlerKey": "MAISIE",
+      "winRateAdj": 65.07870859733742,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000455,
+      "abilityName": "MOTHERLY LOVE",
+      "brawlerKey": "EVE",
+      "winRateAdj": 65.05392927072009,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000818,
+      "abilityName": "HOSOMAKI HEALING",
+      "brawlerKey": "KENJI",
+      "winRateAdj": 65.01797529233549,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000257,
+      "abilityName": "PULSE MODULATOR",
+      "brawlerKey": "PAM",
+      "winRateAdj": 65.00163254865437,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000399,
+      "abilityName": "PIGGY BANK",
+      "brawlerKey": "GRIFF",
+      "winRateAdj": 64.9949512173754,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000639,
+      "abilityName": "CLIPPING SCREAM",
+      "brawlerKey": "MICO",
+      "winRateAdj": 64.98817263721212,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000402,
+      "abilityName": "AIR SUPPORT",
+      "brawlerKey": "RUFFS",
+      "winRateAdj": 64.88240546320071,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000261,
+      "abilityName": "ACTIVE NOISE CANCELING",
+      "brawlerKey": "FRANK",
+      "winRateAdj": 64.8822891438519,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000767,
+      "abilityName": "HEALTHY ADDITIVES",
+      "brawlerKey": "BERRY",
+      "winRateAdj": 64.86927266385828,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000579,
+      "abilityName": "WATER BALLOONS",
+      "brawlerKey": "HANK",
+      "winRateAdj": 64.80510060241656,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000488,
+      "abilityName": "DANCING FLAMES",
+      "brawlerKey": "AMBER",
+      "winRateAdj": 64.78349024527348,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000352,
+      "abilityName": "VENGEFUL SPIRITS",
+      "brawlerKey": "GENE",
+      "winRateAdj": 64.65867876531135,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000530,
+      "abilityName": "CANDY BEANS",
+      "brawlerKey": "CHESTER",
+      "winRateAdj": 64.62223925927918,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000662,
+      "abilityName": "ORDER: FALL BACK",
+      "brawlerKey": "LARRYANDLAWRIE",
+      "winRateAdj": 64.60880900740169,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000834,
+      "abilityName": "LONGARMS",
+      "brawlerKey": "SHADE",
+      "winRateAdj": 64.59098531087886,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000263,
+      "abilityName": "SUPER TOTEM",
+      "brawlerKey": "BO",
+      "winRateAdj": 64.5884030035233,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000408,
+      "abilityName": "LOLLIPOP DROP",
+      "brawlerKey": "LEON",
+      "winRateAdj": 64.5385033260624,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000272,
+      "abilityName": "T-BONE MISSILE",
+      "brawlerKey": "BULL",
+      "winRateAdj": 64.5127817174971,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000754,
+      "abilityName": "VANISH",
+      "brawlerKey": "LILY",
+      "winRateAdj": 64.50038964424056,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000309,
+      "abilityName": "FIRE STARTERS",
+      "brawlerKey": "AMBER",
+      "winRateAdj": 64.49641842667795,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000292,
+      "abilityName": "ASTEROID BELT",
+      "brawlerKey": "ELPRIMO",
+      "winRateAdj": 64.46351146624136,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000490,
+      "abilityName": "X-RAY-SHADES",
+      "brawlerKey": "BUZZ",
+      "winRateAdj": 64.42045162425391,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000356,
+      "abilityName": "SUPPORT FROM BEYOND",
+      "brawlerKey": "TARA",
+      "winRateAdj": 64.34452964241285,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000661,
+      "abilityName": "ORDER: SWAP",
+      "brawlerKey": "LARRYANDLAWRIE",
+      "winRateAdj": 64.29886306810944,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000588,
+      "abilityName": "POISON MUSHROOM",
+      "brawlerKey": "CORDELIUS",
+      "winRateAdj": 64.2932885699501,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000262,
+      "abilityName": "HEAT EJECTOR",
+      "brawlerKey": "CARL",
+      "winRateAdj": 64.2621408526043,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000287,
+      "abilityName": "TRUSTY SPYGLASS",
+      "brawlerKey": "PENNY",
+      "winRateAdj": 64.25909206025551,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000529,
+      "abilityName": "SPICY DICE",
+      "brawlerKey": "CHESTER",
+      "winRateAdj": 64.2456584036008,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000350,
+      "abilityName": "PROTECTIVE TUNES",
+      "brawlerKey": "POCO",
+      "winRateAdj": 64.24236618953474,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000407,
+      "abilityName": "TWISTER",
+      "brawlerKey": "GALE",
+      "winRateAdj": 64.22809493978303,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000260,
+      "abilityName": "RECOILING ROTATOR",
+      "brawlerKey": "DARRYL",
+      "winRateAdj": 64.22598477841791,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000315,
+      "abilityName": "TRANSPLANT",
+      "brawlerKey": "SPROUT",
+      "winRateAdj": 64.21703546140695,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000318,
+      "abilityName": "EXTRA CREDITS",
+      "brawlerKey": "8BIT",
+      "winRateAdj": 64.15869628031729,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000538,
+      "abilityName": "GRAND PIANO",
+      "brawlerKey": "GRAY",
+      "winRateAdj": 64.13337002091912,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000251,
+      "abilityName": "SPARK PLUG",
+      "brawlerKey": "JESSIE",
+      "winRateAdj": 64.05739596506137,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000371,
+      "abilityName": "NEST EGG",
+      "brawlerKey": "BELLE",
+      "winRateAdj": 64.0399275370612,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000514,
+      "abilityName": "SOUL SWITCHER",
+      "brawlerKey": "GUS",
+      "winRateAdj": 63.924498756562855,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000457,
+      "abilityName": "GOTCHA!",
+      "brawlerKey": "COLETTE",
+      "winRateAdj": 63.71223729351875,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000463,
+      "abilityName": "REVERSE POLARITY",
+      "brawlerKey": "BELLE",
+      "winRateAdj": 63.651182458752466,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000351,
+      "abilityName": "IRRESISTIBLE ATTRACTION",
+      "brawlerKey": "FRANK",
+      "winRateAdj": 63.618382485266665,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000670,
+      "abilityName": "INTERLUDE",
+      "brawlerKey": "MELODIE",
+      "winRateAdj": 63.59776312822659,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000295,
+      "abilityName": "RECOIL SPRING",
+      "brawlerKey": "JESSIE",
+      "winRateAdj": 63.53166178128809,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000248,
+      "abilityName": "SALTY BARREL",
+      "brawlerKey": "PENNY",
+      "winRateAdj": 63.52350760749367,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000487,
+      "abilityName": "COIN SHOWER",
+      "brawlerKey": "GRIFF",
+      "winRateAdj": 63.46225642219599,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000364,
+      "abilityName": "SPEED ZONE",
+      "brawlerKey": "STU",
+      "winRateAdj": 63.37713053613179,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000464,
+      "abilityName": "ROUNDHOUSE KICK",
+      "brawlerKey": "FANG",
+      "winRateAdj": 63.28287972931326,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000580,
+      "abilityName": "BARRICADE",
+      "brawlerKey": "HANK",
+      "winRateAdj": 63.28046824925736,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000460,
+      "abilityName": "RADIO CHECK",
+      "brawlerKey": "GROM",
+      "winRateAdj": 63.19192730019233,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000255,
+      "abilityName": "FAST FORWARD",
+      "brawlerKey": "SHELLY",
+      "winRateAdj": 63.17541909560682,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000293,
+      "abilityName": "HERBAL TONIC",
+      "brawlerKey": "BARLEY",
+      "winRateAdj": 63.11608141398069,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000385,
+      "abilityName": "WATCHTOWER",
+      "brawlerKey": "GROM",
+      "winRateAdj": 63.05354521612704,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000289,
+      "abilityName": "TRIPWIRE",
+      "brawlerKey": "BO",
+      "winRateAdj": 62.97152155138217,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000259,
+      "abilityName": "CHEAT CARTRIDGE",
+      "brawlerKey": "8BIT",
+      "winRateAdj": 62.93500843249574,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000274,
+      "abilityName": "FRIENDZONER",
+      "brawlerKey": "EMZ",
+      "winRateAdj": 62.919717251007675,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000462,
+      "abilityName": "RESIDUE",
+      "brawlerKey": "SQUEAK",
+      "winRateAdj": 62.88881546419272,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000302,
+      "abilityName": "NA-AH!",
+      "brawlerKey": "COLETTE",
+      "winRateAdj": 62.88558236777043,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000766,
+      "abilityName": "FRIENDSHIP IS GREAT",
+      "brawlerKey": "BERRY",
+      "winRateAdj": 62.878397705638065,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000317,
+      "abilityName": "FLYING HOOK",
+      "brawlerKey": "CARL",
+      "winRateAdj": 62.86454374392265,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000266,
+      "abilityName": "PSYCHIC ENHANCER",
+      "brawlerKey": "TARA",
+      "winRateAdj": 62.83493010456216,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000250,
+      "abilityName": "STICKY SYRUP MIXER",
+      "brawlerKey": "BARLEY",
+      "winRateAdj": 62.82429742838932,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000264,
+      "abilityName": "SUPLEX SUPPLEMENT",
+      "brawlerKey": "ELPRIMO",
+      "winRateAdj": 62.797079570792455,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000677,
+      "abilityName": "STINGING FLIGHT",
+      "brawlerKey": "ANGELO",
+      "winRateAdj": 62.775009753972576,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000252,
+      "abilityName": "LAMP BLOWOUT",
+      "brawlerKey": "GENE",
+      "winRateAdj": 62.70182597242954,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000458,
+      "abilityName": "EXTRA STICKY",
+      "brawlerKey": "BIBI",
+      "winRateAdj": 62.69741244721497,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000311,
+      "abilityName": "SNEAKY SNEAKERS",
+      "brawlerKey": "MAX",
+      "winRateAdj": 62.63436964476924,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000286,
+      "abilityName": "SLOWING TOXIN",
+      "brawlerKey": "CROW",
+      "winRateAdj": 62.630896865207184,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000253,
+      "abilityName": "MINE MANIA",
+      "brawlerKey": "TICK",
+      "winRateAdj": 62.55897854989253,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000392,
+      "abilityName": "RESERVE BUOY",
+      "brawlerKey": "BUZZ",
+      "winRateAdj": 62.55639010270865,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000243,
+      "abilityName": "INSTAPOISON",
+      "brawlerKey": "CROW",
+      "winRateAdj": 62.54895371915208,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000486,
+      "abilityName": "REBUILD",
+      "brawlerKey": "JACKY",
+      "winRateAdj": 62.4983591159166,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000310,
+      "abilityName": "STOMPER",
+      "brawlerKey": "BULL",
+      "winRateAdj": 62.48682266871065,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000267,
+      "abilityName": "TUNING FORK",
+      "brawlerKey": "POCO",
+      "winRateAdj": 62.4770241607863,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000403,
+      "abilityName": "HARDCORE",
+      "brawlerKey": "EDGAR",
+      "winRateAdj": 62.45434141187317,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000355,
+      "abilityName": "LAST HURRAH",
+      "brawlerKey": "TICK",
+      "winRateAdj": 62.41098957597109,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000340,
+      "abilityName": "LET'S FLY",
+      "brawlerKey": "EDGAR",
+      "winRateAdj": 62.3334640800983,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000378,
+      "abilityName": "WINDUP",
+      "brawlerKey": "SQUEAK",
+      "winRateAdj": 62.3021573501854,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000513,
+      "abilityName": "KOOKY POPPER",
+      "brawlerKey": "GUS",
+      "winRateAdj": 62.26565142911158,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000537,
+      "abilityName": "WALKING CANE",
+      "brawlerKey": "GRAY",
+      "winRateAdj": 62.21550885868157,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000275,
+      "abilityName": "VITAMIN BOOSTER",
+      "brawlerKey": "BIBI",
+      "winRateAdj": 62.19113836519686,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000312,
+      "abilityName": "RATTLED HIVE",
+      "brawlerKey": "BEA",
+      "winRateAdj": 62.18277255314506,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000459,
+      "abilityName": "ACID SPRAY",
+      "brawlerKey": "EMZ",
+      "winRateAdj": 62.16672685432828,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000254,
+      "abilityName": "PHASE SHIFTER",
+      "brawlerKey": "MAX",
+      "winRateAdj": 62.14047718489858,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000271,
+      "abilityName": "HONEY MOLASSES",
+      "brawlerKey": "BEA",
+      "winRateAdj": 62.07548388227694,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000353,
+      "abilityName": "RETURN TO SENDER",
+      "brawlerKey": "NANI",
+      "winRateAdj": 62.02572693136253,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000276,
+      "abilityName": "CLONE PROJECTOR",
+      "brawlerKey": "LEON",
+      "winRateAdj": 61.78702966768657,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000288,
+      "abilityName": "CLAY PIGEONS",
+      "brawlerKey": "SHELLY",
+      "winRateAdj": 61.63449280209481,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000648,
+      "abilityName": "CARDBOARD BOX",
+      "brawlerKey": "KIT",
+      "winRateAdj": 61.61084901466873,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000333,
+      "abilityName": "SHOT IN THE ARM",
+      "brawlerKey": "BYRON",
+      "winRateAdj": 61.52694008812472,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000290,
+      "abilityName": "CREATURE OF THE NIGHT",
+      "brawlerKey": "MORTIS",
+      "winRateAdj": 61.39848398150151,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000409,
+      "abilityName": "BOUNCY CASTLE",
+      "brawlerKey": "RICO",
+      "winRateAdj": 61.10276700658359,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000316,
+      "abilityName": "ROCKET FUEL",
+      "brawlerKey": "BROCK",
+      "winRateAdj": 61.071574769784775,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000245,
+      "abilityName": "ROCKET LACES",
+      "brawlerKey": "BROCK",
+      "winRateAdj": 61.02542335582151,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000545,
+      "abilityName": "CARAMELIZE",
+      "brawlerKey": "MANDY",
+      "winRateAdj": 60.90753964298348,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000406,
+      "abilityName": "LIFE PLANT",
+      "brawlerKey": "SPIKE",
+      "winRateAdj": 60.8531745665828,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000265,
+      "abilityName": "COMBO SPINNER",
+      "brawlerKey": "MORTIS",
+      "winRateAdj": 60.836804243250675,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000461,
+      "abilityName": "BOOSTER SHOTS",
+      "brawlerKey": "BYRON",
+      "winRateAdj": 60.83299913833569,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000485,
+      "abilityName": "POWER SHIELD",
+      "brawlerKey": "SURGE",
+      "winRateAdj": 60.79961702294139,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000291,
+      "abilityName": "HOMEMADE RECIPE",
+      "brawlerKey": "PIPER",
+      "winRateAdj": 60.63021891005283,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000285,
+      "abilityName": "POWER SURGE",
+      "brawlerKey": "SURGE",
+      "winRateAdj": 60.59529098702602,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000546,
+      "abilityName": "COOKIE CRUMBS",
+      "brawlerKey": "MANDY",
+      "winRateAdj": 60.46628743930489,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000278,
+      "abilityName": "WARPIN' TIME",
+      "brawlerKey": "NANI",
+      "winRateAdj": 60.38017451848767,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000258,
+      "abilityName": "FIDGET SPINNER",
+      "brawlerKey": "DYNAMIKE",
+      "winRateAdj": 60.11526073721855,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000247,
+      "abilityName": "POPPING PINCUSHION",
+      "brawlerKey": "SPIKE",
+      "winRateAdj": 59.96075616938784,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000273,
+      "abilityName": "SPEEDLOADER",
+      "brawlerKey": "COLT",
+      "winRateAdj": 59.670889976584775,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000401,
+      "abilityName": "BREAKTHROUGH",
+      "brawlerKey": "STU",
+      "winRateAdj": 59.65240211093289,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000268,
+      "abilityName": "AUTO AIMER",
+      "brawlerKey": "PIPER",
+      "winRateAdj": 59.3393753315501,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000246,
+      "abilityName": "MULTIBALL LAUNCHER",
+      "brawlerKey": "RICO",
+      "winRateAdj": 58.335431494020874,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000294,
+      "abilityName": "SATCHEL CHARGE",
+      "brawlerKey": "DYNAMIKE",
+      "winRateAdj": 58.13310119658473,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "gadget",
+      "abilityId": 23000319,
+      "abilityName": "SILVER BULLET",
+      "brawlerKey": "COLT",
+      "winRateAdj": 57.96454627973624,
+      "useRate": 100,
+      "picksEstimate": 45752318
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23001246,
+      "abilityName": "VULGAR DISPLAY OF PUNCH",
+      "brawlerKey": "DAMIAN",
+      "winRateAdj": 77.59659043957696,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23001245,
+      "abilityName": "CROWDKILL",
+      "brawlerKey": "DAMIAN",
+      "winRateAdj": 76.97298188420945,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000998,
+      "abilityName": "NEW INSECT OVERLORDS",
+      "brawlerKey": "TRUNK",
+      "winRateAdj": 72.2870586534051,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000883,
+      "abilityName": "KICK, PUSH",
+      "brawlerKey": "OLLIE",
+      "winRateAdj": 71.34068659597754,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23001217,
+      "abilityName": "VENOMOUS",
+      "brawlerKey": "NAJIA",
+      "winRateAdj": 71.02520065326244,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23001181,
+      "abilityName": "BIOTIC ECOSYSTEM",
+      "brawlerKey": "GLOWY",
+      "winRateAdj": 70.88077914304344,
+      "useRate": 73.64296079084262,
+      "picksEstimate": 40233887
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23001069,
+      "abilityName": "A HELPING HAND",
+      "brawlerKey": "GIGI",
+      "winRateAdj": 70.87754763326076,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000999,
+      "abilityName": "COLONY SCOUTS",
+      "brawlerKey": "TRUNK",
+      "winRateAdj": 70.67990621069875,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23001181,
+      "abilityName": "BIOTIC ECOSYSTEM",
+      "brawlerKey": "GLOWBERT",
+      "winRateAdj": 70.62551742959991,
+      "useRate": 26.357039209157374,
+      "picksEstimate": 14399830
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23001182,
+      "abilityName": "PARASITISM",
+      "brawlerKey": "GLOWY",
+      "winRateAdj": 70.61536583319872,
+      "useRate": 71.41082285554909,
+      "picksEstimate": 39014387
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23001068,
+      "abilityName": "PLIÉ PROTECTION",
+      "brawlerKey": "GIGI",
+      "winRateAdj": 70.26237224106576,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23001216,
+      "abilityName": "POISONOUS PROTECTOR",
+      "brawlerKey": "NAJIA",
+      "winRateAdj": 70.2074338820972,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23001182,
+      "abilityName": "PARASITISM",
+      "brawlerKey": "GLOWBERT",
+      "winRateAdj": 69.63213458967338,
+      "useRate": 28.589177144450918,
+      "picksEstimate": 15619330
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000610,
+      "abilityName": "TICKETS PLEASE!",
+      "brawlerKey": "CHUCK",
+      "winRateAdj": 69.15050677771045,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000884,
+      "abilityName": "RENEGADE",
+      "brawlerKey": "OLLIE",
+      "winRateAdj": 69.0367309035803,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23001048,
+      "abilityName": "THE GREAT ZIGGINI",
+      "brawlerKey": "ZIGGY",
+      "winRateAdj": 68.90273551366974,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23001190,
+      "abilityName": "THE DARKEST STARR",
+      "brawlerKey": "SIRIUS",
+      "winRateAdj": 68.85481227409068,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000421,
+      "abilityName": "FORCE FIELD",
+      "brawlerKey": "MEG",
+      "winRateAdj": 68.75821715804776,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000915,
+      "abilityName": "HIEROGLYPH HALT",
+      "brawlerKey": "FINX",
+      "winRateAdj": 68.74043640354488,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23001189,
+      "abilityName": "DUSK RUNNERS",
+      "brawlerKey": "SIRIUS",
+      "winRateAdj": 68.72830265869615,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000773,
+      "abilityName": "PUMPING UP",
+      "brawlerKey": "CLANCY",
+      "winRateAdj": 68.64037261312728,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23001047,
+      "abilityName": "THUNDERSTRUCK",
+      "brawlerKey": "ZIGGY",
+      "winRateAdj": 68.62724338455948,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000916,
+      "abilityName": "PRIMER",
+      "brawlerKey": "FINX",
+      "winRateAdj": 68.56870855876016,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000422,
+      "abilityName": "HEAVY METAL",
+      "brawlerKey": "MEG",
+      "winRateAdj": 68.30707870925238,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000929,
+      "abilityName": "THE CROWD GOES MILD",
+      "brawlerKey": "JAEYONG",
+      "winRateAdj": 68.020136765785,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000772,
+      "abilityName": "RECON",
+      "brawlerKey": "CLANCY",
+      "winRateAdj": 67.92031657116942,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000624,
+      "abilityName": "SLIMY",
+      "brawlerKey": "CHARLIE",
+      "winRateAdj": 67.7452270879251,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000735,
+      "abilityName": "SHREDDING",
+      "brawlerKey": "DRACO",
+      "winRateAdj": 67.69592875577226,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000905,
+      "abilityName": "42% BURNT",
+      "brawlerKey": "LUMI",
+      "winRateAdj": 67.68332513861142,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000602,
+      "abilityName": "HEAT SHIELD",
+      "brawlerKey": "PEARL",
+      "winRateAdj": 67.68325724811164,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000147,
+      "abilityName": "THORNY GLOVES",
+      "brawlerKey": "ROSA",
+      "winRateAdj": 67.67259044271987,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000594,
+      "abilityName": "SELF SERVICE",
+      "brawlerKey": "DOUG",
+      "winRateAdj": 67.56092798437354,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000593,
+      "abilityName": "FAST FOOD",
+      "brawlerKey": "DOUG",
+      "winRateAdj": 67.52708427695796,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000223,
+      "abilityName": "HARDY HARD HAT",
+      "brawlerKey": "JACKY",
+      "winRateAdj": 67.51313178582615,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000478,
+      "abilityName": "BLACK POWDER",
+      "brawlerKey": "BONNIE",
+      "winRateAdj": 67.48508732421296,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000554,
+      "abilityName": "RECORDING",
+      "brawlerKey": "RT",
+      "winRateAdj": 67.44507599524256,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000906,
+      "abilityName": "HALF-TIME",
+      "brawlerKey": "LUMI",
+      "winRateAdj": 67.44021209587655,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000452,
+      "abilityName": "UNNATURAL ORDER",
+      "brawlerKey": "EVE",
+      "winRateAdj": 67.38717920942008,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000734,
+      "abilityName": "EXPOSE",
+      "brawlerKey": "DRACO",
+      "winRateAdj": 67.37516395228347,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000930,
+      "abilityName": "EXTRA HIGH NOTE",
+      "brawlerKey": "JAEYONG",
+      "winRateAdj": 67.1853572224198,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23001039,
+      "abilityName": "ZUM ZUM ZUM",
+      "brawlerKey": "MINA",
+      "winRateAdj": 67.13103169503924,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000479,
+      "abilityName": "WISDOM TOOTH",
+      "brawlerKey": "BONNIE",
+      "winRateAdj": 67.10822929540015,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23001040,
+      "abilityName": "BLOWN AWAY",
+      "brawlerKey": "MINA",
+      "winRateAdj": 67.09894033159982,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000601,
+      "abilityName": "HEAT RETENTION",
+      "brawlerKey": "PEARL",
+      "winRateAdj": 67.06911260441872,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000504,
+      "abilityName": "REMOTE RECHARGE",
+      "brawlerKey": "SAM",
+      "winRateAdj": 67.06729735179255,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000431,
+      "abilityName": "IMPROVISE",
+      "brawlerKey": "LOLA",
+      "winRateAdj": 67.05694377331878,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000805,
+      "abilityName": "SPEEDING TICKET",
+      "brawlerKey": "MOE",
+      "winRateAdj": 67.05243839779865,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000623,
+      "abilityName": "DIGESTIVE",
+      "brawlerKey": "CHARLIE",
+      "winRateAdj": 67.03324495988488,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000848,
+      "abilityName": "GUARDED GRIS-GRIS",
+      "brawlerKey": "JUJU",
+      "winRateAdj": 66.98156796638366,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000989,
+      "abilityName": "LIZARD LIMBS",
+      "brawlerKey": "ALLI",
+      "winRateAdj": 66.96266143054265,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000187,
+      "abilityName": "HEALING WINDS",
+      "brawlerKey": "SANDY",
+      "winRateAdj": 66.95283702229992,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000519,
+      "abilityName": "BLOCKBUSTER",
+      "brawlerKey": "BUSTER",
+      "winRateAdj": 66.95268099988718,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000124,
+      "abilityName": "PLANT LIFE",
+      "brawlerKey": "ROSA",
+      "winRateAdj": 66.9213309932892,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000453,
+      "abilityName": "HAPPY SURPRISE",
+      "brawlerKey": "EVE",
+      "winRateAdj": 66.91118807536215,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23001061,
+      "abilityName": "SLIP 'N SNIPE",
+      "brawlerKey": "PIERCE",
+      "winRateAdj": 66.88861960801982,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000414,
+      "abilityName": "FIRST BASH",
+      "brawlerKey": "ASH",
+      "winRateAdj": 66.82097239912108,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000553,
+      "abilityName": "QUICK MATHS",
+      "brawlerKey": "RT",
+      "winRateAdj": 66.81728029289351,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000222,
+      "abilityName": "COUNTER CRUSH",
+      "brawlerKey": "JACKY",
+      "winRateAdj": 66.81644281246069,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000503,
+      "abilityName": "HEARTY RECOVERY",
+      "brawlerKey": "SAM",
+      "winRateAdj": 66.79271493434055,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000415,
+      "abilityName": "MAD AS HECK",
+      "brawlerKey": "ASH",
+      "winRateAdj": 66.75835112379006,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000520,
+      "abilityName": "KEVLAR VEST",
+      "brawlerKey": "BUSTER",
+      "winRateAdj": 66.74249859739506,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000139,
+      "abilityName": "MAMA'S SQUEEZE",
+      "brawlerKey": "PAM",
+      "winRateAdj": 66.73020949487345,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000325,
+      "abilityName": "HYPOTHERMIA",
+      "brawlerKey": "LOU",
+      "winRateAdj": 66.72881857571156,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000398,
+      "abilityName": "BUSINESS RESILIENCE",
+      "brawlerKey": "GRIFF",
+      "winRateAdj": 66.69273979522148,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000186,
+      "abilityName": "RUDE SANDS",
+      "brawlerKey": "SANDY",
+      "winRateAdj": 66.52940341185924,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000496,
+      "abilityName": "INK REFILLS",
+      "brawlerKey": "OTIS",
+      "winRateAdj": 66.51936580069278,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000849,
+      "abilityName": "NUMBING NEEDLES",
+      "brawlerKey": "JUJU",
+      "winRateAdj": 66.43514147207009,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000205,
+      "abilityName": "REVOLVING DOOR",
+      "brawlerKey": "MRP",
+      "winRateAdj": 66.39277218999393,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000432,
+      "abilityName": "SEALED WITH A KISS",
+      "brawlerKey": "LOLA",
+      "winRateAdj": 66.30416926131953,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000569,
+      "abilityName": "PINPOINT PRECISION",
+      "brawlerKey": "MAISIE",
+      "winRateAdj": 66.24744801589398,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000561,
+      "abilityName": "LOVE IS BLIND",
+      "brawlerKey": "WILLOW",
+      "winRateAdj": 66.24167618376366,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23001060,
+      "abilityName": "MISSION: SWIMPOSSIBLE",
+      "brawlerKey": "PIERCE",
+      "winRateAdj": 66.2146559857546,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000990,
+      "abilityName": "YOU BETTER RUN, YOU BETTER TAKE COVER",
+      "brawlerKey": "ALLI",
+      "winRateAdj": 66.13324313803041,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000495,
+      "abilityName": "STENCIL GLUE",
+      "brawlerKey": "OTIS",
+      "winRateAdj": 66.03905808521725,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000136,
+      "abilityName": "HYPER BEAR",
+      "brawlerKey": "NITA",
+      "winRateAdj": 65.97961805758182,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000204,
+      "abilityName": "HANDLE WITH CARE",
+      "brawlerKey": "MRP",
+      "winRateAdj": 65.97197285067924,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000092,
+      "abilityName": "MAMA'S HUG",
+      "brawlerKey": "PAM",
+      "winRateAdj": 65.92319603913309,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000084,
+      "abilityName": "BEAR WITH ME",
+      "brawlerKey": "NITA",
+      "winRateAdj": 65.91230631724646,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000938,
+      "abilityName": "ADVANCED TECHNIQUES",
+      "brawlerKey": "KAZE",
+      "winRateAdj": 65.80118393441383,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000471,
+      "abilityName": "VOCAL WARM UP",
+      "brawlerKey": "JANET",
+      "winRateAdj": 65.68601394723218,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000939,
+      "abilityName": "GRATUITY INCLUDED",
+      "brawlerKey": "KAZE",
+      "winRateAdj": 65.65207077569995,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000570,
+      "abilityName": "TREMORS",
+      "brawlerKey": "MAISIE",
+      "winRateAdj": 65.63093417216157,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000609,
+      "abilityName": "PIT STOP",
+      "brawlerKey": "CHUCK",
+      "winRateAdj": 65.62672045322799,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000470,
+      "abilityName": "STAGE VIEW",
+      "brawlerKey": "JANET",
+      "winRateAdj": 65.61523716001561,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000228,
+      "abilityName": "BLUSTERY BLOW",
+      "brawlerKey": "GALE",
+      "winRateAdj": 65.5989385937511,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000833,
+      "abilityName": "HARDENED HOODIE",
+      "brawlerKey": "SHADE",
+      "winRateAdj": 65.51222557217953,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000562,
+      "abilityName": "OBSESSION",
+      "brawlerKey": "WILLOW",
+      "winRateAdj": 65.38448952049399,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000804,
+      "abilityName": "SKIPPING STONES",
+      "brawlerKey": "MOE",
+      "winRateAdj": 65.28918685628646,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000637,
+      "abilityName": "MONKEY BUSINESS",
+      "brawlerKey": "MICO",
+      "winRateAdj": 65.28792448382555,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000638,
+      "abilityName": "RECORD SMASH",
+      "brawlerKey": "MICO",
+      "winRateAdj": 65.24536478007231,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000094,
+      "abilityName": "STEEL HOOPS",
+      "brawlerKey": "DARRYL",
+      "winRateAdj": 65.21025924448924,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000439,
+      "abilityName": "DIVINE SOLES",
+      "brawlerKey": "FANG",
+      "winRateAdj": 65.08858715316666,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000753,
+      "abilityName": "VIGILANCE",
+      "brawlerKey": "LILY",
+      "winRateAdj": 65.03831449965458,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000148,
+      "abilityName": "SNARE A BEAR",
+      "brawlerKey": "BO",
+      "winRateAdj": 64.99656026505295,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000168,
+      "abilityName": "BOOSTED BOOSTER",
+      "brawlerKey": "8BIT",
+      "winRateAdj": 64.99113582814742,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000157,
+      "abilityName": "ROLLING RELOAD",
+      "brawlerKey": "DARRYL",
+      "winRateAdj": 64.9762568952229,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000875,
+      "abilityName": "DO NOT PASS GO",
+      "brawlerKey": "MEEPLE",
+      "winRateAdj": 64.93936258618895,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000660,
+      "abilityName": "PROTOCOL: ASSIST",
+      "brawlerKey": "LARRYANDLAWRIE",
+      "winRateAdj": 64.9281504316987,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000816,
+      "abilityName": "NIGIRI NEMESIS",
+      "brawlerKey": "KENJI",
+      "winRateAdj": 64.92534771107735,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000144,
+      "abilityName": "SCREECHING SOLO",
+      "brawlerKey": "POCO",
+      "winRateAdj": 64.87412304267502,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000308,
+      "abilityName": "SCORCHIN' SIPHON",
+      "brawlerKey": "AMBER",
+      "winRateAdj": 64.86130713374287,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000528,
+      "abilityName": "SNEAK PEEK",
+      "brawlerKey": "CHESTER",
+      "winRateAdj": 64.80931025048842,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000876,
+      "abilityName": "RULE BENDING",
+      "brawlerKey": "MEEPLE",
+      "winRateAdj": 64.80356742354519,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000815,
+      "abilityName": "STUDIED THE BLADE",
+      "brawlerKey": "KENJI",
+      "winRateAdj": 64.77832441332248,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000229,
+      "abilityName": "FREEZING SNOW",
+      "brawlerKey": "GALE",
+      "winRateAdj": 64.70357627759512,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000153,
+      "abilityName": "SPONGE",
+      "brawlerKey": "FRANK",
+      "winRateAdj": 64.67844651214438,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000832,
+      "abilityName": "SPOOKY SPEEDSTER",
+      "brawlerKey": "SHADE",
+      "winRateAdj": 64.50464185198899,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000527,
+      "abilityName": "SINGLE BELL'O'MANIA",
+      "brawlerKey": "CHESTER",
+      "winRateAdj": 64.45230960710403,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000301,
+      "abilityName": "MASS TAX",
+      "brawlerKey": "COLETTE",
+      "winRateAdj": 64.44349015987623,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000383,
+      "abilityName": "FOOT PATROL",
+      "brawlerKey": "GROM",
+      "winRateAdj": 64.21262782326458,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000397,
+      "abilityName": "KEEP THE CHANGE",
+      "brawlerKey": "GRIFF",
+      "winRateAdj": 64.21075295827052,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000324,
+      "abilityName": "SUPERCOOL",
+      "brawlerKey": "LOU",
+      "winRateAdj": 64.15020053773773,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000586,
+      "abilityName": "MUSHROOM KINGDOM",
+      "brawlerKey": "CORDELIUS",
+      "winRateAdj": 64.14510429623932,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000585,
+      "abilityName": "COMBOSHROOMS",
+      "brawlerKey": "CORDELIUS",
+      "winRateAdj": 64.11436955031124,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000752,
+      "abilityName": "SPIKY",
+      "brawlerKey": "LILY",
+      "winRateAdj": 64.02752142060368,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000667,
+      "abilityName": "FAST BEATS",
+      "brawlerKey": "MELODIE",
+      "winRateAdj": 63.98074662727823,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000307,
+      "abilityName": "WILD FLAMES",
+      "brawlerKey": "AMBER",
+      "winRateAdj": 63.94904624373567,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000346,
+      "abilityName": "FIELD PROMOTION",
+      "brawlerKey": "RUFFS",
+      "winRateAdj": 63.920331446805946,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000199,
+      "abilityName": "HYPE",
+      "brawlerKey": "EMZ",
+      "winRateAdj": 63.914082614516374,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000104,
+      "abilityName": "POWER GRAB",
+      "brawlerKey": "FRANK",
+      "winRateAdj": 63.88210880841891,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000181,
+      "abilityName": "PLUGGED IN",
+      "brawlerKey": "8BIT",
+      "winRateAdj": 63.881125586000564,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000099,
+      "abilityName": "HEAVY COFFERS",
+      "brawlerKey": "PENNY",
+      "winRateAdj": 63.835122408982805,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000384,
+      "abilityName": "X-FACTOR",
+      "brawlerKey": "GROM",
+      "winRateAdj": 63.78424213792635,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000668,
+      "abilityName": "EXTENDED MIX",
+      "brawlerKey": "MELODIE",
+      "winRateAdj": 63.7666481555472,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000149,
+      "abilityName": "SHOCKY",
+      "brawlerKey": "JESSIE",
+      "winRateAdj": 63.72488040477099,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000345,
+      "abilityName": "AIR SUPERIORITY",
+      "brawlerKey": "RUFFS",
+      "winRateAdj": 63.72257942981526,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000659,
+      "abilityName": "PROTOCOL: PROTECT",
+      "brawlerKey": "LARRYANDLAWRIE",
+      "winRateAdj": 63.70370069496425,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000160,
+      "abilityName": "HEALING SHADE",
+      "brawlerKey": "TARA",
+      "winRateAdj": 63.66755508461418,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000300,
+      "abilityName": "PUSH IT",
+      "brawlerKey": "COLETTE",
+      "winRateAdj": 63.64518773488294,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000370,
+      "abilityName": "GROUNDED",
+      "brawlerKey": "BELLE",
+      "winRateAdj": 63.634981600615056,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000241,
+      "abilityName": "PHOTOSYNTHESIS",
+      "brawlerKey": "SPROUT",
+      "winRateAdj": 63.616001885703014,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000240,
+      "abilityName": "OVERGROWTH",
+      "brawlerKey": "SPROUT",
+      "winRateAdj": 63.61291626818133,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000093,
+      "abilityName": "BLACK PORTAL",
+      "brawlerKey": "TARA",
+      "winRateAdj": 63.57533658009584,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000369,
+      "abilityName": "POSITIVE FEEDBACK",
+      "brawlerKey": "BELLE",
+      "winRateAdj": 63.54849698961553,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000578,
+      "abilityName": "TAKE COVER!",
+      "brawlerKey": "HANK",
+      "winRateAdj": 63.544005187837314,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000137,
+      "abilityName": "TOUGH GUY",
+      "brawlerKey": "BULL",
+      "winRateAdj": 63.424011057760175,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000577,
+      "abilityName": "IT'S GONNA BLOW",
+      "brawlerKey": "HANK",
+      "winRateAdj": 63.384820834879385,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000083,
+      "abilityName": "ENERGIZE",
+      "brawlerKey": "JESSIE",
+      "winRateAdj": 63.370740407503355,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000438,
+      "abilityName": "FRESH KICKS",
+      "brawlerKey": "FANG",
+      "winRateAdj": 63.292556302527515,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000140,
+      "abilityName": "METEOR RUSH",
+      "brawlerKey": "ELPRIMO",
+      "winRateAdj": 63.24557905349124,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000142,
+      "abilityName": "MASTER BLASTER",
+      "brawlerKey": "PENNY",
+      "winRateAdj": 63.20946523627242,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000198,
+      "abilityName": "BAD KARMA",
+      "brawlerKey": "EMZ",
+      "winRateAdj": 63.19353939212278,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000512,
+      "abilityName": "SPIRIT ANIMAL",
+      "brawlerKey": "GUS",
+      "winRateAdj": 63.140419131509205,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000114,
+      "abilityName": "WELL OILED",
+      "brawlerKey": "TICK",
+      "winRateAdj": 63.03862320331248,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000090,
+      "abilityName": "CIRCLING EAGLE",
+      "brawlerKey": "BO",
+      "winRateAdj": 63.016080228706805,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000765,
+      "abilityName": "MAKING A MESS",
+      "brawlerKey": "BERRY",
+      "winRateAdj": 62.993938488675084,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000078,
+      "abilityName": "BERSERKER",
+      "brawlerKey": "BULL",
+      "winRateAdj": 62.99106871011485,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000146,
+      "abilityName": "BATTING STANCE",
+      "brawlerKey": "BIBI",
+      "winRateAdj": 62.937052262322645,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000082,
+      "abilityName": "MEDICAL USE",
+      "brawlerKey": "BARLEY",
+      "winRateAdj": 62.92002966839361,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000086,
+      "abilityName": "EL FUEGO",
+      "brawlerKey": "ELPRIMO",
+      "winRateAdj": 62.911884025964824,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000511,
+      "abilityName": "HEALTH BONANZA",
+      "brawlerKey": "GUS",
+      "winRateAdj": 62.884583841020934,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000135,
+      "abilityName": "BAND-AID",
+      "brawlerKey": "SHELLY",
+      "winRateAdj": 62.87978331424172,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000089,
+      "abilityName": "DA CAPO!",
+      "brawlerKey": "POCO",
+      "winRateAdj": 62.85519883435781,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000675,
+      "abilityName": "EMPOWER",
+      "brawlerKey": "ANGELO",
+      "winRateAdj": 62.812448834235724,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000134,
+      "abilityName": "HOME RUN",
+      "brawlerKey": "BIBI",
+      "winRateAdj": 62.76618069901192,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000129,
+      "abilityName": "POWER THROW",
+      "brawlerKey": "CARL",
+      "winRateAdj": 62.76343513904429,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000764,
+      "abilityName": "FLOOR IS FINE",
+      "brawlerKey": "BERRY",
+      "winRateAdj": 62.75207727634123,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000143,
+      "abilityName": "CARRION CROW",
+      "brawlerKey": "CROW",
+      "winRateAdj": 62.751074666678655,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000647,
+      "abilityName": "OVERLY ATTACHED",
+      "brawlerKey": "KIT",
+      "winRateAdj": 62.74425270422819,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000088,
+      "abilityName": "EXTRA TOXIC",
+      "brawlerKey": "CROW",
+      "winRateAdj": 62.690713143408686,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000193,
+      "abilityName": "HONEYCOMB",
+      "brawlerKey": "BEA",
+      "winRateAdj": 62.667289485260255,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000377,
+      "abilityName": "SUPER STICKY",
+      "brawlerKey": "SQUEAK",
+      "winRateAdj": 62.60282566415884,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000535,
+      "abilityName": "FAKE INJURY",
+      "brawlerKey": "GRAY",
+      "winRateAdj": 62.592139297427885,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000339,
+      "abilityName": "FISTICUFFS",
+      "brawlerKey": "EDGAR",
+      "winRateAdj": 62.59187835327792,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000376,
+      "abilityName": "CHAIN REACTION",
+      "brawlerKey": "SQUEAK",
+      "winRateAdj": 62.435474784172705,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000109,
+      "abilityName": "MAGIC PUFFS",
+      "brawlerKey": "GENE",
+      "winRateAdj": 62.401963329570464,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000145,
+      "abilityName": "PROTECTIVE PIROUETTE",
+      "brawlerKey": "CARL",
+      "winRateAdj": 62.369358402233374,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000158,
+      "abilityName": "EXTRA NOXIOUS",
+      "brawlerKey": "BARLEY",
+      "winRateAdj": 62.36829115768457,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000211,
+      "abilityName": "RUN N GUN",
+      "brawlerKey": "MAX",
+      "winRateAdj": 62.36552157094801,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000119,
+      "abilityName": "SMOKE TRAILS",
+      "brawlerKey": "LEON",
+      "winRateAdj": 62.34829742022572,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000159,
+      "abilityName": "SPIRIT SLAP",
+      "brawlerKey": "GENE",
+      "winRateAdj": 62.34439857117625,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000390,
+      "abilityName": "TOUGHER TORPEDO",
+      "brawlerKey": "BUZZ",
+      "winRateAdj": 62.34357019357285,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000676,
+      "abilityName": "FLOW",
+      "brawlerKey": "ANGELO",
+      "winRateAdj": 62.30187842434498,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000192,
+      "abilityName": "INSTA BEALOAD",
+      "brawlerKey": "BEA",
+      "winRateAdj": 62.23512722442878,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000338,
+      "abilityName": "HARD LANDING",
+      "brawlerKey": "EDGAR",
+      "winRateAdj": 62.10062344917693,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000536,
+      "abilityName": "NEW PERSPECTIVE",
+      "brawlerKey": "GRAY",
+      "winRateAdj": 62.026491592970515,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000363,
+      "abilityName": "GASO-HEAL",
+      "brawlerKey": "STU",
+      "winRateAdj": 61.97257952442102,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000210,
+      "abilityName": "SUPER CHARGED",
+      "brawlerKey": "MAX",
+      "winRateAdj": 61.76706700568022,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000141,
+      "abilityName": "INVISIHEAL",
+      "brawlerKey": "LEON",
+      "winRateAdj": 61.755871402328076,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000646,
+      "abilityName": "POWER HUNGRY",
+      "brawlerKey": "KIT",
+      "winRateAdj": 61.67687346682854,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000161,
+      "abilityName": "AUTOMA-TICK RELOAD",
+      "brawlerKey": "TICK",
+      "winRateAdj": 61.616260004122125,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000391,
+      "abilityName": "EYES SHARP",
+      "brawlerKey": "BUZZ",
+      "winRateAdj": 61.458179480444194,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000150,
+      "abilityName": "ROCKET NO. 4",
+      "brawlerKey": "BROCK",
+      "winRateAdj": 61.35839770101358,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000235,
+      "abilityName": "TEMPERED STEEL",
+      "brawlerKey": "NANI",
+      "winRateAdj": 61.13064793774782,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000234,
+      "abilityName": "AUTOFOCUS",
+      "brawlerKey": "NANI",
+      "winRateAdj": 60.91338913161049,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000076,
+      "abilityName": "SHELL SHOCK",
+      "brawlerKey": "SHELLY",
+      "winRateAdj": 60.822779142983066,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000331,
+      "abilityName": "MALAISE",
+      "brawlerKey": "BYRON",
+      "winRateAdj": 60.79533209805893,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000284,
+      "abilityName": "SERVE ICE COLD",
+      "brawlerKey": "SURGE",
+      "winRateAdj": 60.77204359319526,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000079,
+      "abilityName": "MORE ROCKETS!",
+      "brawlerKey": "BROCK",
+      "winRateAdj": 60.759509475395454,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000155,
+      "abilityName": "DEMOLITION",
+      "brawlerKey": "DYNAMIKE",
+      "winRateAdj": 60.7042292066703,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000543,
+      "abilityName": "IN MY SIGHTS",
+      "brawlerKey": "MANDY",
+      "winRateAdj": 60.6964324030742,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000332,
+      "abilityName": "INJECTION",
+      "brawlerKey": "BYRON",
+      "winRateAdj": 60.6280128244679,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000544,
+      "abilityName": "HARD CANDY",
+      "brawlerKey": "MANDY",
+      "winRateAdj": 60.61526024945507,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000362,
+      "abilityName": "ZERO DRAG",
+      "brawlerKey": "STU",
+      "winRateAdj": 60.51170809723831,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000081,
+      "abilityName": "FERTILIZE",
+      "brawlerKey": "SPIKE",
+      "winRateAdj": 60.44914007974129,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000283,
+      "abilityName": "TO THE MAX!",
+      "brawlerKey": "SURGE",
+      "winRateAdj": 60.333165361221276,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000151,
+      "abilityName": "CURVEBALL",
+      "brawlerKey": "SPIKE",
+      "winRateAdj": 60.279552149502116,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000152,
+      "abilityName": "SNAPPY SNIPING",
+      "brawlerKey": "PIPER",
+      "winRateAdj": 59.216501677289145,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000154,
+      "abilityName": "COILED SNAKE",
+      "brawlerKey": "MORTIS",
+      "winRateAdj": 59.188775915844815,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000077,
+      "abilityName": "SLICK BOOTS",
+      "brawlerKey": "COLT",
+      "winRateAdj": 58.99534063710769,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000087,
+      "abilityName": "CREEPY HARVEST",
+      "brawlerKey": "MORTIS",
+      "winRateAdj": 58.967112014494184,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000080,
+      "abilityName": "SUPER BOUNCY",
+      "brawlerKey": "RICO",
+      "winRateAdj": 58.896876992586364,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000156,
+      "abilityName": "ROBO RETREAT",
+      "brawlerKey": "RICO",
+      "winRateAdj": 58.889085300907816,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000091,
+      "abilityName": "AMBUSH",
+      "brawlerKey": "PIPER",
+      "winRateAdj": 58.499531016654316,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000085,
+      "abilityName": "DYNA-JUMP",
+      "brawlerKey": "DYNAMIKE",
+      "winRateAdj": 57.645384602846036,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    },
+    {
+      "type": "starPower",
+      "abilityId": 23000138,
+      "abilityName": "MAGNUM SPECIAL",
+      "brawlerKey": "COLT",
+      "winRateAdj": 57.540942158424144,
+      "useRate": 100,
+      "picksEstimate": 54633717
+    }
+  ],
   "topTeams": [
     {
       "brawlerKeys": [
@@ -626,7 +4336,7 @@
         "COLT",
         "MORTIS"
       ],
-      "wins": 46923.49999708
+      "wins": 46944.49999708
     },
     {
       "brawlerKeys": [
@@ -634,7 +4344,7 @@
         "EDGAR",
         "MORTIS"
       ],
-      "wins": 44905.49999506
+      "wins": 44929.49999506
     },
     {
       "brawlerKeys": [
@@ -642,7 +4352,7 @@
         "EDGAR",
         "MORTIS"
       ],
-      "wins": 39765.66665928
+      "wins": 39790.99999261
     },
     {
       "brawlerKeys": [
@@ -650,7 +4360,7 @@
         "DAMIAN",
         "EDGAR"
       ],
-      "wins": 36039.49999882
+      "wins": 36047.16666548
     },
     {
       "brawlerKeys": [
@@ -658,7 +4368,7 @@
         "MORTIS",
         "RICO"
       ],
-      "wins": 33361.83333145
+      "wins": 33373.83333145
     },
     {
       "brawlerKeys": [
@@ -682,7 +4392,7 @@
         "DAMIAN",
         "MORTIS"
       ],
-      "wins": 31066.1666659
+      "wins": 31076.1666659
     }
   ],
   "activeEvents": [
