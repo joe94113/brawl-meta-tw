@@ -24,6 +24,8 @@ const {
   metaSnapshot,
   metaError,
   liveMetaCount,
+  confidenceForBrawler,
+  trendForBrawler,
 } = useBrawlData()
 
 const roleFilter = ref('All')
@@ -61,8 +63,19 @@ const tierGroups = computed(() =>
   })),
 )
 
+const trendRows = computed(() =>
+  rankedBrawlers.value
+    .map((brawler) => ({
+      brawler,
+      trend: trendForBrawler(brawler),
+      confidence: confidenceForBrawler(brawler),
+    }))
+    .sort((a, b) => Math.abs(b.trend.delta) - Math.abs(a.trend.delta))
+    .slice(0, 6),
+)
+
 function selectBrawler(brawler: Brawler | RankedBrawler) {
-  void router.push({ name: 'counter', params: { id: brawler.id } })
+  void router.push({ name: 'brawler-detail', params: { id: brawler.id } })
 }
 
 function tierBadgeClass(tier: string) {
@@ -125,6 +138,31 @@ function tierBadgeClass(tier: string) {
     </div>
 
     <div v-else class="mx-auto grid w-[min(1180px,calc(100%_-_48px))] gap-4 max-sm:w-[calc(100%_-_28px)]">
+      <section class="dark-panel rounded-lg p-4">
+        <div class="flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <h2 class="m-0 text-xl font-black text-white">Meta 變化趨勢</h2>
+            <p class="mb-0 mt-1 text-sm leading-6 text-slate-400">依近月勝率、使用率與樣本量計算升溫指標，樣本不足會標示可信度。</p>
+          </div>
+        </div>
+        <div class="mt-3 grid grid-cols-6 gap-2 max-lg:grid-cols-3 max-sm:grid-cols-2">
+          <button
+            v-for="row in trendRows"
+            :key="row.brawler.id"
+            type="button"
+            class="grid min-h-[112px] content-start justify-items-center rounded-lg border border-white/10 bg-white/5 p-2 text-white transition hover:border-[#ffcc00]"
+            @click="selectBrawler(row.brawler)"
+          >
+            <img class="size-14 object-contain" :src="row.brawler.imageUrl" :alt="row.brawler.localizedName" />
+            <strong class="mt-1 max-w-full truncate text-sm">{{ row.brawler.localizedName }}</strong>
+            <span class="font-score text-sm font-black" :class="row.trend.tone">
+              {{ row.trend.delta > 0 ? '+' : '' }}{{ row.trend.delta }}%
+            </span>
+            <small class="text-[0.68rem] font-black" :class="row.confidence.tone">可信度 {{ row.confidence.label }}</small>
+          </button>
+        </div>
+      </section>
+
       <article v-for="group in tierGroups" :key="group.tier" class="dark-panel grid min-h-[120px] grid-cols-[96px_1fr] gap-4 rounded-lg p-4 max-sm:grid-cols-1">
         <div class="grid min-h-24 place-items-center rounded-lg text-[#17191f]" :class="tierBadgeClass(group.tier)">
           <strong class="text-[2.7rem] leading-none">{{ group.tier }}</strong>

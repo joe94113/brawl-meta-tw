@@ -7,6 +7,7 @@ import PlayerPage from './pages/PlayerPage.vue'
 import MapRatesPage from './pages/MapRatesPage.vue'
 import MapsPage from './pages/MapsPage.vue'
 import MapDetailPage from './pages/MapDetailPage.vue'
+import BrawlerDetailPage from './pages/BrawlerDetailPage.vue'
 
 export const router = createRouter({
   history:
@@ -21,6 +22,7 @@ export const router = createRouter({
     { path: '/meta', name: 'meta', component: MetaPage },
     { path: '/draft', name: 'draft', component: DraftPage },
     { path: '/counter/:id?', name: 'counter', component: CounterPage },
+    { path: '/brawlers/:id', name: 'brawler-detail', component: BrawlerDetailPage },
     { path: '/player', name: 'player', component: PlayerPage },
     { path: '/maps/winrates', name: 'maprates', component: MapRatesPage },
     { path: '/maps/:id', name: 'map-detail', component: MapDetailPage },

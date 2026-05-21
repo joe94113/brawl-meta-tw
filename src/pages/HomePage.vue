@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { RouterLink, useRouter } from 'vue-router'
+import type { RouteLocationRaw } from 'vue-router'
 import { Search, Trophy } from '@lucide/vue'
 import MetaSourceNote from '../components/MetaSourceNote.vue'
 import SkeletonBlock from '../components/SkeletonBlock.vue'
@@ -9,10 +10,20 @@ import { canonicalModeSlug, isHomeActiveModeSlug } from '../data/modeFilters'
 import type { MapItem } from '../types'
 import { formatPercent } from '../utils/format'
 
+type CommandSuggestion = {
+  key: string
+  type: '英雄' | '地圖' | '玩家'
+  label: string
+  note: string
+  imageUrl: string
+  to: RouteLocationRaw
+}
+
 const router = useRouter()
 const {
   loading,
   loadGameData,
+  brawlers,
   heroBrawlers,
   metaLeaders,
   brawlerCount,
@@ -31,8 +42,7 @@ const {
   rarityLabel,
 } = useBrawlData()
 
-const playerTag = ref('')
-const quickSearch = ref('')
+const commandQuery = ref('')
 
 const todayLabel = new Intl.DateTimeFormat('zh-TW', {
   month: '2-digit',
@@ -72,16 +82,81 @@ const activeMapCards = computed(() =>
 
 onMounted(loadGameData)
 
-function runPlayerSearch() {
-  const tag = playerTag.value.replace('#', '').trim()
-  if (!tag) return
-  void router.push({ name: 'player', query: { tag: `#${tag}` } })
+const commandSuggestions = computed<CommandSuggestion[]>(() => {
+  const query = commandQuery.value.trim()
+  if (!query) return []
+
+  const suggestions: CommandSuggestion[] = [
+    ...brawlers.value
+      .filter((brawler) => commandMatches(query, brawler.localizedName, brawler.name))
+      .slice(0, 4)
+      .map((brawler) => ({
+        key: `brawler-${brawler.id}`,
+        type: '英雄' as const,
+        label: brawler.localizedName,
+        note: `${brawler.name} · ${rarityLabel(brawler.rarityName)}`,
+        imageUrl: brawler.imageUrl,
+        to: { name: 'brawler-detail', params: { id: brawler.id } },
+      })),
+    ...maps.value
+      .filter((map) => commandMatches(query, map.localizedName, map.name))
+      .slice(0, 4)
+      .map((map) => ({
+        key: `map-${map.id}`,
+        type: '地圖' as const,
+        label: map.localizedName,
+        note: modeLabel(map.modeName),
+        imageUrl: map.imageUrl || map.modeImageUrl,
+        to: { name: 'map-detail', params: { id: map.id } },
+      })),
+  ]
+
+  if (looksLikePlayerTag(query)) {
+    suggestions.unshift({
+      key: `player-${normalizePlayerTag(query)}`,
+      type: '玩家' as const,
+      label: `#${normalizePlayerTag(query)}`,
+      note: '個人戰績',
+      imageUrl: '',
+      to: { name: 'player', query: { tag: normalizePlayerTag(query) } },
+    })
+  }
+
+  return suggestions.slice(0, 6)
+})
+
+function runCommandSearch() {
+  const query = commandQuery.value.trim()
+  if (!query) return
+
+  const exactBrawler = brawlers.value.find((brawler) => commandEquals(query, brawler.localizedName, brawler.name))
+  if (exactBrawler) {
+    void router.push({ name: 'brawler-detail', params: { id: exactBrawler.id } })
+    return
+  }
+
+  const exactMap = maps.value.find((map) => commandEquals(query, map.localizedName, map.name))
+  if (exactMap) {
+    void router.push({ name: 'map-detail', params: { id: exactMap.id } })
+    return
+  }
+
+  const firstSuggestion = commandSuggestions.value.find((suggestion) => suggestion.type !== '玩家')
+  if (firstSuggestion && !looksLikePlayerTag(query)) {
+    void router.push(firstSuggestion.to)
+    return
+  }
+
+  if (looksLikePlayerTag(query)) {
+    void router.push({ name: 'player', query: { tag: normalizePlayerTag(query) } })
+    return
+  }
+
+  void router.push({ name: 'meta', query: { q: query } })
 }
 
-function runQuickSearch(kind: 'brawler' | 'map') {
-  const query = quickSearch.value.trim()
-  if (!query) return
-  void router.push(kind === 'map' ? { name: 'maprates', query: { q: query } } : { name: 'meta', query: { q: query } })
+function goCommandSuggestion(suggestion: (typeof commandSuggestions.value)[number]) {
+  void router.push(suggestion.to)
 }
 
 function onImageError(event: Event) {
@@ -90,6 +165,29 @@ function onImageError(event: Event) {
 
 function normalizeMapName(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '')
+}
+
+function normalizeCommandKey(value: string) {
+  return value.toLowerCase().replace(/[#\s_-]+/g, '')
+}
+
+function commandMatches(query: string, ...targets: string[]) {
+  const key = normalizeCommandKey(query)
+  return targets.some((target) => normalizeCommandKey(target).includes(key))
+}
+
+function commandEquals(query: string, ...targets: string[]) {
+  const key = normalizeCommandKey(query)
+  return targets.some((target) => normalizeCommandKey(target) === key)
+}
+
+function normalizePlayerTag(value: string) {
+  return value.replace('#', '').replace(/\s+/g, '').toUpperCase()
+}
+
+function looksLikePlayerTag(value: string) {
+  const tag = normalizePlayerTag(value)
+  return value.trim().startsWith('#') || (/^[A-Z0-9]{3,}$/.test(tag) && /\d/.test(tag))
 }
 
 function fallbackMapForEvent(id: string, name: string, modeName: string, modeImageUrl: string): MapItem {
@@ -130,23 +228,36 @@ function fallbackMapForEvent(id: string, name: string, modeName: string, modeIma
       </h1>
 
       <div class="dark-panel mt-8 w-[min(760px,100%)] rounded-lg p-4 accent-ring">
-        <form class="grid grid-cols-[auto_1fr_auto] items-center gap-3 max-sm:grid-cols-1" role="search" @submit.prevent="runPlayerSearch">
+        <form class="grid grid-cols-[auto_1fr_auto] items-center gap-3 max-sm:grid-cols-1" role="search" @submit.prevent="runCommandSearch">
           <span class="grid size-12 place-items-center rounded-lg bg-[#ffcc00] text-[#121824] max-sm:hidden">
             <Search class="size-6" />
           </span>
           <label class="relative block">
-            <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-xl font-black text-slate-500">#</span>
-            <input v-model="playerTag" class="min-h-14 w-full rounded-lg border border-white/10 bg-[#121824] px-4 pl-10 text-lg font-black text-white outline-none ring-[#ffcc00]/30 focus:ring-4" placeholder="輸入玩家 Tag" />
+            <input v-model="commandQuery" class="min-h-14 w-full rounded-lg border border-white/10 bg-[#121824] px-4 text-lg font-black text-white outline-none ring-[#ffcc00]/30 focus:ring-4" placeholder="搜尋英雄、地圖或玩家 Tag" />
           </label>
           <button type="submit" class="inline-flex min-h-14 items-center justify-center gap-2 rounded-lg bg-[#ffcc00] px-6 font-black text-[#121824]">
             <Trophy class="size-5" />
-            查戰績
+            搜尋
           </button>
         </form>
-        <div class="mt-3 grid grid-cols-[1fr_auto_auto] gap-2 max-sm:grid-cols-1">
-          <input v-model="quickSearch" class="min-h-11 rounded-lg border border-white/10 bg-white/5 px-3 text-sm text-white outline-none focus:border-[#8a2be2]" placeholder="快搜英雄或地圖" />
-          <button type="button" class="rounded-lg border border-white/15 px-4 text-sm font-black text-white" @click="runQuickSearch('brawler')">英雄</button>
-          <button type="button" class="rounded-lg border border-white/15 px-4 text-sm font-black text-white" @click="runQuickSearch('map')">地圖</button>
+        <div v-if="commandSuggestions.length > 0" class="mt-3 grid gap-2">
+          <button
+            v-for="suggestion in commandSuggestions"
+            :key="suggestion.key"
+            type="button"
+            class="grid min-h-[58px] grid-cols-[44px_minmax(0,1fr)_auto] items-center gap-3 rounded-lg border border-white/10 bg-white/5 p-2 text-left transition hover:border-[#ffcc00]"
+            @click="goCommandSuggestion(suggestion)"
+          >
+            <span class="grid size-11 place-items-center overflow-hidden rounded-lg bg-[#121824]">
+              <img v-if="suggestion.imageUrl" class="size-full object-cover" :src="suggestion.imageUrl" :alt="suggestion.label" @error="onImageError" />
+              <Search v-else class="size-5 text-[#ffcc00]" />
+            </span>
+            <span class="min-w-0">
+              <strong class="block truncate text-sm text-white">{{ suggestion.label }}</strong>
+              <small class="block truncate text-xs font-black text-slate-500">{{ suggestion.note }}</small>
+            </span>
+            <span class="rounded-lg bg-[#121824] px-2 py-1 text-[0.68rem] font-black text-[#ffcc00]">{{ suggestion.type }}</span>
+          </button>
         </div>
       </div>
 
@@ -179,7 +290,7 @@ function fallbackMapForEvent(id: string, name: string, modeName: string, modeIma
       <SkeletonBlock :rows="5" />
     </div>
     <div v-else class="mx-auto grid w-[min(1180px,calc(100%_-_48px))] grid-cols-5 gap-4 max-lg:grid-cols-2 max-sm:w-[calc(100%_-_28px)] max-sm:grid-cols-1">
-      <RouterLink v-for="(entry, index) in metaLeaders" :key="entry.id" :to="`/counter/${entry.id}`" class="dark-panel relative grid min-h-[260px] content-end gap-3 overflow-hidden rounded-lg p-4 text-white no-underline hover:border-[#ffcc00]">
+      <RouterLink v-for="(entry, index) in metaLeaders" :key="entry.id" :to="`/brawlers/${entry.id}`" class="dark-panel relative grid min-h-[260px] content-end gap-3 overflow-hidden rounded-lg p-4 text-white no-underline hover:border-[#ffcc00]">
         <span class="absolute left-4 top-4 text-xl font-black">#{{ index + 1 }}</span>
         <img class="absolute right-[-18px] top-5 size-[150px] object-contain" :src="entry.imageUrl" :alt="entry.localizedName" @error="onImageError" />
         <div>
@@ -225,7 +336,7 @@ function fallbackMapForEvent(id: string, name: string, modeName: string, modeIma
             <RouterLink :to="`/maps/${event.mapId}`" class="text-xs font-black text-[#ffcc00] no-underline">地圖詳情</RouterLink>
           </div>
           <div class="flex gap-2">
-            <RouterLink v-for="pick in event.picks" :key="pick.brawler.id" :to="`/counter/${pick.brawler.id}`" class="relative grid size-16 place-items-center rounded-lg bg-[#121824] ring-1 ring-white/10">
+            <RouterLink v-for="pick in event.picks" :key="pick.brawler.id" :to="`/brawlers/${pick.brawler.id}`" class="relative grid size-16 place-items-center rounded-lg bg-[#121824] ring-1 ring-white/10">
               <img class="size-12 object-contain" :src="pick.brawler.imageUrl" :alt="pick.brawler.localizedName" @error="onImageError" />
               <span class="absolute bottom-1 right-1 rounded bg-[#00e676] px-1 font-score text-[10px] font-black text-[#121824]">{{ Math.round(pick.winRate) }}</span>
             </RouterLink>

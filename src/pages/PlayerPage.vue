@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { Check, Copy, Search, Share2, Trophy } from '@lucide/vue'
 import { RouterLink, useRoute, useRouter } from 'vue-router'
 import PageHeader from '../components/PageHeader.vue'
@@ -21,6 +21,7 @@ type BattlePlayerRow = {
   teamIndex: number
   playerIndex: number
 }
+type BattleLogFilter = 'all' | 'showdown' | 'team'
 
 const route = useRoute()
 const router = useRouter()
@@ -32,11 +33,20 @@ const playerLoading = ref(false)
 const playerError = ref('')
 const playerProfile = ref<OfficialPlayer | null>(null)
 const battleLog = ref<OfficialBattle[]>([])
+const battleLogFilter = ref<BattleLogFilter>('all')
+const battleLogLimit = ref(8)
 const shareStatus = ref('')
+const shareCardUrl = ref('')
 
 const normalizedPlayerTag = computed(() => normalizeTag(playerTag.value))
 const ownerHashTag = computed(() => (normalizedPlayerTag.value ? `#${normalizedPlayerTag.value}` : ''))
 const canNativeShare = computed(() => typeof navigator !== 'undefined' && 'share' in navigator)
+const shareCardFilename = computed(() => `brawl-meta-${normalizedPlayerTag.value || 'player'}-card.png`)
+const battleLogFilterOptions: Array<{ value: BattleLogFilter; label: string }> = [
+  { value: 'all', label: '全部' },
+  { value: 'showdown', label: '生死鬥' },
+  { value: 'team', label: '3v3 團隊' },
+]
 
 const playerTopBrawlers = computed(() =>
   (playerProfile.value?.brawlers || [])
@@ -64,6 +74,15 @@ const battleSummary = computed(() => {
     bestRank,
   }
 })
+
+const filteredBattleLog = computed(() => {
+  if (battleLogFilter.value === 'showdown') return battleLog.value.filter((battle) => isShowdownBattle(battle))
+  if (battleLogFilter.value === 'team') return battleLog.value.filter((battle) => !isShowdownBattle(battle))
+  return battleLog.value
+})
+
+const visibleBattleLog = computed(() => filteredBattleLog.value.slice(0, battleLogLimit.value))
+const hasMoreBattleLog = computed(() => visibleBattleLog.value.length < filteredBattleLog.value.length)
 
 const modeRows = computed(() => {
   const counts = new Map<string, { mode: string; total: number; wins: number }>()
@@ -152,6 +171,10 @@ onMounted(() => {
   if (normalizedPlayerTag.value) void fetchPlayerData()
 })
 
+onBeforeUnmount(() => {
+  resetShareCard()
+})
+
 watch(
   () => route.query.tag,
   (tag) => {
@@ -178,6 +201,9 @@ async function fetchPlayerData() {
   playerError.value = ''
   playerProfile.value = null
   battleLog.value = []
+  battleLogFilter.value = 'all'
+  battleLogLimit.value = 8
+  resetShareCard()
 
   const encodedTag = encodeURIComponent(`#${normalizedPlayerTag.value}`)
 
@@ -217,6 +243,15 @@ function useRecentTag(tag: string) {
   submitPlayerSearch()
 }
 
+function setBattleLogFilter(filter: BattleLogFilter) {
+  battleLogFilter.value = filter
+  battleLogLimit.value = 8
+}
+
+function loadMoreBattles() {
+  battleLogLimit.value += 8
+}
+
 async function sharePlayerPage() {
   if (!playerProfile.value || !normalizedPlayerTag.value) return
 
@@ -244,6 +279,278 @@ async function sharePlayerPage() {
       shareStatus.value = ''
     }, 2400)
   }
+}
+
+async function generateShareCard() {
+  const profile = playerProfile.value
+  if (!profile) return
+
+  const topBrawlers = playerTopBrawlers.value.slice(0, 4)
+  const iconUrl = profileIconUrl(profile.icon?.id)
+
+  shareStatus.value = '正在產生 PNG 圖卡'
+
+  try {
+    if (document.fonts) await document.fonts.ready.catch(() => undefined)
+
+    const [profileIcon, ...brawlerImages] = await Promise.all([
+      loadCanvasImage(iconUrl),
+      ...topBrawlers.map((brawler) => loadCanvasImage(brawlerImageUrl(brawler))),
+    ])
+    const blob = await renderShareCardBlob(profile, topBrawlers, profileIcon, brawlerImages)
+
+    resetShareCard()
+    shareCardUrl.value = URL.createObjectURL(blob)
+    shareStatus.value = 'PNG 圖卡已產生'
+  } catch {
+    shareStatus.value = '圖卡產生失敗，請稍後再試'
+  } finally {
+    window.setTimeout(() => {
+      shareStatus.value = ''
+    }, 2400)
+  }
+}
+
+function openShareCard() {
+  if (!shareCardUrl.value) return
+  window.open(shareCardUrl.value, '_blank', 'noopener,noreferrer')
+}
+
+function resetShareCard() {
+  if (shareCardUrl.value) URL.revokeObjectURL(shareCardUrl.value)
+  shareCardUrl.value = ''
+}
+
+async function renderShareCardBlob(
+  profile: OfficialPlayer,
+  topBrawlers: OfficialPlayerBrawler[],
+  profileIcon: HTMLImageElement | null,
+  brawlerImages: Array<HTMLImageElement | null>,
+) {
+  const canvas = document.createElement('canvas')
+  canvas.width = 1200
+  canvas.height = 630
+
+  const context = canvas.getContext('2d')
+  if (!context) throw new Error('Canvas unavailable')
+
+  const gradient = context.createLinearGradient(0, 0, 1200, 630)
+  gradient.addColorStop(0, '#121824')
+  gradient.addColorStop(0.55, '#1d2330')
+  gradient.addColorStop(1, '#2d184f')
+  context.fillStyle = gradient
+  context.fillRect(0, 0, 1200, 630)
+
+  fillRoundRect(context, 46, 44, 1108, 542, 28, 'rgba(255,255,255,0.055)')
+  strokeRoundRect(context, 46, 44, 1108, 542, 28, 'rgba(255,255,255,0.14)', 1)
+
+  drawText(context, '荒野報馬仔', 78, 104, '900 28px "Noto Sans TC", Arial, sans-serif', '#ffcc00')
+  drawText(context, profile.name, 78, 178, '900 68px "Noto Sans TC", Arial, sans-serif', '#ffffff', 760)
+  const clubText = profile.club ? ` · ${profile.club.name}` : ''
+  drawText(context, `#${normalizedPlayerTag.value}${clubText}`, 80, 224, '700 30px "Noto Sans TC", Arial, sans-serif', '#94a3b8', 760)
+
+  context.fillStyle = '#ffcc00'
+  context.beginPath()
+  context.arc(1010, 156, 76, 0, Math.PI * 2)
+  context.fill()
+
+  if (profileIcon) {
+    drawCircleImage(context, profileIcon, 1010, 156, 76)
+  } else {
+    drawText(context, profile.name.slice(0, 1), 1010, 180, '900 72px "Noto Sans TC", Arial, sans-serif', '#121824', 120, 'center')
+  }
+
+  context.lineWidth = 8
+  context.strokeStyle = '#ffcc00'
+  context.beginPath()
+  context.arc(1010, 156, 78, 0, Math.PI * 2)
+  context.stroke()
+  context.lineWidth = 2
+  context.strokeStyle = 'rgba(255,255,255,0.18)'
+  context.beginPath()
+  context.arc(1010, 156, 86, 0, Math.PI * 2)
+  context.stroke()
+
+  drawShareMetric(context, 78, 292, '目前獎盃', profile.trophies.toLocaleString(), '#ffcc00')
+  drawShareMetric(context, 330, 292, '最高獎盃', profile.highestTrophies.toLocaleString(), '#ffffff')
+  drawShareMetric(context, 582, 292, '近期勝率', `${battleSummary.value.winRate}%`, '#00e676')
+  drawShareMetric(context, 834, 292, '近期場次', `${battleSummary.value.total}`, '#ffffff')
+
+  drawText(context, '代表角色', 78, 472, '800 24px "Noto Sans TC", Arial, sans-serif', '#94a3b8')
+  if (topBrawlers.length > 0) {
+    topBrawlers.forEach((brawler, index) => {
+      drawShareBrawler(context, brawler, brawlerImages[index] || null, 78 + index * 252, 492)
+    })
+  } else {
+    drawText(context, '暫無資料', 78, 526, '900 36px "Noto Sans TC", Arial, sans-serif', '#ffffff')
+  }
+  drawText(context, `分享頁：${playerShareUrl()}`, 78, 566, '700 20px "Noto Sans TC", Arial, sans-serif', '#64748b', 940)
+
+  return canvasToPngBlob(canvas)
+}
+
+function loadCanvasImage(url: string) {
+  return new Promise<HTMLImageElement | null>((resolve) => {
+    if (!url) {
+      resolve(null)
+      return
+    }
+
+    const image = new Image()
+    image.crossOrigin = 'anonymous'
+    image.decoding = 'async'
+    image.onload = () => resolve(image)
+    image.onerror = () => resolve(null)
+    image.src = url
+  })
+}
+
+function canvasToPngBlob(canvas: HTMLCanvasElement) {
+  return new Promise<Blob>((resolve, reject) => {
+    try {
+      canvas.toBlob(
+        (blob) => {
+          if (blob) resolve(blob)
+          else reject(new Error('PNG export failed'))
+        },
+        'image/png',
+        0.92,
+      )
+    } catch (error) {
+      reject(error)
+    }
+  })
+}
+
+function drawShareMetric(context: CanvasRenderingContext2D, x: number, y: number, label: string, value: string, color: string) {
+  fillRoundRect(context, x, y, 220, 118, 18, 'rgba(18,24,36,0.72)')
+  strokeRoundRect(context, x, y, 220, 118, 18, 'rgba(255,255,255,0.12)', 1)
+  drawText(context, label, x + 22, y + 40, '800 22px "Noto Sans TC", Arial, sans-serif', '#94a3b8')
+  drawText(context, value, x + 22, y + 88, '900 40px Oswald, "Noto Sans TC", Arial, sans-serif', color, 176)
+}
+
+function drawShareBrawler(
+  context: CanvasRenderingContext2D,
+  brawler: OfficialPlayerBrawler,
+  image: HTMLImageElement | null,
+  x: number,
+  y: number,
+) {
+  fillRoundRect(context, x, y, 230, 58, 16, 'rgba(18,24,36,0.82)')
+  strokeRoundRect(context, x, y, 230, 58, 16, 'rgba(255,255,255,0.12)', 1)
+  context.fillStyle = '#1d2330'
+  context.beginPath()
+  context.arc(x + 34, y + 29, 26, 0, Math.PI * 2)
+  context.fill()
+  context.lineWidth = 2
+  context.strokeStyle = 'rgba(255,204,0,0.55)'
+  context.stroke()
+
+  if (image) {
+    drawContainImage(context, image, x + 4, y - 3, 60, 60)
+  } else {
+    drawText(context, displayBrawlerName(brawler).slice(0, 1), x + 34, y + 38, '900 25px "Noto Sans TC", Arial, sans-serif', '#ffcc00', 44, 'center')
+  }
+
+  drawText(context, displayBrawlerName(brawler), x + 72, y + 26, '900 22px "Noto Sans TC", Arial, sans-serif', '#ffffff', 142)
+  drawText(
+    context,
+    `${brawler.trophies.toLocaleString()} 獎盃 · 等級 ${brawler.power}`,
+    x + 72,
+    y + 48,
+    '800 16px "Noto Sans TC", Arial, sans-serif',
+    '#ffcc00',
+    142,
+  )
+}
+
+function drawText(
+  context: CanvasRenderingContext2D,
+  text: string,
+  x: number,
+  y: number,
+  font: string,
+  color: string,
+  maxWidth = 1100,
+  align: CanvasTextAlign = 'left',
+) {
+  context.save()
+  context.font = font
+  context.fillStyle = color
+  context.textAlign = align
+  context.textBaseline = 'alphabetic'
+  context.fillText(truncateCanvasText(context, text, maxWidth), x, y)
+  context.restore()
+}
+
+function truncateCanvasText(context: CanvasRenderingContext2D, text: string, maxWidth: number) {
+  if (context.measureText(text).width <= maxWidth) return text
+
+  let next = text
+  while (next.length > 1 && context.measureText(`${next}...`).width > maxWidth) {
+    next = next.slice(0, -1)
+  }
+  return `${next}...`
+}
+
+function drawCircleImage(context: CanvasRenderingContext2D, image: HTMLImageElement, cx: number, cy: number, radius: number) {
+  context.save()
+  context.beginPath()
+  context.arc(cx, cy, radius, 0, Math.PI * 2)
+  context.clip()
+  drawCoverImage(context, image, cx - radius, cy - radius, radius * 2, radius * 2)
+  context.restore()
+}
+
+function drawCoverImage(context: CanvasRenderingContext2D, image: HTMLImageElement, x: number, y: number, width: number, height: number) {
+  const scale = Math.max(width / image.naturalWidth, height / image.naturalHeight)
+  const drawWidth = image.naturalWidth * scale
+  const drawHeight = image.naturalHeight * scale
+  context.drawImage(image, x + (width - drawWidth) / 2, y + (height - drawHeight) / 2, drawWidth, drawHeight)
+}
+
+function drawContainImage(context: CanvasRenderingContext2D, image: HTMLImageElement, x: number, y: number, width: number, height: number) {
+  const scale = Math.min(width / image.naturalWidth, height / image.naturalHeight)
+  const drawWidth = image.naturalWidth * scale
+  const drawHeight = image.naturalHeight * scale
+  context.drawImage(image, x + (width - drawWidth) / 2, y + (height - drawHeight) / 2, drawWidth, drawHeight)
+}
+
+function fillRoundRect(context: CanvasRenderingContext2D, x: number, y: number, width: number, height: number, radius: number, fillStyle: string) {
+  roundedRectPath(context, x, y, width, height, radius)
+  context.fillStyle = fillStyle
+  context.fill()
+}
+
+function strokeRoundRect(
+  context: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  width: number,
+  height: number,
+  radius: number,
+  strokeStyle: string,
+  lineWidth: number,
+) {
+  roundedRectPath(context, x, y, width, height, radius)
+  context.strokeStyle = strokeStyle
+  context.lineWidth = lineWidth
+  context.stroke()
+}
+
+function roundedRectPath(context: CanvasRenderingContext2D, x: number, y: number, width: number, height: number, radius: number) {
+  const safeRadius = Math.min(radius, width / 2, height / 2)
+  context.beginPath()
+  context.moveTo(x + safeRadius, y)
+  context.lineTo(x + width - safeRadius, y)
+  context.quadraticCurveTo(x + width, y, x + width, y + safeRadius)
+  context.lineTo(x + width, y + height - safeRadius)
+  context.quadraticCurveTo(x + width, y + height, x + width - safeRadius, y + height)
+  context.lineTo(x + safeRadius, y + height)
+  context.quadraticCurveTo(x, y + height, x, y + height - safeRadius)
+  context.lineTo(x, y + safeRadius)
+  context.quadraticCurveTo(x, y, x + safeRadius, y)
+  context.closePath()
 }
 
 function playerShareUrl() {
@@ -515,13 +822,25 @@ function showdownPlayerRow(player: OfficialBattlePlayer, team: BattleTeam, teamI
 
 function formatBattleTime(value?: string) {
   if (!value) return ''
+  const date = parseBattleTime(value)
+  if (!date) return ''
+
   return new Intl.DateTimeFormat('zh-TW', {
     month: '2-digit',
     day: '2-digit',
     hour: '2-digit',
     minute: '2-digit',
     hour12: false,
-  }).format(new Date(value))
+  }).format(date)
+}
+
+function parseBattleTime(value: string) {
+  const compact = value.match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})(\.\d+)?Z$/)
+  const date = compact
+    ? new Date(`${compact[1]}-${compact[2]}-${compact[3]}T${compact[4]}:${compact[5]}:${compact[6]}${compact[7] || '.000'}Z`)
+    : new Date(value)
+
+  return Number.isNaN(date.getTime()) ? null : date
 }
 
 function resultLabel(battle: OfficialBattle) {
@@ -618,6 +937,14 @@ function onImageError(event: Event) {
               <Copy v-else class="size-4" />
               {{ shareStatus || '分享戰績' }}
             </button>
+            <button
+              type="button"
+              class="inline-flex min-h-10 items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/10 px-4 text-sm font-black text-white transition hover:bg-white/15"
+              @click="generateShareCard"
+            >
+              <Share2 class="size-4" />
+              產生戰績圖卡
+            </button>
           </div>
         </div>
 
@@ -632,6 +959,18 @@ function onImageError(event: Event) {
           </div>
         </div>
         <p v-if="playerError" class="mt-3 rounded-lg border border-[#ff1744]/40 bg-[#ff1744]/10 p-3 leading-7 text-red-100">{{ playerError }}</p>
+
+        <div v-if="playerProfile && shareCardUrl" class="mt-5 grid grid-cols-[280px_minmax(0,1fr)] gap-4 rounded-lg border border-[#ffcc00]/25 bg-[#ffcc00]/8 p-3 max-lg:grid-cols-1">
+          <img class="aspect-[1200/630] w-full rounded-lg border border-white/10 object-cover" :src="shareCardUrl" alt="戰績分享圖卡預覽" />
+          <div class="min-w-0 self-center">
+            <h3 class="m-0 text-base font-black text-white">戰績圖卡已產生</h3>
+            <p class="mb-0 mt-2 text-sm leading-6 text-slate-300">圖卡會帶上玩家名稱、Tag、獎盃、近期勝率與代表角色，適合直接分享個人頁數據。</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <button type="button" class="inline-flex min-h-10 items-center rounded-lg bg-[#ffcc00] px-4 text-sm font-black text-[#121824]" @click="openShareCard">開啟圖卡</button>
+              <a class="inline-flex min-h-10 items-center rounded-lg border border-white/15 bg-white/10 px-4 text-sm font-black text-white no-underline" :href="shareCardUrl" :download="shareCardFilename">下載 PNG</a>
+            </div>
+          </div>
+        </div>
 
         <div v-if="playerProfile" class="mt-5 grid grid-cols-[repeat(4,minmax(0,1fr))] gap-3 max-sm:grid-cols-[repeat(2,minmax(0,1fr))]">
           <div class="min-w-0 rounded-lg bg-white/5 p-3">
@@ -819,8 +1158,26 @@ function onImageError(event: Event) {
         </div>
 
         <div v-if="battleLog.length > 0" class="mt-5 grid gap-3">
-          <h3 class="m-0 text-base font-black text-white">近期對戰歷史</h3>
-          <article v-for="battle in battleLog.slice(0, 16)" :key="battle.battleTime" class="grid gap-3 rounded-lg border bg-[#121824] p-3" :class="battleResultClass(battle.battle?.result)">
+          <div class="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <h3 class="m-0 text-base font-black text-white">近期對戰歷史</h3>
+              <p class="mb-0 mt-1 text-xs font-black text-slate-500">顯示 {{ visibleBattleLog.length }} / {{ filteredBattleLog.length }} 場</p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <button
+                v-for="option in battleLogFilterOptions"
+                :key="option.value"
+                type="button"
+                class="min-h-9 rounded-lg border px-3 text-xs font-black transition"
+                :class="battleLogFilter === option.value ? 'border-[#ffcc00] bg-[#ffcc00] text-[#121824]' : 'border-white/10 bg-white/5 text-slate-300 hover:border-[#ffcc00]'"
+                @click="setBattleLogFilter(option.value)"
+              >
+                {{ option.label }}
+              </button>
+            </div>
+          </div>
+
+          <article v-for="battle in visibleBattleLog" :key="battle.battleTime" class="grid gap-3 rounded-lg border bg-[#121824] p-3" :class="battleResultClass(battle.battle?.result)">
             <div class="grid grid-cols-[76px_minmax(0,1fr)_auto] items-center gap-3 max-sm:grid-cols-[64px_minmax(0,1fr)]">
               <div class="relative grid size-[76px] place-items-center overflow-hidden rounded-lg border border-white/10 bg-[#1d2330] max-sm:size-16">
                 <img
@@ -1036,6 +1393,15 @@ function onImageError(event: Event) {
               </div>
             </div>
           </article>
+
+          <button
+            v-if="hasMoreBattleLog"
+            type="button"
+            class="mx-auto mt-2 inline-flex min-h-11 items-center justify-center rounded-lg border border-white/15 bg-white/5 px-5 text-sm font-black text-white transition hover:border-[#ffcc00] hover:text-[#ffcc00]"
+            @click="loadMoreBattles"
+          >
+            載入更多
+          </button>
         </div>
 
         <div v-else-if="playerProfile && !playerLoading" class="mt-5 rounded-lg border border-white/10 bg-white/5 p-4">

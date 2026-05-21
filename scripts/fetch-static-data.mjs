@@ -114,6 +114,8 @@ const activeEvents = auxQueries
   .slice(0, 12)
 
 const mapStats = await fetchActiveMapStats(activeEvents, windowStart)
+const existingSnapshot = await readExistingSnapshot()
+const previousStatsByKey = new Map((existingSnapshot?.stats || []).map((stat) => [stat.brawlerKey, stat]))
 
 const snapshot = {
   stats: (statPayload?.data || [])
@@ -121,12 +123,17 @@ const snapshot = {
       const sourceName = row.dimensionsRaw?.brawler?.brawler || ''
       const winRate = asNumber(row.metricsRaw?.winRateAdj)
       const useRate = asNumber(row.metricsRaw?.useRate)
+      const brawlerKey = brawlerStatKey(sourceName)
+      const winRateAdj = winRate * 100
+      const previous = previousStatsByKey.get(brawlerKey)
 
       return {
-        brawlerKey: brawlerStatKey(sourceName),
-        winRateAdj: winRate * 100,
+        brawlerKey,
+        winRateAdj,
         useRate: useRate * 100,
         picksEstimate: sampleSize ? Math.round(sampleSize * useRate) : undefined,
+        previousWinRateAdj: Number.isFinite(previous?.winRateAdj) ? previous.winRateAdj : undefined,
+        trendDelta: Number.isFinite(previous?.winRateAdj) ? Math.round((winRateAdj - previous.winRateAdj) * 10) / 10 : undefined,
       }
     })
     .filter((stat) => stat.brawlerKey && Number.isFinite(stat.winRateAdj)),

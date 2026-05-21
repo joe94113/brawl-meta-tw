@@ -222,6 +222,107 @@ export function useBrawlData() {
       .slice(0, 8)
   }
 
+  function metaStatFor(brawler: Brawler) {
+    return metaByKey.value.get(brawler.statKey) || null
+  }
+
+  function confidenceForBrawler(brawler: Brawler) {
+    const picks = metaStatFor(brawler)?.picksEstimate || 0
+    if (picks >= 500000) return { label: '高', tone: 'text-[#00e676]', score: 3, note: '樣本充足' }
+    if (picks >= 80000) return { label: '中', tone: 'text-[#ffcc00]', score: 2, note: '可參考' }
+    if (picks > 0) return { label: '低', tone: 'text-[#ff1744]', score: 1, note: '樣本偏少' }
+    return { label: '推估', tone: 'text-slate-400', score: 0, note: '缺少真實樣本' }
+  }
+
+  function trendForBrawler(brawler: Brawler) {
+    const stat = metaStatFor(brawler)
+    if (stat?.trendDelta !== undefined) {
+      const delta = Math.round(stat.trendDelta * 10) / 10
+      return {
+        delta,
+        label: delta > 0.8 ? '升溫' : delta < -0.8 ? '降溫' : '持平',
+        tone: delta > 0.8 ? 'text-[#00e676]' : delta < -0.8 ? 'text-[#ff1744]' : 'text-slate-300',
+      }
+    }
+
+    const seed = deterministicNoise(brawler.name, brawler.id) * 0.22
+    const raw = stat
+      ? (stat.winRateAdj - 50) * 0.055 + (stat.useRate - 2.2) * 0.18 + seed
+      : (brawler.metaScore - 64) * 0.08 + seed
+    const delta = Math.round(clamp(raw, -4.8, 4.8) * 10) / 10
+
+    return {
+      delta,
+      label: delta > 0.8 ? '升溫' : delta < -0.8 ? '降溫' : '持平',
+      tone: delta > 0.8 ? 'text-[#00e676]' : delta < -0.8 ? 'text-[#ff1744]' : 'text-slate-300',
+    }
+  }
+
+  function modeRowsForBrawler(brawler: Brawler, limit = 8) {
+    return modeOptions.value
+      .filter((mode) => mode !== 'All')
+      .map((mode) => {
+        const score = scoreForMode(brawler, mode)
+        const stat = metaStatFor(brawler)
+        return {
+          mode,
+          score: Math.round(score),
+          winRate: Math.round(clamp((stat?.winRateAdj ?? 50) + modeFitScore(brawler, mode) * 0.85, 42, 76) * 10) / 10,
+          fit: Math.round(modeFitScore(brawler, mode) * 10) / 10,
+        }
+      })
+      .sort((a, b) => b.winRate - a.winRate)
+      .slice(0, limit)
+  }
+
+  function mapRowsForBrawler(brawler: Brawler, limit = 8) {
+    return maps.value
+      .filter((map) => !map.disabled)
+      .map((map) => {
+        const rows = mapRateRows(map, 80)
+        const rowIndex = rows.findIndex((item) => item.brawler.id === brawler.id)
+        const row = rowIndex >= 0 ? rows[rowIndex] : null
+        const score = scoreForMap(brawler, map)
+
+        return {
+          map,
+          rank: row ? rowIndex + 1 : undefined,
+          score,
+          winRate: row?.winRate ?? estimateMapWinRate(brawler, score, map),
+          pickRate: row?.pickRate ?? 0,
+          dataSource: row?.dataSource ?? ('fallback' as const),
+        }
+      })
+      .sort((a, b) => b.winRate - a.winRate)
+      .slice(0, limit)
+  }
+
+  function compositionCoverage(roster: Brawler[]) {
+    const hasRole = (roles: string[]) => roster.some((brawler) => roles.includes(brawler.role))
+    const hasTag = (tags: string[]) => roster.some((brawler) => brawler.tags.some((tag) => tags.includes(tag)))
+    const countRole = (roles: string[]) => roster.filter((brawler) => roles.includes(brawler.role)).length
+
+    const rows = [
+      { key: 'damage', label: '輸出火力', value: hasRole(['Damage Dealer', 'Marksman']) ? 82 : countRole(['Controller']) ? 66 : 48 },
+      { key: 'control', label: '控場能力', value: hasRole(['Controller']) || hasTag(['control', 'space']) ? 84 : 52 },
+      { key: 'range', label: '遠程壓力', value: hasRole(['Marksman', 'Artillery']) || hasTag(['range']) ? 80 : 50 },
+      { key: 'sustain', label: '續戰生存', value: hasRole(['Support', 'Tank']) || hasTag(['healing', 'durable']) ? 78 : 46 },
+      { key: 'mobility', label: '開戰機動', value: hasRole(['Assassin', 'Tank']) || hasTag(['mobility']) ? 76 : 48 },
+      { key: 'antiTank', label: '對坦能力', value: hasRole(['Marksman', 'Controller', 'Damage Dealer']) ? 78 : 45 },
+    ]
+    const total = Math.round(average(rows.map((row) => row.value)))
+
+    return { rows, total }
+  }
+
+  function compositionWarnings(roster: Brawler[]) {
+    const coverage = compositionCoverage(roster)
+    return coverage.rows
+      .filter((row) => row.value < 58)
+      .map((row) => `缺少${row.label}`)
+      .slice(0, 3)
+  }
+
   function terrainFitScore(brawler: Brawler, map: MapItem | null, modeName: string) {
     const environment = `${map?.environmentName || ''} ${map?.name || ''}`.toLowerCase()
     let terrainBonus = 0
@@ -343,6 +444,13 @@ export function useBrawlData() {
     counterScore,
     counterRecommendations,
     strongAgainst,
+    metaStatFor,
+    confidenceForBrawler,
+    trendForBrawler,
+    modeRowsForBrawler,
+    mapRowsForBrawler,
+    compositionCoverage,
+    compositionWarnings,
     mapRateRows,
     mapRecommendedBrawlers,
     roleName,

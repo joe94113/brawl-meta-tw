@@ -1,22 +1,31 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import PageHeader from '../components/PageHeader.vue'
 import { useBrawlData } from '../composables/useBrawlData'
 import { average } from '../data/metaRules'
 import type { Brawler, DraftLane } from '../types'
 
+const route = useRoute()
 const router = useRouter()
 const {
   loadGameData,
   rankedBrawlers,
   brawlers,
+  maps,
+  selectedMap,
+  selectedMapId,
   selectedMode,
   modeOptions,
   roleName,
   modeLabel,
   scoreForMode,
+  scoreForMap,
+  mapRateRows,
   counterScore,
+  counterRecommendations,
+  compositionCoverage,
+  compositionWarnings,
 } = useBrawlData()
 
 const draftLane = ref<DraftLane>('enemy')
@@ -24,7 +33,14 @@ const enemyPicks = ref<number[]>([])
 const allyPicks = ref<number[]>([])
 const bans = ref<number[]>([])
 
-onMounted(loadGameData)
+onMounted(async () => {
+  await loadGameData()
+  const mapId = Number(route.query.map)
+  if (mapId) {
+    selectedMapId.value = mapId
+    if (selectedMap.value) selectedMode.value = selectedMap.value.modeName
+  }
+})
 
 const allyRoster = computed(() => idsToBrawlers(allyPicks.value))
 const enemyRoster = computed(() => idsToBrawlers(enemyPicks.value))
@@ -64,6 +80,35 @@ const banRecommendations = computed(() =>
     .slice(0, 6),
 )
 
+const visibleMaps = computed(() =>
+  maps.value
+    .filter((map) => !map.disabled)
+    .filter((map) => selectedMode.value === 'All' || map.modeName === selectedMode.value)
+    .slice(0, 80),
+)
+
+const allyCoverage = computed(() => compositionCoverage(allyRoster.value))
+const allyWarnings = computed(() => compositionWarnings(allyRoster.value))
+const enemyCounterRows = computed(() =>
+  enemyRoster.value
+    .flatMap((enemy) =>
+      counterRecommendations(enemy, selectedMap.value?.modeName || selectedMode.value)
+        .slice(0, 3)
+        .map((row) => ({ ...row, target: enemy })),
+    )
+    .filter((row) => !isDrafted(row.brawler.id))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 5),
+)
+const mapPowerPicks = computed(() =>
+  selectedMap.value
+    ? mapRateRows(selectedMap.value, 5)
+    : rankedBrawlers.value.slice(0, 5).map((brawler) => ({
+        brawler,
+        winRate: Math.round((brawler.winRateAdj || brawler.liveScore) * 10) / 10,
+      })),
+)
+
 function idsToBrawlers(ids: number[]) {
   return ids
     .map((id) => brawlers.value.find((brawler) => brawler.id === id))
@@ -95,6 +140,10 @@ function clearDraft() {
   bans.value = []
 }
 
+function selectDraftMap() {
+  if (selectedMap.value) selectedMode.value = selectedMap.value.modeName
+}
+
 function draftState(id: number) {
   if (enemyPicks.value.includes(id)) return '敵方'
   if (allyPicks.value.includes(id)) return '我方'
@@ -110,7 +159,9 @@ function draftScore(candidate: Brawler) {
   const allyFit =
     allyRoster.value.length > 0 ? average(allyRoster.value.map((ally) => synergyScore(candidate, ally))) : 50
 
-  return scoreForMode(candidate, selectedMode.value) * 0.72 + enemyPressure * 0.62 + allyFit * 0.32
+  const mapScore = selectedMap.value ? scoreForMap(candidate, selectedMap.value) : scoreForMode(candidate, selectedMode.value)
+
+  return mapScore * 0.74 + enemyPressure * 0.62 + allyFit * 0.34
 }
 
 function synergyScore(candidate: Brawler, ally: Brawler) {
@@ -156,11 +207,18 @@ function onImageError(event: Event) {
   <section class="bg-[#121824] py-[72px]">
     <PageHeader eyebrow="BrawlPick TW" title="荒野選角指南" note="針對鑽石以上 Ban/Pick 階段，依敵方、我方與 Ban 位即時推薦選角。" />
 
-    <div class="mx-auto mb-5 flex w-[min(1180px,calc(100%_-_48px))] justify-end gap-3 max-sm:w-[calc(100%_-_28px)]">
+    <div class="mx-auto mb-5 flex w-[min(1180px,calc(100%_-_48px))] flex-wrap justify-end gap-3 max-sm:w-[calc(100%_-_28px)]">
       <label class="grid gap-1 text-sm font-black text-slate-300">
         模式
         <select v-model="selectedMode" class="min-h-12 min-w-[168px] rounded-lg border border-white/10 bg-[#1d2330] px-3 text-white">
           <option v-for="mode in modeOptions" :key="mode" :value="mode">{{ modeLabel(mode) }}</option>
+        </select>
+      </label>
+      <label class="grid gap-1 text-sm font-black text-slate-300">
+        地圖
+        <select v-model="selectedMapId" class="min-h-12 min-w-[208px] rounded-lg border border-white/10 bg-[#1d2330] px-3 text-white" @change="selectDraftMap">
+          <option :value="null">依模式推薦</option>
+          <option v-for="map in visibleMaps" :key="map.id" :value="map.id">{{ map.localizedName }}</option>
         </select>
       </label>
       <button type="button" class="self-end rounded-lg bg-[#ffcc00] px-5 py-3 font-black text-[#121824]" @click="clearDraft">清空</button>
@@ -190,6 +248,39 @@ function onImageError(event: Event) {
             </div>
           </div>
         </div>
+
+        <section class="mb-4 grid grid-cols-[minmax(0,1fr)_320px] gap-3 max-lg:grid-cols-1">
+          <div class="rounded-lg border border-white/10 bg-white/5 p-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="m-0 text-base font-black text-white">陣容評分器</h3>
+              <strong class="font-score text-2xl text-[#ffcc00]">{{ allyCoverage.total }}</strong>
+            </div>
+            <div class="mt-3 grid grid-cols-3 gap-2 max-sm:grid-cols-2">
+              <span v-for="row in allyCoverage.rows" :key="row.key" class="rounded-lg bg-[#121824]/80 p-2">
+                <small class="block truncate text-xs font-black text-slate-500">{{ row.label }}</small>
+                <b class="font-score text-lg" :class="row.value >= 70 ? 'text-[#00e676]' : row.value >= 58 ? 'text-[#ffcc00]' : 'text-[#ff1744]'">{{ row.value }}</b>
+              </span>
+            </div>
+            <p class="mb-0 mt-3 text-sm leading-6 text-slate-400">
+              {{ allyWarnings.length ? `補位提醒：${allyWarnings.join('、')}` : '目前我方陣容分工均衡，可以依對位或地圖補強。' }}
+            </p>
+          </div>
+
+          <div class="rounded-lg border border-white/10 bg-white/5 p-3">
+            <h3 class="m-0 text-base font-black text-white">{{ selectedMap ? '本圖強勢角色' : '模式強勢角色' }}</h3>
+            <div class="mt-3 grid gap-2">
+              <button v-for="row in mapPowerPicks" :key="row.brawler.id" type="button" class="grid min-h-12 grid-cols-[42px_minmax(0,1fr)_auto] items-center gap-2 rounded-lg bg-[#121824]/80 p-2 text-left" @click="toggleDraftBrawler(row.brawler)">
+                <img class="size-10 object-contain" :src="row.brawler.imageUrl" :alt="row.brawler.localizedName" @error="onImageError" />
+                <span class="min-w-0">
+                  <strong class="block truncate text-sm text-white">{{ row.brawler.localizedName }}</strong>
+                  <small class="text-slate-500">{{ roleName(row.brawler.role) }}</small>
+                </span>
+                <b class="font-score text-[#00e676]">{{ row.winRate }}%</b>
+              </button>
+              <p v-if="mapPowerPicks.length === 0" class="m-0 text-sm text-slate-500">選擇地圖後會顯示本圖強勢角色。</p>
+            </div>
+          </div>
+        </section>
 
         <div class="grid max-h-[580px] grid-cols-[repeat(auto-fill,minmax(86px,1fr))] gap-2 overflow-auto pr-1">
           <button
@@ -227,6 +318,16 @@ function onImageError(event: Event) {
                 <span class="mt-1 block text-xs leading-5 text-slate-400">{{ item.reason }}</span>
               </div>
           <b class="font-score text-[#ff1744]">{{ Math.round(item.score) }}</b>
+        </article>
+
+        <h3 class="mb-0 mt-2 text-base font-black text-white">敵方 Counter 補位</h3>
+        <article v-for="item in enemyCounterRows" :key="`${item.target.id}-${item.brawler.id}`" class="grid min-h-[72px] grid-cols-[52px_1fr_auto] items-center gap-3 rounded-lg border border-[#00e676]/25 bg-[#00e676]/8 p-2.5">
+          <img class="size-[52px] object-contain" :src="item.brawler.imageUrl" :alt="item.brawler.localizedName" />
+          <div>
+            <strong class="block">{{ item.brawler.localizedName }}</strong>
+            <span class="mt-1 block text-xs leading-5 text-slate-400">用來處理 {{ item.target.localizedName }}</span>
+          </div>
+          <b class="font-score text-[#00e676]">{{ Math.round(item.score) }}</b>
         </article>
       </aside>
     </div>

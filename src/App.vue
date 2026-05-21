@@ -17,6 +17,7 @@ const navItems = [
 
 const activeGroup = computed(() => {
   if (route.path.startsWith('/counter')) return 'counter'
+  if (route.path.startsWith('/brawlers')) return 'meta'
   if (route.path.startsWith('/maps/winrates')) return 'maprates'
   if (route.path.startsWith('/maps')) return 'maps'
   if (route.path.startsWith('/draft')) return 'draft'

@@ -117,6 +117,9 @@ function onImageError(event: Event) {
             {{ tagLabels[tag] || tag }}
           </span>
         </div>
+        <RouterLink :to="`/brawlers/${selectedBrawler.id}`" class="mt-5 inline-flex min-h-11 w-full items-center justify-center rounded-lg border border-[#ffcc00]/35 bg-[#ffcc00]/10 px-4 font-black text-[#ffcc00] no-underline">
+          完整角色詳情
+        </RouterLink>
       </article>
 
       <div class="grid gap-5">

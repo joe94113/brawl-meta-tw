@@ -57,7 +57,7 @@ function selectMapId() {
 }
 
 function inspectBrawler(id: number) {
-  void router.push({ name: 'counter', params: { id } })
+  void router.push({ name: 'brawler-detail', params: { id } })
 }
 
 function onImageError(event: Event) {

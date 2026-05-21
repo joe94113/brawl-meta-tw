@@ -110,6 +110,8 @@ export interface MetaStat {
   winRateAdj: number
   useRate: number
   picksEstimate?: number
+  previousWinRateAdj?: number
+  trendDelta?: number
 }
 
 export interface MapMetaStat {
