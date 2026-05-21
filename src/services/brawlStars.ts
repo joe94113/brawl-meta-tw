@@ -15,10 +15,10 @@ export async function fetchOfficialJson<T>(path: string): Promise<T> {
   const base = officialApiBase()
 
   if (!base) {
-    throw new Error('線上玩家戰績查詢需要設定 VITE_BRAWL_STARS_PROXY_BASE，GitHub Pages 無法直接抓玩家資料。')
+    throw new Error('線上玩家戰績查詢需要設定 VITE_BRAWL_STARS_PROXY_BASE。GitHub Pages 不能直接讀玩家資料，必須透過 Worker API。')
   }
 
   const response = await fetch(`${base}${path}`)
-  if (!response.ok) throw new Error(`玩家資料代理 ${response.status}`)
+  if (!response.ok) throw new Error(`玩家資料代理回傳 HTTP ${response.status}`)
   return response.json() as Promise<T>
 }

@@ -106,18 +106,26 @@ function toPlayerResponse(profile) {
     trophies: player.trophies,
     highestTrophies: player.highestTrophies,
     expLevel: player.expLevel,
+    expPoints: player.expPoints || 0,
+    rankedRank: player.rankedRank || 0,
+    rankedRankName: player.rankedRankName || '',
+    rankedElo: player.rankedElo || 0,
+    rankedSeasonId: player.rankedSeasonId || '',
+    highestSeasonRankedRank: player.highestSeasonRankedRank || 0,
+    highestSeasonRankedRankName: player.highestSeasonRankedRankName || '',
+    highestSeasonRankedElo: player.highestSeasonRankedElo || 0,
+    highestAllTimeRankedRank: player.highestAllTimeRankedRank || 0,
+    highestAllTimeRankedRankName: player.highestAllTimeRankedRankName || '',
+    highestAllTimeRankedElo: player.highestAllTimeRankedElo || 0,
     soloVictories: player.soloVictories || 0,
     duoVictories: player.duoVictories || 0,
     '3vs3Victories': player['3vs3Victories'] || 0,
+    totalPrestigeLevel: player.totalPrestigeLevel || 0,
+    bestRoboRumbleTime: player.bestRoboRumbleTime || 0,
+    bestTimeAsBigBrawler: player.bestTimeAsBigBrawler || 0,
+    isQualifiedFromChampionshipChallenge: Boolean(player.isQualifiedFromChampionshipChallenge),
     club: player.club,
-    brawlers: Object.values(player.brawlers || {}).map((brawler) => ({
-      id: brawler.id,
-      name: brawler.name,
-      power: brawler.power,
-      rank: brawler.rank,
-      trophies: brawler.trophies,
-      highestTrophies: brawler.highestTrophies,
-    })),
+    brawlers: Object.values(player.brawlers || {}).map(toPlayerBrawler),
   }
 }
 
@@ -129,18 +137,24 @@ function toBattleLogResponse(profile) {
     items: (profile.player.battles || []).map((battle) => ({
       battleTime: battle.timestamp,
       event: {
+        id: battle.event?.id,
         mode: battle.event?.mode,
+        modeId: battle.event?.modeId,
         map: battle.event?.map,
       },
       battle: {
         mode: battle.event?.mode,
+        type: battle.ranked ? 'ranked' : 'regular',
         result: battle.victory ? 'victory' : 'defeat',
+        rawResult: battle.result,
+        ranked: Boolean(battle.ranked),
         trophyChange: battle.trophyChange,
         rank: parseBattleRank(battle.result),
         teams: (battle.teams || []).map((team) =>
           team.map((player) => ({
             tag: player.tag ? `#${player.tag.replace(/^#/, '')}` : undefined,
             name: player.name,
+            isBigBrawler: Boolean(player.isBigbrawler),
             brawler: toBattleBrawler(player, lookup, ownerTag),
           })),
         ),
@@ -172,6 +186,30 @@ function brawlerLookup(profile) {
   return result
 }
 
+function toPlayerBrawler(brawler) {
+  return {
+    id: brawler.id,
+    name: brawler.name,
+    power: brawler.power,
+    rank: brawler.rank,
+    trophies: brawler.trophies,
+    highestTrophies: brawler.highestTrophies,
+    prestigeLevel: brawler.prestigeLevel || 0,
+    currentWinStreak: brawler.currentWinStreak || 0,
+    maxWinStreak: brawler.maxWinStreak || 0,
+    skin: brawler.skin ? pickNamedItem(brawler.skin) : undefined,
+    gadgets: toNamedItems(brawler.gadgets),
+    starPowers: toNamedItems(brawler.starPowers),
+    gears: toNamedItems(brawler.gears),
+    hyperCharges: toNamedItems(brawler.hyperCharges),
+    buffies: {
+      gadget: Boolean(brawler.buffies?.gadget),
+      starPower: Boolean(brawler.buffies?.starPower),
+      hyperCharge: Boolean(brawler.buffies?.hyperCharge),
+    },
+  }
+}
+
 function toBattleBrawler(player, lookup, ownerTag) {
   const matched = lookup.get(player.brawler) || {}
   const isOwner = player.tag?.replace(/^#/, '') === ownerTag
@@ -183,6 +221,31 @@ function toBattleBrawler(player, lookup, ownerTag) {
     rank: player.brawlerRank || (isOwner ? matched.rank : 0) || 0,
     trophies: player.brawlerTrophies || matched.trophies || 0,
     highestTrophies: (isOwner ? matched.highestTrophies : 0) || player.brawlerTrophies || 0,
+    prestigeLevel: isOwner ? matched.prestigeLevel || 0 : 0,
+    currentWinStreak: isOwner ? matched.currentWinStreak || 0 : 0,
+    maxWinStreak: isOwner ? matched.maxWinStreak || 0 : 0,
+    skin: isOwner && matched.skin ? pickNamedItem(matched.skin) : undefined,
+    gadgets: isOwner ? toNamedItems(matched.gadgets) : [],
+    starPowers: isOwner ? toNamedItems(matched.starPowers) : [],
+    gears: isOwner ? toNamedItems(matched.gears) : [],
+    hyperCharges: isOwner ? toNamedItems(matched.hyperCharges) : [],
+    buffies: {
+      gadget: Boolean(isOwner && matched.buffies?.gadget),
+      starPower: Boolean(isOwner && matched.buffies?.starPower),
+      hyperCharge: Boolean(isOwner && matched.buffies?.hyperCharge),
+    },
+  }
+}
+
+function toNamedItems(items) {
+  return Array.isArray(items) ? items.map(pickNamedItem).filter((item) => item.id || item.name) : []
+}
+
+function pickNamedItem(item) {
+  return {
+    id: item?.id || 0,
+    name: item?.name || '',
+    level: item?.level || undefined,
   }
 }
 

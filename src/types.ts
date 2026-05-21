@@ -174,6 +174,25 @@ export interface OfficialPlayerBrawler {
   rank: number
   trophies: number
   highestTrophies: number
+  prestigeLevel?: number
+  currentWinStreak?: number
+  maxWinStreak?: number
+  skin?: OfficialPlayerAccessory
+  gadgets?: OfficialPlayerAccessory[]
+  starPowers?: OfficialPlayerAccessory[]
+  gears?: OfficialPlayerAccessory[]
+  hyperCharges?: OfficialPlayerAccessory[]
+  buffies?: {
+    gadget?: boolean
+    starPower?: boolean
+    hyperCharge?: boolean
+  }
+}
+
+export interface OfficialPlayerAccessory {
+  id: number
+  name: string
+  level?: number
 }
 
 export interface OfficialPlayer {
@@ -186,9 +205,24 @@ export interface OfficialPlayer {
   trophies: number
   highestTrophies: number
   expLevel: number
+  expPoints?: number
+  rankedRank?: number
+  rankedRankName?: string
+  rankedElo?: number
+  rankedSeasonId?: string
+  highestSeasonRankedRank?: number
+  highestSeasonRankedRankName?: string
+  highestSeasonRankedElo?: number
+  highestAllTimeRankedRank?: number
+  highestAllTimeRankedRankName?: string
+  highestAllTimeRankedElo?: number
   soloVictories: number
   duoVictories: number
   '3vs3Victories': number
+  totalPrestigeLevel?: number
+  bestRoboRumbleTime?: number
+  bestTimeAsBigBrawler?: number
+  isQualifiedFromChampionshipChallenge?: boolean
   club?: {
     tag: string
     name: string
@@ -199,19 +233,24 @@ export interface OfficialPlayer {
 export interface OfficialBattlePlayer {
   tag?: string
   name?: string
+  isBigBrawler?: boolean
   brawler?: OfficialPlayerBrawler
 }
 
 export interface OfficialBattle {
   battleTime: string
   event?: {
+    id?: number
     mode?: string
+    modeId?: number
     map?: string
   }
   battle?: {
     mode?: string
     type?: string
     result?: string
+    rawResult?: string
+    ranked?: boolean
     duration?: number
     trophyChange?: number
     rank?: number
