@@ -24,6 +24,7 @@ const {
   loading,
   loadGameData,
   brawlers,
+  rankedBrawlers,
   heroBrawlers,
   metaLeaders,
   brawlerCount,
@@ -36,9 +37,11 @@ const {
   maps,
   gameModes,
   mapRecommendedBrawlers,
+  trendForBrawler,
   modeLabel,
   modeSlugLabel,
   modeNameFromSlug,
+  roleName,
   rarityLabel,
 } = useBrawlData()
 
@@ -57,6 +60,47 @@ const versionLabel = computed(() => {
 })
 
 const heroVisualBrawlers = computed(() => heroBrawlers.value.slice(0, 4))
+
+const metaWeeklyReport = computed(() => {
+  const rows = rankedBrawlers.value.map((brawler) => ({
+    brawler,
+    trend: trendForBrawler(brawler),
+    beneficiaryScore: (trendForBrawler(brawler).delta + 3) * 1.6 + brawler.liveScore * 0.18 + (brawler.useRate || 0) * 0.25,
+  }))
+
+  return [
+    {
+      key: 'rising',
+      title: '本週上升最多',
+      tone: 'text-[#00e676]',
+      chipClass: 'bg-[#00e676] text-[#121824]',
+      rows: rows
+        .filter((row) => row.trend.delta > 0)
+        .sort((a, b) => b.trend.delta - a.trend.delta)
+        .slice(0, 3),
+    },
+    {
+      key: 'falling',
+      title: '本週下滑最多',
+      tone: 'text-[#ff1744]',
+      chipClass: 'bg-[#ff1744] text-white',
+      rows: rows
+        .filter((row) => row.trend.delta < 0)
+        .sort((a, b) => a.trend.delta - b.trend.delta)
+        .slice(0, 3),
+    },
+    {
+      key: 'benefit',
+      title: '版本受益角色',
+      tone: 'text-[#ffcc00]',
+      chipClass: 'bg-[#ffcc00] text-[#121824]',
+      rows: rows
+        .filter((row) => row.trend.delta >= -0.4)
+        .sort((a, b) => b.beneficiaryScore - a.beneficiaryScore)
+        .slice(0, 3),
+    },
+  ]
+})
 
 const activeMapCards = computed(() =>
   activeEvents.value.filter((event) => isHomeActiveModeSlug(event.mode)).slice(0, 6).map((event) => {
@@ -299,6 +343,32 @@ function fallbackMapForEvent(id: string, name: string, modeName: string, modeIma
         </div>
         <strong class="font-score text-3xl font-black text-[#00e676]">{{ formatPercent(entry.winRateAdj) }}</strong>
       </RouterLink>
+    </div>
+
+    <div v-if="!loading" class="mx-auto mt-6 grid w-[min(1180px,calc(100%_-_48px))] grid-cols-3 gap-4 max-lg:grid-cols-1 max-sm:w-[calc(100%_-_28px)]">
+      <article v-for="group in metaWeeklyReport" :key="group.key" class="dark-panel rounded-lg p-4">
+        <div class="flex items-center justify-between gap-3">
+          <h3 class="m-0 text-lg font-black text-white">{{ group.title }}</h3>
+          <span class="rounded-lg px-2 py-1 text-[0.68rem] font-black" :class="group.chipClass">週報</span>
+        </div>
+        <div class="mt-3 grid gap-2">
+          <RouterLink
+            v-for="row in group.rows"
+            :key="`${group.key}-${row.brawler.id}`"
+            :to="`/brawlers/${row.brawler.id}`"
+            class="grid min-h-[66px] grid-cols-[52px_minmax(0,1fr)_auto] items-center gap-3 rounded-lg border border-white/10 bg-white/5 p-2 text-white no-underline transition hover:border-[#ffcc00]"
+          >
+            <img class="size-12 object-contain" :src="row.brawler.imageUrl" :alt="row.brawler.localizedName" @error="onImageError" />
+            <span class="min-w-0">
+              <strong class="block truncate text-sm">{{ row.brawler.localizedName }}</strong>
+              <small class="block truncate text-xs font-black text-slate-500">{{ roleName(row.brawler.role) }} · {{ row.brawler.liveTier }} Tier</small>
+            </span>
+            <b class="font-score whitespace-nowrap text-lg" :class="group.tone">
+              {{ row.trend.delta > 0 ? '+' : '' }}{{ row.trend.delta }}%
+            </b>
+          </RouterLink>
+        </div>
+      </article>
     </div>
   </section>
 

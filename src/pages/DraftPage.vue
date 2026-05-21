@@ -60,7 +60,7 @@ const draftRecommendations = computed(() =>
 
 const banRecommendations = computed(() =>
   brawlers.value
-    .filter((brawler) => !allyPicks.value.includes(brawler.id) && !enemyPicks.value.includes(brawler.id))
+    .filter((brawler) => !isDrafted(brawler.id))
     .map((brawler) => {
       const allyRisk =
         allyRoster.value.length > 0
@@ -78,6 +78,36 @@ const banRecommendations = computed(() =>
     })
     .sort((a, b) => b.score - a.score)
     .slice(0, 6),
+)
+
+const avoidRecommendations = computed(() =>
+  brawlers.value
+    .filter((brawler) => !isDrafted(brawler.id))
+    .map((brawler) => {
+      const mapScore = selectedMap.value ? scoreForMap(brawler, selectedMap.value) : scoreForMode(brawler, selectedMode.value)
+      const enemyThreat =
+        enemyRoster.value.length > 0
+          ? average(enemyRoster.value.map((enemy) => counterScore(enemy, brawler, selectedMode.value)))
+          : 48
+      const allyFit =
+        allyRoster.value.length > 0 ? average(allyRoster.value.map((ally) => synergyScore(brawler, ally))) : 52
+      const score = enemyThreat * 0.72 + (72 - mapScore) * 0.7 + (58 - allyFit) * 0.32
+      const hardestEnemy = enemyRoster.value
+        .map((enemy) => ({ enemy, score: counterScore(enemy, brawler, selectedMode.value) }))
+        .sort((a, b) => b.score - a.score)[0]
+
+      return {
+        brawler,
+        score: Math.round(score * 10) / 10,
+        reason: hardestEnemy && hardestEnemy.score >= 58
+          ? `容易被 ${hardestEnemy.enemy.localizedName} 處理`
+          : mapScore < 55
+            ? '本圖或模式適性偏低'
+            : '和目前我方陣容分工重疊',
+      }
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 5),
 )
 
 const visibleMaps = computed(() =>
@@ -108,6 +138,12 @@ const mapPowerPicks = computed(() =>
         winRate: Math.round((brawler.winRateAdj || brawler.liveScore) * 10) / 10,
       })),
 )
+
+const roomStatusRows = computed(() => [
+  { label: '我方', value: `${allyRoster.value.length}/3` },
+  { label: '敵方', value: `${enemyRoster.value.length}/3` },
+  { label: 'Ban', value: `${banRoster.value.length}/6` },
+])
 
 function idsToBrawlers(ids: number[]) {
   return ids
@@ -205,7 +241,7 @@ function onImageError(event: Event) {
 
 <template>
   <section class="bg-[#121824] py-[72px]">
-    <PageHeader eyebrow="BrawlPick TW" title="荒野選角指南" note="針對鑽石以上 Ban/Pick 階段，依敵方、我方與 Ban 位即時推薦選角。" />
+    <PageHeader eyebrow="BrawlPick TW" title="Ban/Pick 選角房間" note="選地圖、填入雙方 Pick 與 Ban 位後，即時判斷該選誰、該 Ban 誰、哪些角色先不要拿。" />
 
     <div class="mx-auto mb-5 flex w-[min(1180px,calc(100%_-_48px))] flex-wrap justify-end gap-3 max-sm:w-[calc(100%_-_28px)]">
       <label class="grid gap-1 text-sm font-black text-slate-300">
@@ -226,6 +262,22 @@ function onImageError(event: Event) {
 
     <div class="mx-auto grid w-[min(1180px,calc(100%_-_48px))] grid-cols-[minmax(0,1fr)_360px] gap-5 max-lg:grid-cols-1 max-sm:w-[calc(100%_-_28px)]">
       <div class="dark-panel rounded-lg p-4">
+        <div class="mb-4 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-lg border border-[#ffcc00]/20 bg-[#ffcc00]/8 p-3 max-sm:grid-cols-1">
+          <div class="min-w-0">
+            <span class="text-xs font-black uppercase tracking-[0.18em] text-[#ffcc00]">房間狀態</span>
+            <h2 class="m-0 text-xl font-black text-white">{{ selectedMap ? selectedMap.localizedName : modeLabel(selectedMode) }}</h2>
+            <p class="mb-0 mt-1 truncate text-sm font-black text-slate-400">
+              {{ selectedMap ? modeLabel(selectedMap.modeName) : '依目前模式推估' }}
+            </p>
+          </div>
+          <div class="grid grid-cols-3 gap-2">
+            <span v-for="row in roomStatusRows" :key="row.label" class="min-w-16 rounded-lg bg-[#121824]/80 px-3 py-2 text-center">
+              <small class="block text-[0.68rem] font-black text-slate-500">{{ row.label }}</small>
+              <b class="font-score text-lg text-[#ffcc00]">{{ row.value }}</b>
+            </span>
+          </div>
+        </div>
+
         <div class="mb-4 flex flex-wrap gap-2">
           <button v-for="lane in ['enemy', 'ally', 'ban']" :key="lane" type="button" class="min-h-10 rounded-lg border px-4 font-bold" :class="draftLane === lane ? 'border-[#f7c948] bg-[#f7c948] text-[#121318]' : 'border-[#15161b] bg-[#15161b] text-white'" @click="draftLane = lane as DraftLane">
             {{ lane === 'enemy' ? '敵方 Pick' : lane === 'ally' ? '我方 Pick' : 'Ban 位' }}
@@ -300,23 +352,33 @@ function onImageError(event: Event) {
       </div>
 
       <aside class="dark-panel sticky top-24 grid gap-3 self-start rounded-lg p-4 max-lg:static">
-        <h3 class="m-0 text-base font-black text-white">這場建議 Pick</h3>
+        <h3 class="m-0 text-base font-black text-white">該選誰</h3>
         <article v-for="item in draftRecommendations" :key="item.brawler.id" class="grid min-h-[72px] grid-cols-[52px_1fr_auto] items-center gap-3 rounded-lg border border-white/10 bg-white/5 p-2.5">
           <img class="size-[52px] object-contain" :src="item.brawler.imageUrl" :alt="item.brawler.localizedName" />
           <div>
             <strong class="block">{{ item.brawler.localizedName }}</strong>
-                <span class="mt-1 block text-xs leading-5 text-slate-400">{{ item.reason }}</span>
-              </div>
+            <span class="mt-1 block text-xs leading-5 text-slate-400">{{ item.reason }}</span>
+          </div>
           <b class="font-score text-[#00e676]">{{ Math.round(item.score) }}</b>
         </article>
 
-        <h3 class="mb-0 mt-2 text-base font-black text-white">優先 Ban</h3>
+        <h3 class="mb-0 mt-2 text-base font-black text-white">不要選誰</h3>
+        <article v-for="item in avoidRecommendations" :key="item.brawler.id" class="grid min-h-[72px] grid-cols-[52px_1fr_auto] items-center gap-3 rounded-lg border border-white/10 bg-white/5 p-2.5 opacity-90">
+          <img class="size-[52px] object-contain grayscale" :src="item.brawler.imageUrl" :alt="item.brawler.localizedName" />
+          <div>
+            <strong class="block">{{ item.brawler.localizedName }}</strong>
+            <span class="mt-1 block text-xs leading-5 text-slate-400">{{ item.reason }}</span>
+          </div>
+          <b class="font-score text-slate-400">{{ Math.round(item.score) }}</b>
+        </article>
+
+        <h3 class="mb-0 mt-2 text-base font-black text-white">該 Ban 誰</h3>
         <article v-for="item in banRecommendations" :key="item.brawler.id" class="grid min-h-[72px] grid-cols-[52px_1fr_auto] items-center gap-3 rounded-lg border border-[#ff1744]/25 bg-[#ff1744]/8 p-2.5">
           <img class="size-[52px] object-contain" :src="item.brawler.imageUrl" :alt="item.brawler.localizedName" />
           <div>
             <strong class="block">{{ item.brawler.localizedName }}</strong>
-                <span class="mt-1 block text-xs leading-5 text-slate-400">{{ item.reason }}</span>
-              </div>
+            <span class="mt-1 block text-xs leading-5 text-slate-400">{{ item.reason }}</span>
+          </div>
           <b class="font-score text-[#ff1744]">{{ Math.round(item.score) }}</b>
         </article>
 
