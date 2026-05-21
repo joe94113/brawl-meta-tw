@@ -208,13 +208,16 @@ export interface OfficialPlayer {
   expPoints?: number
   rankedRank?: number
   rankedRankName?: string
+  rankedRankIconUrl?: string
   rankedElo?: number
   rankedSeasonId?: string
   highestSeasonRankedRank?: number
   highestSeasonRankedRankName?: string
+  highestSeasonRankedRankIconUrl?: string
   highestSeasonRankedElo?: number
   highestAllTimeRankedRank?: number
   highestAllTimeRankedRankName?: string
+  highestAllTimeRankedRankIconUrl?: string
   highestAllTimeRankedElo?: number
   soloVictories: number
   duoVictories: number

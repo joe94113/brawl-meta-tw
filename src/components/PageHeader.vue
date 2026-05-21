@@ -12,6 +12,6 @@ defineProps<{
       <p class="mb-3 text-xs font-black uppercase tracking-[0.14em] text-[#ffcc00]">{{ eyebrow }}</p>
       <h1 class="m-0 text-[2.3rem] font-black leading-tight text-white max-sm:text-[1.9rem]">{{ title }}</h1>
     </div>
-    <p v-if="note" class="m-0 max-w-[520px] leading-7 text-slate-300">{{ note }}</p>
+    <p v-if="note" class="m-0 max-w-[520px] break-words leading-7 text-slate-300 max-lg:w-full max-sm:break-all">{{ note }}</p>
   </div>
 </template>

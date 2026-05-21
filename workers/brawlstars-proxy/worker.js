@@ -87,12 +87,13 @@ async function fetchBrawlTimeProfileFromPage(tag) {
   const piniaState = parsePiniaState(pageContext.piniaState)
   const player = piniaState?.json?.brawlstars?.player
   const allBrawlers = pageContext.vueQueryState?.queries?.find((query) => query.queryKey?.[0] === 'all-brawlers')?.state?.data || []
+  const rankedIcons = extractRankedIcons(html)
 
   if (!player?.tag) {
     throw new Error('Brawl Time Ninja profile payload not found')
   }
 
-  return { player, allBrawlers }
+  return { player, allBrawlers, rankedIcons }
 }
 
 function toPlayerResponse(profile) {
@@ -109,13 +110,16 @@ function toPlayerResponse(profile) {
     expPoints: player.expPoints || 0,
     rankedRank: player.rankedRank || 0,
     rankedRankName: player.rankedRankName || '',
+    rankedRankIconUrl: rankIconUrl(profile, player.rankedRankName),
     rankedElo: player.rankedElo || 0,
     rankedSeasonId: player.rankedSeasonId || '',
     highestSeasonRankedRank: player.highestSeasonRankedRank || 0,
     highestSeasonRankedRankName: player.highestSeasonRankedRankName || '',
+    highestSeasonRankedRankIconUrl: rankIconUrl(profile, player.highestSeasonRankedRankName),
     highestSeasonRankedElo: player.highestSeasonRankedElo || 0,
     highestAllTimeRankedRank: player.highestAllTimeRankedRank || 0,
     highestAllTimeRankedRankName: player.highestAllTimeRankedRankName || '',
+    highestAllTimeRankedRankIconUrl: rankIconUrl(profile, player.highestAllTimeRankedRankName),
     highestAllTimeRankedElo: player.highestAllTimeRankedElo || 0,
     soloVictories: player.soloVictories || 0,
     duoVictories: player.duoVictories || 0,
@@ -263,6 +267,32 @@ function extractPageContext(html) {
 function parsePiniaState(value) {
   if (!value) return null
   return typeof value === 'string' ? JSON.parse(value) : value
+}
+
+function extractRankedIcons(html) {
+  const icons = new Map()
+  const matches = html.matchAll(/<img\b(?=[^>]*\bsrc="([^"]*rank_[^"]+\.png)")(?=[^>]*\balt="([^"]+)")[^>]*>/gi)
+
+  for (const match of matches) {
+    const [, src, alt] = match
+    if (!src || !alt) continue
+    icons.set(normalizeRankName(alt), absoluteBrawlTimeUrl(src))
+  }
+
+  return icons
+}
+
+function rankIconUrl(profile, rankName) {
+  if (!rankName || !profile.rankedIcons) return ''
+  return profile.rankedIcons.get(normalizeRankName(rankName)) || ''
+}
+
+function normalizeRankName(value) {
+  return String(value || '').trim().toUpperCase().replace(/\s+/g, ' ')
+}
+
+function absoluteBrawlTimeUrl(src) {
+  return src.startsWith('http') ? src : `${BRAWL_TIME_BASE}${src}`
 }
 
 function slugify(value) {
