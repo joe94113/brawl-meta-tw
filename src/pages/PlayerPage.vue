@@ -455,7 +455,7 @@ function drawShareBrawler(
   drawText(context, displayBrawlerName(brawler), x + 72, y + 26, '900 22px "Noto Sans TC", Arial, sans-serif', '#ffffff', 142)
   drawText(
     context,
-    `${brawler.trophies.toLocaleString()} 獎盃 · 等級 ${brawler.power}`,
+    `${brawler.trophies.toLocaleString()} 獎盃 · ${brawler.power}等`,
     x + 72,
     y + 48,
     '800 16px "Noto Sans TC", Arial, sans-serif',
@@ -632,7 +632,7 @@ function rankNameLabel(name?: string) {
 
 function rankedValue(rankName?: string, elo?: number) {
   const label = rankNameLabel(rankName)
-  return elo ? `${label} · ${elo.toLocaleString()} Elo` : label
+  return elo ? `${label} · ${elo.toLocaleString()}` : label
 }
 
 function formatOptionalNumber(value?: number) {
