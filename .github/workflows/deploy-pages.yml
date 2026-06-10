@@ -44,7 +44,8 @@ jobs:
 
       - name: Fetch public meta data
         run: npm run data:meta
-        continue-on-error: true
+        env:
+          META_MAX_STALE_DAYS: 3
 
       - name: Verify player proxy base
         run: |

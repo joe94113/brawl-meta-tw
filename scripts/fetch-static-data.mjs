@@ -2,6 +2,10 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises'
 
 const META_SOURCE_URL = 'https://brawltime.ninja/tier-list/brawler'
 const RECENT_WINDOW_DAYS = 30
+const requestedMaxStaleDays = Number(process.env.META_MAX_STALE_DAYS || 3)
+const MAX_SNAPSHOT_STALE_DAYS = Number.isFinite(requestedMaxStaleDays) && requestedMaxStaleDays >= 0 ? requestedMaxStaleDays : 3
+const MIN_STATS_COUNT = 30
+const MS_PER_DAY = 24 * 60 * 60 * 1000
 const SNAPSHOT_URL = new URL('../public/data/meta-snapshot.json', import.meta.url)
 const BRAWL_TIME_HEADERS = {
   Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -38,11 +42,13 @@ const statsSourceUrl = recentStatsSourceUrl(windowStart)
 const gadgetSourceUrl = abilityStatsSourceUrl('gadget', windowStart)
 const starPowerSourceUrl = abilityStatsSourceUrl('starpower', windowStart)
 
+console.log(`[data:meta] Fetching Brawl Time data for windowStart=${windowStart}.`)
+
 let requiredPages
 try {
   requiredPages = await Promise.all([fetchBrawlTimeText(statsSourceUrl), fetchBrawlTimeText(META_SOURCE_URL)])
 } catch (error) {
-  await keepExistingSnapshotOrThrow(error)
+  await keepExistingFreshSnapshotOrThrow(error)
   process.exit(0)
 }
 
@@ -154,8 +160,12 @@ const snapshot = {
   sourceUrl: statsSourceUrl,
 }
 
+assertFreshSnapshot(snapshot)
 await mkdir(new URL('../public/data/', import.meta.url), { recursive: true })
 await writeFile(SNAPSHOT_URL, `${JSON.stringify(snapshot, null, 2)}\n`, 'utf8')
+console.log(
+  `[data:meta] Wrote fresh snapshot: ${snapshot.stats.length} brawlers, ${snapshot.mapStats.length} map rows, window ${snapshot.windowStart}, lastUpdated ${snapshot.lastUpdated || 'unknown'}.`,
+)
 
 function extractPageContext(pageHtml) {
   const match = pageHtml.match(/<script id="vike_pageContext" type="application\/json">([\s\S]*?)<\/script>/)
@@ -206,12 +216,23 @@ async function fetchOptionalBrawlTimeText(url) {
   }
 }
 
-async function keepExistingSnapshotOrThrow(error) {
+async function keepExistingFreshSnapshotOrThrow(error) {
   const existing = await readExistingSnapshot()
   if (!existing?.stats?.length) throw error
 
-  console.warn(`[data:meta] ${errorMessage(error)}`)
-  console.warn('[data:meta] Keeping existing public/data/meta-snapshot.json so deployment can continue.')
+  const freshness = snapshotFreshness(existing)
+  if (!freshness.ok) {
+    throw new Error(
+      [
+        `[data:meta] Fresh Brawl Time request failed: ${errorMessage(error)}`,
+        `[data:meta] Existing public/data/meta-snapshot.json is stale: ${freshness.summary}`,
+        '[data:meta] Refusing to deploy stale meta data.',
+      ].join('\n'),
+    )
+  }
+
+  console.warn(`[data:meta] Fresh Brawl Time request failed: ${errorMessage(error)}`)
+  console.warn(`[data:meta] Keeping existing public/data/meta-snapshot.json (${freshness.summary}).`)
 }
 
 async function readExistingSnapshot() {
@@ -224,6 +245,67 @@ async function readExistingSnapshot() {
 
 function errorMessage(error) {
   return error instanceof Error ? error.message : String(error)
+}
+
+function assertFreshSnapshot(snapshot) {
+  const freshness = snapshotFreshness(snapshot)
+  if (!freshness.ok) throw new Error(`[data:meta] Generated snapshot failed freshness check: ${freshness.summary}`)
+}
+
+function snapshotFreshness(snapshot) {
+  const issues = []
+  const statsCount = snapshot?.stats?.length || 0
+  if (statsCount < MIN_STATS_COUNT) issues.push(`only ${statsCount} brawler rows`)
+
+  const expectedWindowStart = dateOnly(addDays(new Date(), -RECENT_WINDOW_DAYS))
+  const windowStartDate = parseDateOnly(snapshot?.windowStart)
+  if (!windowStartDate) {
+    issues.push('missing windowStart')
+  } else {
+    const driftDays = Math.max(0, Math.round((parseDateOnly(expectedWindowStart) - windowStartDate) / MS_PER_DAY))
+    if (driftDays > MAX_SNAPSHOT_STALE_DAYS) {
+      issues.push(`windowStart ${snapshot.windowStart} is ${driftDays} days behind expected ${expectedWindowStart}`)
+    }
+  }
+
+  const lastUpdatedDate = parseDateTime(snapshot?.lastUpdated)
+  if (lastUpdatedDate) {
+    const ageDays = Math.max(0, Math.floor((Date.now() - lastUpdatedDate.getTime()) / MS_PER_DAY))
+    if (ageDays > MAX_SNAPSHOT_STALE_DAYS) {
+      issues.push(`lastUpdated ${snapshot.lastUpdated} is ${ageDays} days old`)
+    }
+  }
+
+  const summary = [
+    `windowStart=${snapshot?.windowStart || 'missing'}`,
+    `lastUpdated=${snapshot?.lastUpdated || 'missing'}`,
+    `stats=${statsCount}`,
+    `maxStaleDays=${MAX_SNAPSHOT_STALE_DAYS}`,
+  ].join(', ')
+
+  return { ok: issues.length === 0, summary: issues.length ? `${summary}; ${issues.join('; ')}` : summary }
+}
+
+function parseDateOnly(value) {
+  if (typeof value !== 'string') return null
+  const time = Date.parse(`${value}T00:00:00Z`)
+  return Number.isFinite(time) ? new Date(time) : null
+}
+
+function parseDateTime(value) {
+  if (typeof value !== 'string') return null
+  const time = Date.parse(value)
+  return Number.isFinite(time) ? new Date(time) : null
+}
+
+function addDays(date, days) {
+  const next = new Date(date)
+  next.setUTCDate(next.getUTCDate() + days)
+  return next
+}
+
+function dateOnly(date) {
+  return date.toISOString().slice(0, 10)
 }
 
 function canonicalModeSlug(value) {
