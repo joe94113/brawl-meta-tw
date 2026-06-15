@@ -19,31 +19,43 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Validate Cloudflare inputs
+      - name: Check Cloudflare inputs
+        id: cloudflare-config
         run: |
           missing=0
           if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
-            echo "::error::CLOUDFLARE_API_TOKEN is empty. Add it in Settings > Secrets and variables > Actions > Secrets."
+            echo "::notice::CLOUDFLARE_API_TOKEN is empty. Add it in Settings > Secrets and variables > Actions > Secrets to deploy the Worker automatically."
             missing=1
           fi
           if [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
-            echo "::error::CLOUDFLARE_ACCOUNT_ID is empty. Add your Cloudflare account id in Settings > Secrets and variables > Actions > Secrets."
+            echo "::notice::CLOUDFLARE_ACCOUNT_ID is empty. Add your Cloudflare account id in Settings > Secrets and variables > Actions > Secrets."
             missing=1
           fi
           if [ -z "$CLOUDFLARE_WORKERS_SUBDOMAIN" ]; then
-            echo "::error::CLOUDFLARE_WORKERS_SUBDOMAIN is empty. Add it in Settings > Secrets and variables > Actions > Variables, for example joe94113."
+            echo "::notice::CLOUDFLARE_WORKERS_SUBDOMAIN is empty. Add it in Settings > Secrets and variables > Actions > Variables, for example joe94113."
             missing=1
           fi
-          exit "$missing"
+          if [ "$missing" -ne 0 ]; then
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
+              echo "::error::Cloudflare inputs are required for a manual Worker deploy."
+              exit 1
+            fi
+            echo "::notice::Skipping Worker deploy because Cloudflare inputs are not configured. GitHub Pages deploy is unaffected."
+            exit 0
+          fi
+          echo "ready=true" >> "$GITHUB_OUTPUT"
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_WORKERS_SUBDOMAIN: ${{ vars.CLOUDFLARE_WORKERS_SUBDOMAIN }}
 
       - name: Show Wrangler version
+        if: steps.cloudflare-config.outputs.ready == 'true'
         run: npx wrangler --version
 
       - name: Deploy player proxy
+        if: steps.cloudflare-config.outputs.ready == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -51,6 +63,7 @@ jobs:
           command: deploy --config workers/brawlstars-proxy/wrangler.toml
 
       - name: Verify proxy CORS
+        if: steps.cloudflare-config.outputs.ready == 'true'
         run: |
           PROXY_BASE="https://brawlstars-proxy.$CLOUDFLARE_WORKERS_SUBDOMAIN.workers.dev"
           HEADERS="$(mktemp)"
@@ -68,6 +81,7 @@ jobs:
           CLOUDFLARE_WORKERS_SUBDOMAIN: ${{ vars.CLOUDFLARE_WORKERS_SUBDOMAIN }}
 
       - name: Verify Brawl Time data proxy
+        if: steps.cloudflare-config.outputs.ready == 'true'
         run: |
           PROXY_BASE="https://brawlstars-proxy.$CLOUDFLARE_WORKERS_SUBDOMAIN.workers.dev"
           BODY="$(mktemp)"
