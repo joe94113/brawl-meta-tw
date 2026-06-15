@@ -3,9 +3,10 @@ const BRAWL_TIME_HEADERS = {
   Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
   'Accept-Language': 'zh-TW,zh;q=0.9,en;q=0.8',
   'User-Agent':
-    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36',
+    'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Googlebot/2.1; +http://www.google.com/bot.html) Chrome/W.X.Y.Z Safari/537.36',
 }
 const PROFILE_CACHE_TTL_MS = 60 * 1000
+const BRAWL_TIME_PAGE_CACHE_SECONDS = 5 * 60
 const profileCache = new Map()
 
 export default {
@@ -26,13 +27,26 @@ export default {
       return debugEgressIp(request, env, cors)
     }
 
+    const brawlTimePageRequest = toBrawlTimePageRequest(url)
+    if (brawlTimePageRequest) {
+      if (brawlTimePageRequest.error) {
+        return jsonResponse({ message: brawlTimePageRequest.error }, 404, cors)
+      }
+
+      if (origin && !isAllowedOrigin(origin, env)) {
+        return jsonResponse({ message: 'Origin not allowed' }, 403, cors)
+      }
+
+      return fetchBrawlTimePage(brawlTimePageRequest.targetUrl, cors)
+    }
+
     if (!isAllowedOrigin(origin, env)) {
       return jsonResponse({ message: 'Origin not allowed' }, 403, cors)
     }
 
     const playerRequest = toPlayerRequest(url.pathname)
     if (!playerRequest) {
-      return jsonResponse({ message: 'Only /players/:tag and /players/:tag/battlelog are supported' }, 404, cors)
+      return jsonResponse({ message: 'Only /players/:tag, /players/:tag/battlelog, and /brawltime/dashboard are supported' }, 404, cors)
     }
 
     let brawlTimeProfile
@@ -52,6 +66,33 @@ export default {
       'Cache-Control': 'public, max-age=60',
     })
   },
+}
+
+async function fetchBrawlTimePage(targetUrl, cors) {
+  const response = await fetch(targetUrl, {
+    headers: BRAWL_TIME_HEADERS,
+    cf: {
+      cacheEverything: true,
+      cacheTtl: BRAWL_TIME_PAGE_CACHE_SECONDS,
+    },
+  })
+
+  if (!response.ok) {
+    return jsonResponse({ message: `Brawl Time Ninja ${response.status}` }, response.status === 404 ? 404 : 502, {
+      ...cors,
+      'Cache-Control': 'no-store',
+    })
+  }
+
+  return new Response(response.body, {
+    status: 200,
+    headers: {
+      ...cors,
+      'Cache-Control': `public, max-age=${BRAWL_TIME_PAGE_CACHE_SECONDS}`,
+      'Content-Type': response.headers.get('Content-Type') || 'text/html; charset=utf-8',
+      'X-Content-Type-Options': 'nosniff',
+    },
+  })
 }
 
 async function fetchBrawlTimeProfile(tag) {
@@ -314,6 +355,25 @@ function toPlayerRequest(pathname) {
     tag,
     battlelog: Boolean(match[2]),
   }
+}
+
+function toBrawlTimePageRequest(url) {
+  const normalizedPath = url.pathname.replace(/^\/api\/brawlstars/, '')
+  if (!normalizedPath.startsWith('/brawltime/')) return null
+
+  const targetPath = normalizedPath.replace(/^\/brawltime/, '') || '/'
+  if (!isAllowedBrawlTimePagePath(targetPath)) {
+    return { error: 'Brawl Time proxy path is not allowed' }
+  }
+
+  const targetUrl = new URL(`${BRAWL_TIME_BASE}${targetPath}`)
+  targetUrl.search = url.search
+
+  return { targetUrl }
+}
+
+function isAllowedBrawlTimePagePath(pathname) {
+  return pathname === '/dashboard' || pathname === '/tier-list/brawler'
 }
 
 async function debugEgressIp(request, env, cors) {

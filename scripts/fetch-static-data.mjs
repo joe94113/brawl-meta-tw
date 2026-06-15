@@ -1,18 +1,20 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 
-const META_SOURCE_URL = 'https://brawltime.ninja/tier-list/brawler'
+const BRAWL_TIME_BASE = 'https://brawltime.ninja'
+const META_SOURCE_URL = `${BRAWL_TIME_BASE}/tier-list/brawler`
 const RECENT_WINDOW_DAYS = 30
 const requestedMaxStaleDays = Number(process.env.META_MAX_STALE_DAYS || 3)
 const MAX_SNAPSHOT_STALE_DAYS = Number.isFinite(requestedMaxStaleDays) && requestedMaxStaleDays >= 0 ? requestedMaxStaleDays : 3
 const MIN_STATS_COUNT = 30
 const MS_PER_DAY = 24 * 60 * 60 * 1000
 const SNAPSHOT_URL = new URL('../public/data/meta-snapshot.json', import.meta.url)
+const BRAWL_TIME_PROXY_BASE = normalizeBaseUrl(process.env.BRAWL_TIME_PROXY_BASE || '')
 const BRAWL_TIME_HEADERS = {
   Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
   'Accept-Language': 'zh-TW,zh;q=0.9,en;q=0.8',
   'Cache-Control': 'no-cache',
   'User-Agent':
-    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36',
+    'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Googlebot/2.1; +http://www.google.com/bot.html) Chrome/W.X.Y.Z Safari/537.36',
 }
 const HOME_ACTIVE_MODE_SLUGS = new Set([
   'gemGrab',
@@ -43,6 +45,9 @@ const gadgetSourceUrl = abilityStatsSourceUrl('gadget', windowStart)
 const starPowerSourceUrl = abilityStatsSourceUrl('starpower', windowStart)
 
 console.log(`[data:meta] Fetching Brawl Time data for windowStart=${windowStart}.`)
+if (BRAWL_TIME_PROXY_BASE) {
+  console.log(`[data:meta] Using Brawl Time proxy: ${new URL(BRAWL_TIME_PROXY_BASE).host}.`)
+}
 
 let requiredPages
 try {
@@ -194,16 +199,20 @@ function recentWindowStart() {
 }
 
 function recentStatsSourceUrl(start) {
-  return `https://brawltime.ninja/dashboard?cube=map&dimension=brawler&filter%5Bseason%5D=${start}&metric=useRate&metric=winRateAdj&sort=winRateAdj`
+  return `${BRAWL_TIME_BASE}/dashboard?cube=map&dimension=brawler&filter%5Bseason%5D=${start}&metric=useRate&metric=winRateAdj&sort=winRateAdj`
 }
 
 function abilityStatsSourceUrl(cube, start) {
-  return `https://brawltime.ninja/dashboard?cube=${cube}&dimension=brawler&dimension=${cube}&filter%5Bseason%5D=${start}&metric=picks&metric=winRateAdj&sort=winRateAdj`
+  return `${BRAWL_TIME_BASE}/dashboard?cube=${cube}&dimension=brawler&dimension=${cube}&filter%5Bseason%5D=${start}&metric=picks&metric=winRateAdj&sort=winRateAdj`
 }
 
 async function fetchBrawlTimeText(url) {
-  const response = await fetch(url, { headers: BRAWL_TIME_HEADERS })
-  if (!response.ok) throw new Error(`Brawl Time Ninja ${response.status}: ${url}`)
+  const fetchUrl = brawlTimeFetchUrl(url)
+  const response = await fetch(fetchUrl, { headers: BRAWL_TIME_HEADERS })
+  if (!response.ok) {
+    const viaProxy = BRAWL_TIME_PROXY_BASE ? ` via ${new URL(BRAWL_TIME_PROXY_BASE).host}` : ''
+    throw new Error(`Brawl Time Ninja ${response.status}: ${url}${viaProxy}`)
+  }
   return response.text()
 }
 
@@ -308,6 +317,28 @@ function dateOnly(date) {
   return date.toISOString().slice(0, 10)
 }
 
+function normalizeBaseUrl(value) {
+  if (!value) return ''
+  const url = new URL(value)
+  url.pathname = url.pathname.replace(/\/+$/, '')
+  url.search = ''
+  url.hash = ''
+  return url.toString().replace(/\/$/, '')
+}
+
+function brawlTimeFetchUrl(sourceUrl) {
+  if (!BRAWL_TIME_PROXY_BASE) return sourceUrl
+
+  const source = new URL(sourceUrl)
+  if (source.origin !== BRAWL_TIME_BASE) {
+    throw new Error(`Unexpected Brawl Time source origin: ${source.origin}`)
+  }
+
+  const proxyUrl = new URL(`${BRAWL_TIME_PROXY_BASE}/brawltime${source.pathname}`)
+  proxyUrl.search = source.search
+  return proxyUrl.toString()
+}
+
 function canonicalModeSlug(value) {
   return MODE_SLUG_ALIASES[value] || value
 }
@@ -334,7 +365,7 @@ async function fetchActiveMapStats(events, start) {
 }
 
 function mapStatsSourceUrl(mapName, start) {
-  return `https://brawltime.ninja/dashboard?cube=map&dimension=map&dimension=brawler&filter%5Bseason%5D=${start}&filter%5Bmap%5D=${encodeURIComponent(mapName)}&metric=useRate&metric=winRateAdj&sort=winRateAdj`
+  return `${BRAWL_TIME_BASE}/dashboard?cube=map&dimension=map&dimension=brawler&filter%5Bseason%5D=${start}&filter%5Bmap%5D=${encodeURIComponent(mapName)}&metric=useRate&metric=winRateAdj&sort=winRateAdj`
 }
 
 function parseMapStats(pageHtml) {

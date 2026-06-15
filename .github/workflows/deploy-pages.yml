@@ -45,6 +45,7 @@ jobs:
       - name: Fetch public meta data
         run: npm run data:meta
         env:
+          BRAWL_TIME_PROXY_BASE: ${{ vars.BRAWL_TIME_PROXY_BASE }}
           META_MAX_STALE_DAYS: 3
 
       - name: Verify player proxy base

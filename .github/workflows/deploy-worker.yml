@@ -66,3 +66,22 @@ jobs:
           echo "Worker proxy is ready: $PROXY_BASE"
         env:
           CLOUDFLARE_WORKERS_SUBDOMAIN: ${{ vars.CLOUDFLARE_WORKERS_SUBDOMAIN }}
+
+      - name: Verify Brawl Time data proxy
+        run: |
+          PROXY_BASE="https://brawlstars-proxy.$CLOUDFLARE_WORKERS_SUBDOMAIN.workers.dev"
+          BODY="$(mktemp)"
+          STATUS="$(curl -sS -o "$BODY" -w "%{http_code}" "$PROXY_BASE/brawltime/tier-list/brawler")"
+          if [ "$STATUS" != "200" ]; then
+            cat "$BODY"
+            echo "::error::Brawl Time data proxy returned HTTP $STATUS."
+            exit 1
+          fi
+          if ! grep -q "vike_pageContext" "$BODY"; then
+            head -c 500 "$BODY"
+            echo "::error::Brawl Time data proxy response did not contain the expected page payload."
+            exit 1
+          fi
+          echo "Brawl Time data proxy is ready: $PROXY_BASE/brawltime/tier-list/brawler"
+        env:
+          CLOUDFLARE_WORKERS_SUBDOMAIN: ${{ vars.CLOUDFLARE_WORKERS_SUBDOMAIN }}
