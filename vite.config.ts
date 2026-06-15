@@ -6,6 +6,8 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import tailwindcss from '@tailwindcss/vite'
 import brawlStarsWorker from './workers/brawlstars-proxy/worker.js'
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
@@ -14,12 +16,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     base: env.VITE_BASE_PATH || githubPagesBase,
-    plugins: [
-      vue(),
-      tailwindcss(),
-      vueDevTools(),
-      brawlStarsDevProxy(),
-    ],
+    plugins: [vue(), tailwindcss(), vueDevTools(), brawlStarsDevProxy(), cloudflare()],
     server: {
       proxy: {
         '/api/brawltime': {
@@ -41,7 +38,7 @@ export default defineConfig(({ mode }) => {
         '@': fileURLToPath(new URL('./src', import.meta.url))
       },
     },
-  }
+  };
 })
 
 function brawlStarsDevProxy(): Plugin {
